@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    //Main pallette
+    <color name="middle_mintCream">#F0F7EE</color>
+    <color name="middle_beauBlue">#C4D7F2</color>
+    <color name="primary_powderBlue">#AFDEDC</color>
+    <color name="primary_morningBlue">#91A8A4</color>
+    <color name="secondary_oldLavander">#776871</color>
+    <color name="secondary_rocketMetalic">#83767E</color>
+
 </resources>
