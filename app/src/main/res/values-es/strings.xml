@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tu mejor viaje</string>
     <string name="home_button_name">Mi feed</string>
     <string name="search_button_name">Buscar</string>
     <string name="profile_button_name">Mi perfil</string>
