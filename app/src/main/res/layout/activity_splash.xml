@@ -40,7 +40,7 @@
         android:id="@+id/imageIconPlane"
         android:layout_width="172dp"
         android:layout_height="151dp"
-        android:src="@drawable/icon_travel"
+        android:src="@drawable/icon_plane"
         app:layout_constraintBottom_toTopOf="@+id/textFirstText"
         app:layout_constraintEnd_toEndOf="@+id/imageShape1"
         app:layout_constraintHorizontal_bias="0.496"
