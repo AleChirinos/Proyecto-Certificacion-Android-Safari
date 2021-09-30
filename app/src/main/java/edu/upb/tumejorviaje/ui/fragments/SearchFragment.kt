@@ -1,4 +1,4 @@
-package edu.upb.tumejorviaje.ui
+package edu.upb.tumejorviaje.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import edu.upb.tumejorviaje.R
 
-class MenuButtonFragmentCH : Fragment(){
+class SearchFragment: Fragment(){
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_button_options_ch, container, false)
+    ): View {
+        return inflater.inflate(R.layout.fragment_search, container, false)
     }
 }

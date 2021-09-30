@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuItemProfile"
+        android:title="@string/profile_button_name"
+        android:icon="@drawable/icons8_profile"
+        />
+    <item
+        android:id="@+id/menuItemChat"
+        android:title="@string/chat_button_name"
+        android:icon="@drawable/icons8_chat"
+        />
+    <item
+        android:id="@+id/menuItemFeed"
+        android:title="@string/home_button_name"
+        android:icon="@drawable/icons8_home"
+        />
+    <item
+        android:id="@+id/menuItemSearch"
+        android:title="@string/search_button_name"
+        android:icon="@drawable/icons8_search"
+        />
+    <item
+        android:id="@+id/menuItemUpload"
+        android:title="@string/upload_button_name"
+        android:icon="@drawable/icons8_upload"
+        />
+</menu>

@@ -1,7 +1,8 @@
-package edu.upb.tumejorviaje
+package edu.upb.tumejorviaje.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import edu.upb.tumejorviaje.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
