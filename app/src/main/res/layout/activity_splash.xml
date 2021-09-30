@@ -8,7 +8,7 @@
     tools:context=".SplashActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageWallper"
         android:layout_width="434dp"
         android:layout_height="735dp"
         android:src="@drawable/wallpaper_travel"
@@ -20,7 +20,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageShape1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="70dp"
@@ -28,48 +28,48 @@
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="250dp"
         android:src="@drawable/wallper_text_and_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/imageWallper"
+        app:layout_constraintEnd_toEndOf="@+id/imageWallper"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageWallper"
+        app:layout_constraintTop_toTopOf="@+id/imageWallper"
         app:layout_constraintVertical_bias="0.0" />
 
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageIconPlane"
         android:layout_width="172dp"
         android:layout_height="151dp"
         android:src="@drawable/icon_travel"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/textFirstText"
+        app:layout_constraintEnd_toEndOf="@+id/imageShape1"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/imageShape1"
+        app:layout_constraintTop_toBottomOf="@+id/imageWallper" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imageShape2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/wallper_text"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageShape1"
+        app:layout_constraintEnd_toEndOf="@+id/imageShape1"
+        app:layout_constraintStart_toStartOf="@+id/imageShape1"
+        app:layout_constraintTop_toTopOf="@+id/textFirstText" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textFirstText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textColor="?attr/colorOnSecondary"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/imageWallper"
+        app:layout_constraintEnd_toEndOf="@+id/imageShape1"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintStart_toStartOf="@+id/imageShape1"
+        app:layout_constraintTop_toBottomOf="@+id/imageIconPlane" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

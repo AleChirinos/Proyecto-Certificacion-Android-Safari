@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Your best Trip</string>
+    <string name="text_login">Are you ready?</string>
+    <string name="text_login2">It\'s time to pack</string>
+    <string name="text_hint_username_email">Username or email</string>
+    <string name="text_hint_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="radioButton_rememberme">Rememberme</string>
+    <string name="loginFacebook">Login with Facebook</string>
+    <string name="loginGoogle">Login with Google</string>
+    <string name="button_register">Register</string>
 </resources>
