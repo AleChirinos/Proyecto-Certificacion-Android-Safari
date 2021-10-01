@@ -1,7 +1,8 @@
-package edu.upb.tumejorviaje
+package edu.upb.tumejorviaje.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import edu.upb.tumejorviaje.R
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

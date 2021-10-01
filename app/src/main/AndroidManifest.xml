@@ -19,11 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginOrRegisterActivity"
+            android:name=".ui.activities.LoginOrRegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.activities.RegisterActivity"
             android:exported="true" />
+        <activity android:name=".ui.activities.MenuActivity"
+            android:exported="true"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
