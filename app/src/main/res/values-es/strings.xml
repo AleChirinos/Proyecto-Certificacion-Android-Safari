@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_button_name">Mi feed</string>
+    <string name="search_button_name">Buscar</string>
+    <string name="profile_button_name">Mi perfil</string>
+    <string name="upload_button_name">Subir</string>
+    <string name="chat_button_name">Mis chats</string>
+</resources>

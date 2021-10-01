@@ -16,4 +16,9 @@
     <string name="register_email">Email</string>
     <string name="register_description">Descripcion de tu cuenta (Estudiante, viajero, turista con experiencia)</string>
     <string name="register_sign_in">Registrarse</string>
+    <string name="home_button_name">Mi feed</string>
+    <string name="search_button_name">Buscar</string>
+    <string name="profile_button_name">Mi perfil</string>
+    <string name="upload_button_name">Subir</string>
+    <string name="chat_button_name">Mis chats</string>
 </resources>
