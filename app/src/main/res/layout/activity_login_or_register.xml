@@ -219,7 +219,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView10" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/RegisterButton1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
