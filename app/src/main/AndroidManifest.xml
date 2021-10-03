@@ -3,6 +3,9 @@
     package="edu.upb.tumejorviaje">
     <uses-permission android:name="android.permission.INTERNET"/>
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TuMejorViaje">
+        <activity
+            android:name=".ui.activities.DirectChatActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.activities.SplashActivity"
             android:exported="true">
@@ -25,8 +31,10 @@
         <activity
             android:name=".ui.activities.RegisterActivity"
             android:exported="true" />
-        <activity android:name=".ui.activities.MenuActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".ui.activities.MenuActivity"
+            android:exported="true" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
