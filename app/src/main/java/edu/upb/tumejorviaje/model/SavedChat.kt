@@ -1,4 +1,4 @@
-package edu.upb.tumejorviaje.post
+package edu.upb.tumejorviaje.model
 
 data class SavedChat (val chatName: String,
                       val chatLastMessage: String,

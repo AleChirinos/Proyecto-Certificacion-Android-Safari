@@ -1,7 +1,7 @@
 package edu.upb.tumejorviaje.data
 
 import edu.upb.tumejorviaje.R
-import edu.upb.tumejorviaje.post.SavedChat
+import edu.upb.tumejorviaje.model.SavedChat
 
 object ChatsTempDataSource {
     val chatsList = mutableListOf(

@@ -6,11 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import edu.upb.tumejorviaje.R
-import edu.upb.tumejorviaje.post.SavedChat
+import edu.upb.tumejorviaje.model.SavedChat
 
 class ChatListAdapter : RecyclerView.Adapter<ChatListViewHolder>() {
     val elementList: MutableList<SavedChat> = mutableListOf()
