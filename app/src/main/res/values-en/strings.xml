@@ -6,4 +6,5 @@
     <string name="upload_button_name">Upload</string>
     <string name="app_name">Tu mejor viaje</string>
     <string name="chat_button_name">My chats</string>
+    <string name="text_search">Search</string>
 </resources>
