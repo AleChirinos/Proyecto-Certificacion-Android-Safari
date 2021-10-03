@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Your best Trip</string>
+    <string name="text_login">Are you ready?</string>
+    <string name="text_login2">It\'s time to pack</string>
+    <string name="text_hint_username_email">Username or email</string>
+    <string name="text_hint_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="radioButton_rememberme">Rememberme</string>
+    <string name="loginFacebook">Login with Facebook</string>
+    <string name="loginGoogle">Login with Google</string>
+    <string name="button_register">Register</string>
+    <string name="register_title">Register!</string>
+    <string name="register_username">Username</string>
+    <string name="register_password">Password</string>
+    <string name="register_confirm_password">Confirm Password</string>
+    <string name="register_email">Email</string>
+    <string name="register_description">Description of your account (Student, traveler, tourist with experience)</string>
+    <string name="register_sign_in">Sign in</string>
     <string name="home_button_name">My feed</string>
     <string name="search_button_name">Search</string>
     <string name="profile_button_name">My profile</string>
     <string name="upload_button_name">Upload</string>
-    <string name="app_name">Tu mejor viaje</string>
     <string name="chat_button_name">My chats</string>
+    <string name="uploadTitle">Title:</string>
+    <string name="uploadInitialDescription">Initial description (shown at the feed):</string>
+    <string name="uploadBody">Post body:</string>
+    <string name="uploadTagViaje">TRIPS</string>
+    <string name="uploadTagPrecio">PRICES</string>
+    <string name="uploadTagDocumentos">DOCUMENTS</string>
+    <string name="uploadTagIntercambio">EXCHANGE</string>
+    <string name="uploadTagVivienda">HOUSES</string>
+    <string name="upload_post_button">Upload new post</string>
+    <string name="uploadPhotoDesc">.png or .jpg (Photos). 1 min max .mp4 (Videos), 1093 x 600 (Minimum resolution)</string>
+    <string name="emptyTitle">Post title required</string>
+    <string name="emptyInitDescription">Post initial description required</string>
+    <string name="emptyPostBody">Post body required</string>
+    <string name="validatedUpload">Validated</string>
 </resources>

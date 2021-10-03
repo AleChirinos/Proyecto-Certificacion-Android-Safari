@@ -21,4 +21,18 @@
     <string name="profile_button_name">Mi perfil</string>
     <string name="upload_button_name">Subir</string>
     <string name="chat_button_name">Mis chats</string>
+    <string name="uploadTitle">Título:</string>
+    <string name="uploadInitialDescription">Descripción inicial (mostrado en el feed):</string>
+    <string name="uploadBody">Cuerpo del post:</string>
+    <string name="uploadTagViaje">VIAJES</string>
+    <string name="uploadTagPrecio">PRECIOS</string>
+    <string name="uploadTagDocumentos">DOCUMENTOS</string>
+    <string name="uploadTagIntercambio">INTERCAMBIO</string>
+    <string name="uploadTagVivienda">VIVIENDA</string>
+    <string name="upload_post_button">Subir nuevo post</string>
+    <string name="uploadPhotoDesc">Foto .png o .jpg, Video .mp4 de 1 min máximo, 1093 x 600 (Resolución mínima)</string>
+    <string name="emptyTitle">Se requiere un título para el post</string>
+    <string name="emptyInitDescription">Se requiere una descripción inicial en el post</string>
+    <string name="emptyPostBody">Se requiere agregar el cuerpo del post</string>
+    <string name="validatedUpload">Validado</string>
 </resources>
