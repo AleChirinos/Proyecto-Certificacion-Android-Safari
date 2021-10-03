@@ -4,10 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import edu.upb.tumejorviaje.R
+import edu.upb.tumejorviaje.ui.base.StepsBaseFragment
 
-class UploadFragment: Fragment(){
+class UploadFragment: StepsBaseFragment(){
+    private lateinit var textTitle: EditText
+    private lateinit var textInitDesc: EditText
+    private lateinit var textBodyDesc: EditText
+    private lateinit var uploadPostBtn: View
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -15,4 +23,30 @@ class UploadFragment: Fragment(){
     ): View {
         return inflater.inflate(R.layout.fragment_upload, container, false)
     }
-}
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        textTitle=view.findViewById(R.id.editTextTitle)
+        textInitDesc=view.findViewById(R.id.editTextDescInit)
+        textBodyDesc=view.findViewById(R.id.editTextPostBody)
+        uploadPostBtn=view.findViewById(R.id.uploadPostButton)
+
+        uploadPostBtn.setOnClickListener{
+            val title=textTitle.text.toString().trim()
+            val initDesc=textInitDesc.text.toString().trim()
+            val bodyView=textBodyDesc.text.toString().trim()
+
+            if(title.isEmpty()){
+                textTitle.error ="Titulo requerido"
+                return@setOnClickListener
+            } else if (initDesc.isEmpty()){
+                textInitDesc.error ="Descripcion inicial requerida"
+                return@setOnClickListener
+            } else if (bodyView.isEmpty()){
+                textBodyDesc.error ="Cuerpo del post requerido"
+                return@setOnClickListener
+            }  else {
+                onSuccess?.invoke()
+            }
+        }
+
+    }
