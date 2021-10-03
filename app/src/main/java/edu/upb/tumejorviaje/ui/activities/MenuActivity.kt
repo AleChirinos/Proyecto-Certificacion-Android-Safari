@@ -17,9 +17,15 @@ class MenuActivity : AppCompatActivity() {
     private val searchFragment = SearchFragment()
     private val uploadFragment = UploadFragment()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
+
+
+
+
 
         uploadFragment.setOnSuccessListener {
             Toast.makeText(this,this.getString(R.string.validatedUpload),Toast.LENGTH_SHORT).show()

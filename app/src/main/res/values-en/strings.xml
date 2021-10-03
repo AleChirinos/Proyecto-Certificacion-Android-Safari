@@ -10,7 +10,7 @@
     <string name="from_text">Country of origin</string>
     <string name="lives_text">Country where lives or visit</string>
     <string name="post_text">My posts</string>
-    <string name="uploadTitle">Titulo:</string>
+    <string name="uploadTitle">Title:</string>
     <string name="register_sign_in">Sign in</string>
     <string name="register_description">Description of your account (Student, traveler, tourist with experience)</string>
     <string name="register_email">Email</string>

@@ -9,7 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.model.SavedChat
 
-class ChatListAdapter : RecyclerView.Adapter<ChatListViewHolder>() {
+
+class ChatListAdapter() : RecyclerView.Adapter<ChatListViewHolder>() {
+
+
     val elementList: MutableList<SavedChat> = mutableListOf()
 
     fun addAll(newElementList: MutableList<SavedChat>) {
@@ -25,11 +28,14 @@ class ChatListAdapter : RecyclerView.Adapter<ChatListViewHolder>() {
 
     override fun onBindViewHolder(holder: ChatListViewHolder, position: Int) {
         holder.bind(elementList[position])
+
     }
 
     override fun getItemCount(): Int {
         return elementList.size
     }
+
+
 }
 
 class ChatListViewHolder(val itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -38,9 +44,13 @@ class ChatListViewHolder(val itemView: View): RecyclerView.ViewHolder(itemView) 
     private val tvChatLastMessage = itemView.findViewById<TextView>(R.id.chat_text)
 
 
+
     fun bind(savedChat: SavedChat) {
         ivChatImage.setImageResource(savedChat.profileImg)
         tvChatName.text = savedChat.chatName
         tvChatLastMessage.text = savedChat.chatLastMessage
+
     }
+
+
 }

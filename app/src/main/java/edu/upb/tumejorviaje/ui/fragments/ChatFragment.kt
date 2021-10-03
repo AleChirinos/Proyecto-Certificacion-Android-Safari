@@ -1,5 +1,6 @@
 package edu.upb.tumejorviaje.ui.fragments
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,6 @@ import edu.upb.tumejorviaje.ui.adapters.ChatListAdapter
 
 class ChatFragment: Fragment(){
     private val chatListAdapter = ChatListAdapter()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,9 +24,9 @@ class ChatFragment: Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvChats)
         recyclerView.adapter = chatListAdapter
-
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
         chatListAdapter.addAll(ChatsTempDataSource.chatsList)
     }
+
+
 }
