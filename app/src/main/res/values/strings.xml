@@ -22,4 +22,7 @@
     <string name="upload_button_name">Subir</string>
     <string name="chat_button_name">Mis chats</string>
     <string name="text_search">Buscar</string>
+    <string name="from_text">Pais de origen</string>
+    <string name="lives_text">Pais donde vive o visita</string>
+    <string name="post_text">Mis publicaciones</string>
 </resources>

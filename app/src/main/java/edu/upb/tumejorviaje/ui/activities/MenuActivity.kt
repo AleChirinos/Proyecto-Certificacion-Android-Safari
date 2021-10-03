@@ -41,5 +41,6 @@ class MenuActivity : AppCompatActivity() {
             }
             true
         }
+        menuNavigationView.selectedItemId = R.id.menuItemFeed
     }
 }

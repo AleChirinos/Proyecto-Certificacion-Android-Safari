@@ -39,6 +39,5 @@ object TempDataSource {
             postUrl = "https://www.tendenciashoy.com/wp-content/uploads/2020/07/times-square-foto-anthony-rosset-unsplash.jpeg",
             profileUrl = ""
         ),
-
-        )
+    )
 }

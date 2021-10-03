@@ -7,4 +7,7 @@
     <string name="app_name">Tu mejor viaje</string>
     <string name="chat_button_name">My chats</string>
     <string name="text_search">Search</string>
+    <string name="from_text">Country of origin</string>
+    <string name="lives_text">Country where lives or visit</string>
+    <string name="post_text">My posts</string>
 </resources>
