@@ -1,6 +1,7 @@
 package edu.upb.tumejorviaje.ui.activities
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import edu.upb.tumejorviaje.R
@@ -19,6 +20,10 @@ class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
+        uploadFragment.setOnSuccessListener {
+            Toast.makeText(this,"Validation",Toast.LENGTH_SHORT).show()
+        }
 
         menuNavigationView=findViewById(R.id.menuNavigationView)
         menuNavigationView.setOnItemSelectedListener {
