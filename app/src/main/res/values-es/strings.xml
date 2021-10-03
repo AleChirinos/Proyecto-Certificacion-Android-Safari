@@ -33,5 +33,8 @@
     <string name="uploadTagVivienda">VIVIENDA</string>
     <string name="uploadPhotoDesc">Foto .png o .jpg, Video .mp4 de 1 min maximo, 1093 x 600 ( Resolución minima)</string>
     <string name="upload_post_button">Subir nuevo post</string>
+    <string name="emptyTitle">Se requiere un título para el post</string>
+    <string name="emptyInitDescription">Se requiere una descripción inicial en el post</string>
+    <string name="emptyPostBody">Se requiere agregar el cuerpo del post</string>
     <string name="validatedUpload">Validado</string>
 </resources>

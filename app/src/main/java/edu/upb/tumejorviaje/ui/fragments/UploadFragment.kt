@@ -47,13 +47,13 @@ class UploadFragment: StepsBaseFragment(){
             val bodyView=textBodyDesc.text.toString().trim()
 
             if(title.isEmpty()){
-                textTitle.error ="Titulo requerido"
+                textTitle.error =context?.getString(R.string.emptyTitle)
                 return@setOnClickListener
             } else if (initDesc.isEmpty()){
-                textInitDesc.error ="Descripcion inicial requerida"
+                textInitDesc.error =context?.getString(R.string.emptyInitDescription)
                 return@setOnClickListener
             } else if (bodyView.isEmpty()){
-                textBodyDesc.error ="Cuerpo del post requerido"
+                textBodyDesc.error =context?.getString(R.string.emptyPostBody)
                 return@setOnClickListener
             }  else {
                 onSuccess?.invoke()
