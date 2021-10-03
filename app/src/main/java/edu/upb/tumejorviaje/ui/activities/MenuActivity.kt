@@ -22,7 +22,7 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         uploadFragment.setOnSuccessListener {
-            Toast.makeText(this,"Validation",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,this.getString(R.string.validatedUpload),Toast.LENGTH_SHORT).show()
         }
 
         menuNavigationView=findViewById(R.id.menuNavigationView)

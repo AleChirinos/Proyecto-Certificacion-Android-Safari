@@ -33,4 +33,5 @@
     <string name="uploadTagVivienda">HOUSES</string>
     <string name="uploadPhotoDesc">Png o Jpg (Photos). 1 min max .mp4 (Video), 1093 x 600 (minimum Resolution)</string>
     <string name="upload_post_button">Upload new post</string>
+    <string name="validatedUpload">Validated</string>
 </resources>
