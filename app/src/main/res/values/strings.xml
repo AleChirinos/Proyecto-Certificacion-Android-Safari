@@ -25,4 +25,5 @@
     <string name="from_text">Pais de origen</string>
     <string name="lives_text">Pais donde vive o visita</string>
     <string name="post_text">Mis publicaciones</string>
+    <string name="new_chat_start_new_chat">Comenzar un nuevo chat</string>
 </resources>

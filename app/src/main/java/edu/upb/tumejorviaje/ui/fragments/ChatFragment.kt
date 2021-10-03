@@ -12,7 +12,9 @@ import edu.upb.tumejorviaje.data.ChatsTempDataSource
 import edu.upb.tumejorviaje.ui.adapters.ChatListAdapter
 
 class ChatFragment: Fragment(){
+    lateinit var btNewChat : View
     private val chatListAdapter = ChatListAdapter()
+    private val newChatFragment = NewChatFragment()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,11 +24,16 @@ class ChatFragment: Fragment(){
         return inflater.inflate(R.layout.fragment_chat, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        btNewChat = view.findViewById(R.id.newChatButtom)
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvChats)
         recyclerView.adapter = chatListAdapter
 
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
         chatListAdapter.addAll(ChatsTempDataSource.chatsList)
+
+        btNewChat.setOnClickListener {
+            newChatFragment.show(childFragmentManager,"NewChat")
+        }
     }
 }
