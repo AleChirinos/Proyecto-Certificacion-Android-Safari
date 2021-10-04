@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activities.DirectChatActivity"
-    android:background="@color/primary_morningBlue">
+    android:background="?attr/colorPrimary">
 
     <ImageView
         android:id="@+id/backToMainIcon"
@@ -13,6 +13,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/icons8_back_"
+        app:tint="?attr/colorOnPrimary"
         app:layout_constraintEnd_toStartOf="@id/chatDirectIcon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +24,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/user_icon"
+        app:tint="?attr/colorOnPrimary"
         app:layout_constraintEnd_toStartOf="@id/textDescLayout"
         app:layout_constraintStart_toEndOf="@id/backToMainIcon"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
+            android:textColor="?attr/colorPrimaryVariant"
             android:textSize="20dp"
             android:textStyle="bold"
             android:text="María Marcela"
@@ -52,6 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
+            android:textSize="12dp"
+            android:textColor="?attr/colorOnPrimary"
             android:text="En Línea, último mensaje a las 9:00 am"
             />
     </LinearLayout>

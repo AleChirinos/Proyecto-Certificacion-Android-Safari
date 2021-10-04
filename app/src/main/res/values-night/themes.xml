@@ -2,24 +2,25 @@
     <!-- Base application theme. -->
     <style name="Theme.TuMejorViaje" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primary_powderBlue</item>
-        <item name="colorPrimaryVariant">@color/primary_morningBlue</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/primary_MediumTurquoise</item>
+        <item name="colorPrimaryVariant">@color/primary_xanadu</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/secondary_oldLavander</item>
-        <item name="colorSecondaryVariant">@color/secondary_rocketMetalic</item>
+        <item name="colorSecondary">@color/secondary_blueBell</item>
+        <item name="colorSecondaryVariant">@color/secondary_darkLiver2</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
 
         <!-- Customize your theme here. -->
 
-        <item name="background">@color/wallperNight</item>
+        <item name="background">@color/raisinBlack</item>
+        <item name="android:fontFamily">@font/allerta</item>
     </style>
 
 
     <style name="MenuTheme" parent="Theme.TuMejorViaje">
-        <item name="colorSurface">@color/secondary_oldLavander</item>
+        <item name="colorSurface">@color/secondary_silverChalice</item>
         <item name="colorOnSurface">@color/white</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorSurface</item>
     </style>

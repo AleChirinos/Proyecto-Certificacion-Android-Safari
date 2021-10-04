@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/background">
+    android:background="?attr/colorSecondary">
 
     <ImageView
         android:id="@+id/profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:tint="?attr/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +49,6 @@
         android:layout_height="wrap_content"
         android:text="dt.valdivia"
         android:textSize="30sp"
-
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="@+id/imageView8" />
@@ -68,13 +68,28 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <ImageView
+        android:id="@+id/Profilebackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/wallper_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/imageView8"
+        app:layout_constraintStart_toStartOf="@id/imageView8"
+        app:layout_constraintTop_toBottomOf="@id/imageView8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
         android:id="@+id/imageView15"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintStart_toStartOf="@id/Profilebackground"
+        app:layout_constraintEnd_toEndOf="@id/Profilebackground"
+        app:layout_constraintTop_toTopOf="@id/Profilebackground"
+        app:layout_constraintBottom_toTopOf="@id/rvProfile"
         app:srcCompat="@drawable/wallper_text" />
 
     <TextView
@@ -95,9 +110,11 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/Profilebackground"
+        app:layout_constraintEnd_toEndOf="@id/Profilebackground"
+        app:layout_constraintStart_toStartOf="@id/Profilebackground"
         app:layout_constraintTop_toBottomOf="@+id/imageView15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

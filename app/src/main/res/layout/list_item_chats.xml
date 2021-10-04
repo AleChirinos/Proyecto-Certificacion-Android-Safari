@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/chat_shape"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -20,8 +20,8 @@
 
     <ImageView
         android:id="@+id/chat_circle_profile"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/chat_shape"
         app:layout_constraintStart_toStartOf="@+id/chat_shape"
@@ -35,8 +35,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="Maria Marcela"
-        android:textColor="@color/secondary_oldLavander"
-        android:textSize="25sp"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/chat_circle_profile"
         app:layout_constraintTop_toTopOf="@+id/chat_shape" />
@@ -48,8 +48,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="24dp"
         android:text="Aun estoy esperando."
-        android:textColor="@color/secondary_rocketMetalic"
-        android:textSize="20sp"
+        android:textColor="?attr/colorPrimaryVariant"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/chat_shape"
         app:layout_constraintStart_toEndOf="@+id/chat_circle_profile"
         app:layout_constraintTop_toBottomOf="@+id/chat_name" />

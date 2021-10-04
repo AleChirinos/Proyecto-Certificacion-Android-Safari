@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textColor="?attr/colorOnPrimary"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/guidelineTitle"
@@ -26,12 +26,13 @@
         android:id="@+id/menuNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+
+        app:itemIconTint="?attr/colorPrimaryVariant"
         app:layout_constraintBottom_toTopOf="@id/mainContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTextView"
-        app:menu="@menu/main_menu_bar"
-        />
+        app:menu="@menu/main_menu_bar" />
 
     <FrameLayout
         android:id="@+id/mainContainer"

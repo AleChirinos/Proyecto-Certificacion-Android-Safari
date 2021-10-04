@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?attr/colorSecondary"
     xmlns:tools="http://schemas.android.com/tools"
     >
 
@@ -27,6 +27,7 @@
         android:layout_width="250dp"
         android:layout_height="175dp"
         android:src="@drawable/wallper_text"
+
         android:layout_marginTop="50sp"
         app:layout_constraintBottom_toTopOf="@id/editTextTitle"
         app:layout_constraintTop_toTopOf="@id/form_frame"
@@ -84,6 +85,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
+        app:backgroundTint="?attr/colorOnPrimary"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/form_frame"
         app:layout_constraintTop_toBottomOf="@id/titleIndicator"
@@ -114,6 +116,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:inputType="textMultiLine"
+        app:backgroundTint="?attr/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="@+id/form_frame"
         app:layout_constraintTop_toBottomOf="@id/initDescIndicator"
         app:layout_constraintStart_toStartOf="@+id/form_frame"
@@ -149,6 +152,7 @@
         app:layout_constraintTop_toBottomOf="@id/PostBodyindicator"
         app:layout_constraintStart_toStartOf="@+id/form_frame"
         app:layout_constraintBottom_toTopOf="@id/checkBoxDocumentos"
+        app:backgroundTint="?attr/colorOnPrimary"
         />
 
     <CheckBox

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Your best Trip</string>
+    <string name="app_name">YOUR BEST TRIP</string>
     <string name="text_login">Are you ready?</string>
     <string name="text_login2">It\'s time to pack</string>
     <string name="text_hint_username_email">Username or email</string>

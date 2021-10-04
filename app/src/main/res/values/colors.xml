@@ -8,8 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="hint_color">#f5f5f5</color>
-    <color name="alabaster">#DAE1D8</color>
-    <color name="wallperNight">#141113</color>
+    <color name="beaublue">#CDDDF4</color>
+    <color name="raisinBlack">#2C262A</color>
 
 
     //Main pallette
@@ -17,8 +17,18 @@
     <color name="middle_beauBlue">#C4D7F2</color>
     <color name="primary_powderBlue">#AFDEDC</color>
     <color name="primary_morningBlue">#91A8A4</color>
-    <color name="secondary_oldLavander">#776871</color>
-    <color name="secondary_rocketMetalic">#83767E</color>
+    <color name="secondary_silverChalice">#D8E9E9</color>
+    <color name="secondary_alabaster">#DAE1D8</color>
+
+    //Dark pallette
+
+    <color name="middle_laurelGreen">#95AB90</color>
+    <color name="middle_frenchSkyBlue">#89B0E6</color>
+    <color name="primary_MediumTurquoise">#1E4847</color>
+    <color name="primary_xanadu">#6D9DC2</color>
+    <color name="secondary_blueBell">#8D9BCE</color>
+    <color name="secondary_darkLiver2">#AFB8D9</color>
+
 
 
 
