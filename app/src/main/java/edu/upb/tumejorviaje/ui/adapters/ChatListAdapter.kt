@@ -41,6 +41,7 @@ class ChatListAdapter() : RecyclerView.Adapter<ChatListViewHolder>() {
 
     override fun onBindViewHolder(holder: ChatListViewHolder, position: Int) {
         holder.bind(elementList[position])
+
     }
 
     override fun getItemCount(): Int {
