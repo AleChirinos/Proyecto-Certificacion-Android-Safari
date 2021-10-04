@@ -30,6 +30,7 @@ class ChatFragment: StepsBaseFragment(){
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         btNewChat = view.findViewById(R.id.newChatButtom)
+
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvChats)
         recyclerView.adapter = chatListAdapter
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
