@@ -1,5 +1,6 @@
 package edu.upb.tumejorviaje.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,15 +23,18 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
+        //Para ir a directChatActivity como nueva ventana de chat
+        chatFragment.setOnSuccessListener {
+            val intent=Intent(this,DirectChatActivity::class.java)
+            startActivity(intent)
+        }
 
-
-
-
-
+        //Para verificar el funcionamiento del comprobador de formularios
         uploadFragment.setOnSuccessListener {
             Toast.makeText(this,this.getString(R.string.validatedUpload),Toast.LENGTH_SHORT).show()
         }
 
+        //Para navegar por los fragments
         menuNavigationView=findViewById(R.id.menuNavigationView)
         menuNavigationView.setOnItemSelectedListener {
             when(it.itemId){
