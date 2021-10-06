@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/postFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/wallper_text_and_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ivPostTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@id/ivPostInitDescription"
+        app:layout_constraintEnd_toEndOf="@id/postFrame"
+        app:layout_constraintStart_toStartOf="@id/postFrame"
+        app:layout_constraintTop_toTopOf="@id/postFrame"
+        tools:text="Mi viaje de intercambio a Francia" />
+
+    <TextView
+        android:id="@+id/ivPostInitDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        android:lineSpacingExtra="4sp"
+        android:textAlignment="center"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@id/ivPostImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivPostTitle"
+        tools:text="Durante los 5 meses que fui a la Universidad de Venecia para mi diplomado en Software, esto fué lo que viví" />
+
+    <ImageView
+        android:id="@+id/ivPostImage"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/primary_morningBlue"
+        android:padding="4dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="@id/postFrame"
+        app:layout_constraintStart_toStartOf="@id/postFrame"
+        app:layout_constraintTop_toBottomOf="@id/ivPostInitDescription"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+
+        />
+
+    <ImageView
+        android:id="@+id/ivPostUserSection"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/status_section_post"
+        app:layout_constraintStart_toStartOf="@id/ivPostImage"
+        app:layout_constraintTop_toTopOf="@id/ivPostImage" />
+
+    <!--    < de.hdodenhof.circleimageview.CircleImageView-->
+    <ImageView
+        app:tint="?attr/colorOnPrimary"
+        android:id="@+id/ivPostProfileUser"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivPostUserSection"
+        app:layout_constraintStart_toStartOf="@id/ivPostUserSection"
+        app:layout_constraintTop_toTopOf="@id/ivPostUserSection"
+        app:srcCompat="@drawable/icons8_profile" />
+
+    <TextView
+        android:id="@+id/ivPostPublisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/ivPostDate"
+        app:layout_constraintEnd_toEndOf="@id/ivPostUserSection"
+        app:layout_constraintStart_toEndOf="@id/ivPostProfileUser"
+        app:layout_constraintTop_toTopOf="@id/ivPostUserSection"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Por: Nicole Góngora" />
+
+    <TextView
+        android:id="@+id/ivPostDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="9dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@id/ivPostUserSection"
+        app:layout_constraintStart_toStartOf="@id/ivPostPublisher"
+        app:layout_constraintTop_toBottomOf="@id/ivPostPublisher"
+        tools:text="Hace un mes (17/09/2021)"
+        />
+
+
+    <ImageView
+        android:id="@+id/ivPostStatsSection"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:background="@drawable/status_section_post"
+        app:layout_constraintStart_toStartOf="@id/ivPostImage"
+        app:layout_constraintBottom_toBottomOf="@id/ivPostImage" />
+
+    <ImageView
+        app:tint="?attr/colorOnPrimary"
+        android:id="@+id/ivPostLikes"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/ivPostUserSection"
+        app:layout_constraintEnd_toStartOf="@id/ivPostComments"
+        app:layout_constraintTop_toTopOf="@id/ivPostStatsSection"
+        app:srcCompat="@drawable/icons8_profile" />
+
+    <ImageView
+        app:tint="?attr/colorOnPrimary"
+        android:id="@+id/ivPostComments"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@id/ivPostLikes"
+        app:layout_constraintEnd_toStartOf="@id/ivPostShare"
+        app:layout_constraintTop_toTopOf="@id/ivPostStatsSection"
+        app:srcCompat="@drawable/icons8_profile" />
+
+    <ImageView
+        app:tint="?attr/colorOnPrimary"
+        android:id="@+id/ivPostShare"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@id/ivPostComments"
+        app:layout_constraintTop_toTopOf="@id/ivPostStatsSection"
+        app:layout_constraintEnd_toEndOf="@id/ivPostStatsSection"
+        app:srcCompat="@drawable/icons8_profile" />
+
+    <TextView
+        android:id="@+id/ivPostLikeN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="9dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivPostStatsSection"
+        app:layout_constraintEnd_toEndOf="@id/ivPostLikes"
+        app:layout_constraintStart_toStartOf="@id/ivPostLikes"
+        app:layout_constraintTop_toBottomOf="@id/ivPostLikes"
+        tools:text="23" />
+
+    <TextView
+        android:id="@+id/ivPostCommentN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="9dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivPostStatsSection"
+        app:layout_constraintStart_toStartOf="@id/ivPostComments"
+        app:layout_constraintTop_toBottomOf="@id/ivPostComments"
+        app:layout_constraintEnd_toEndOf="@id/ivPostComments"
+        tools:text="23"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/roboto"
+        android:justificationMode="inter_word"
+        tools:text="Fue durante mi trayecto desde Bolivia a Italia para mi diplomado donde pude experimentar por primera vez cómo es visitar un nuevo país de manera oficial. como una adulta. Uno pensaría que eso fuera muy fácil, pero nada más alejado de la realidad: Sacar papeles para ingresar al territorio, encontrar en Airbnb algun departamento que esté en un lugar cercano a la Universidad y que no me asalten en la noche, averiguar los precios de cada transporte, en fin, toda una odisea que fue..."
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/postFrame"
+        app:layout_constraintEnd_toEndOf="@id/postFrame"
+        app:layout_constraintStart_toStartOf="@id/postFrame"
+        app:layout_constraintTop_toBottomOf="@id/ivPostImage" />
+
+
+
+    <!-- app:civ_border_width="3dp"
+        app:civ_border_color="?attr/colorSecondaryVariant"
+
+        />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

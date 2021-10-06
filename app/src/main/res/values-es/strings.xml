@@ -42,4 +42,5 @@
     <string name="register_description">Descripcion de tu cuenta (Estudiante, viajero, turista con experiencia)</string>
     <string name="register_sign_in">Registrarse</string>
     <string name="new_chat_start_new_chat">Comenzar un nuevo chat</string>
+    <string name="uploadAuthor">"Por: "</string>
 </resources>
