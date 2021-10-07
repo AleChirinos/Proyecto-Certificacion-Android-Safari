@@ -26,24 +26,24 @@
         android:id="@+id/menuNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-
         app:itemIconTint="?attr/colorPrimaryVariant"
-        app:layout_constraintBottom_toTopOf="@id/mainContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTextView"
         app:menu="@menu/main_menu_bar" />
 
-    <FrameLayout
-        android:id="@+id/mainContainer"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintTop_toBottomOf="@+id/menuNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/menuNavigationView"
-        >
-    </FrameLayout>
+        app:navGraph="@navigation/main_menu_nav_graph" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTitle"
@@ -51,10 +51,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1" />
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

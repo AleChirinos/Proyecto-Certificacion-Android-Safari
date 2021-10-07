@@ -5,27 +5,27 @@
 
 
     <item
-        android:id="@+id/menuItemProfile"
+        android:id="@+id/profileFragment"
         android:title="@string/profile_button_name"
         android:icon="@drawable/icons8_profile"
         />
     <item
-        android:id="@+id/menuItemChat"
+        android:id="@+id/chatFragment"
         android:title="@string/chat_button_name"
         android:icon="@drawable/icons8_chat"
         />
     <item
-        android:id="@+id/menuItemFeed"
+        android:id="@+id/feedFragment"
         android:title="@string/home_button_name"
         android:icon="@drawable/icons8_home"
         />
     <item
-        android:id="@+id/menuItemSearch"
+        android:id="@+id/searchFragment"
         android:title="@string/search_button_name"
         android:icon="@drawable/icons8_search"
         />
     <item
-        android:id="@+id/menuItemUpload"
+        android:id="@+id/uploadFragment"
         android:title="@string/upload_button_name"
         android:icon="@drawable/icons8_upload"
         />
