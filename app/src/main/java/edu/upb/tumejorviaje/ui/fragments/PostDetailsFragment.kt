@@ -16,4 +16,9 @@ class PostDetailsFragment : Fragment() {
     ): View {
         return inflater.inflate(R.layout.fragment_post_details, container, false)
     }
+
+
+
+
+
 }

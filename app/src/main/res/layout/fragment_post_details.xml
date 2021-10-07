@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:maxHeight="470dp"
     android:clickable="true"
     android:focusable="true">
 
@@ -128,24 +128,24 @@
     <ImageView
         app:tint="?attr/colorOnPrimary"
         android:id="@+id/ivPostLikes"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@id/ivPostUserSection"
         app:layout_constraintEnd_toStartOf="@id/ivPostComments"
         app:layout_constraintTop_toTopOf="@id/ivPostStatsSection"
-        app:srcCompat="@drawable/icons8_profile" />
+        app:srcCompat="@drawable/icons8_like" />
 
     <ImageView
         app:tint="?attr/colorOnPrimary"
         android:id="@+id/ivPostComments"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toEndOf="@id/ivPostLikes"
         app:layout_constraintEnd_toStartOf="@id/ivPostShare"
         app:layout_constraintTop_toTopOf="@id/ivPostStatsSection"
-        app:srcCompat="@drawable/icons8_profile" />
+        app:srcCompat="@drawable/icons8_comentarios" />
 
     <ImageView
         app:tint="?attr/colorOnPrimary"
@@ -156,7 +156,8 @@
         app:layout_constraintStart_toEndOf="@id/ivPostComments"
         app:layout_constraintTop_toTopOf="@id/ivPostStatsSection"
         app:layout_constraintEnd_toEndOf="@id/ivPostStatsSection"
-        app:srcCompat="@drawable/icons8_profile" />
+        app:layout_constraintBottom_toBottomOf="@id/ivPostStatsSection"
+        app:srcCompat="@drawable/icons8_compartir" />
 
     <TextView
         android:id="@+id/ivPostLikeN"
@@ -164,7 +165,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="6dp"
         android:textColor="?attr/colorOnPrimary"
-        android:textSize="9dp"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@id/ivPostStatsSection"
         app:layout_constraintEnd_toEndOf="@id/ivPostLikes"
         app:layout_constraintStart_toStartOf="@id/ivPostLikes"
@@ -177,7 +178,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="6dp"
         android:textColor="?attr/colorOnPrimary"
-        android:textSize="9dp"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@id/ivPostStatsSection"
         app:layout_constraintStart_toStartOf="@id/ivPostComments"
         app:layout_constraintTop_toBottomOf="@id/ivPostComments"
@@ -186,18 +187,18 @@
         />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/ivLongDescription"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
         android:fontFamily="@font/roboto"
         android:justificationMode="inter_word"
         tools:text="Fue durante mi trayecto desde Bolivia a Italia para mi diplomado donde pude experimentar por primera vez cómo es visitar un nuevo país de manera oficial. como una adulta. Uno pensaría que eso fuera muy fácil, pero nada más alejado de la realidad: Sacar papeles para ingresar al territorio, encontrar en Airbnb algun departamento que esté en un lugar cercano a la Universidad y que no me asalten en la noche, averiguar los precios de cada transporte, en fin, toda una odisea que fue..."
         android:textColor="?attr/colorOnSurface"
         android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="@id/postFrame"
+        android:maxHeight="60dp"
         app:layout_constraintEnd_toEndOf="@id/postFrame"
         app:layout_constraintStart_toStartOf="@id/postFrame"
         app:layout_constraintTop_toBottomOf="@id/ivPostImage" />
