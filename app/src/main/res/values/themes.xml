@@ -15,6 +15,7 @@
         <!-- Customize your theme here. -->
         <item name="background">@color/middle_laurelGreen</item>
         <item name="android:fontFamily">@font/allerta</item>
+        <item name="colorOnSurface">?attr/colorOnPrimary</item>
 
 
     </style>
