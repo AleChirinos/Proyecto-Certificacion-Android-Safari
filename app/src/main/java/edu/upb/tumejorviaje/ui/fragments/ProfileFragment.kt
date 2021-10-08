@@ -9,8 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.data.TempDataProfile
-import edu.upb.tumejorviaje.data.TempDataSource
-import edu.upb.tumejorviaje.ui.adapter.FeedListAdapter
+import edu.upb.tumejorviaje.ui.adapters.FeedListAdapter
 
 class ProfileFragment: Fragment(){
 
