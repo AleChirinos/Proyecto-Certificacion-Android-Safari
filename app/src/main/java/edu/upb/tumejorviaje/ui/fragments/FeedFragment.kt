@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.upb.tumejorviaje.R
@@ -30,5 +31,10 @@ class FeedFragment: Fragment(){
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
         feedListAdapter.addAll(TempDataSource.feedList)
+
+        feedListAdapter.setOnFeedItemClickListener {
+            findNavController().navigate(R.id.action_feedFragment_to_postDetailsFragment)
+        }
     }
+
 }

@@ -12,11 +12,16 @@ import edu.upb.tumejorviaje.model.Post
 
 class FeedListAdapter : RecyclerView.Adapter<FeedListViewHolder>() {
     val elementList : MutableList<Post> = mutableListOf()
+    private var onFeedItemClickListener: ((post: Post) -> Unit)? = null
 
     fun addAll(newElementList: MutableList<Post>){
         elementList.clear()
         elementList.addAll(newElementList)
         notifyDataSetChanged()
+    }
+
+    fun setOnFeedItemClickListener(onFeedItemClickListener: ((post: Post) -> Unit)?) {
+        this.onFeedItemClickListener = onFeedItemClickListener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedListViewHolder {

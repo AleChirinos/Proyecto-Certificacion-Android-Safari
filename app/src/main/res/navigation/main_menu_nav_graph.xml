@@ -9,7 +9,11 @@
         android:id="@+id/feedFragment"
         android:name="edu.upb.tumejorviaje.ui.fragments.FeedFragment"
         android:label="FeedFragment"
-        tools:layout="@layout/fragment_feed"/>
+        tools:layout="@layout/fragment_feed">
+        <action
+            android:id="@+id/action_feedFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="edu.upb.tumejorviaje.ui.fragments.ProfileFragment"
@@ -19,7 +23,11 @@
         android:id="@+id/chatFragment"
         android:name="edu.upb.tumejorviaje.ui.fragments.ChatFragment"
         android:label="ChatFragment"
-        tools:layout="@layout/fragment_chat"/>
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragment_to_directChatActivity"
+            app:destination="@id/directChatActivity"/>
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="edu.upb.tumejorviaje.ui.fragments.SearchFragment"
@@ -30,4 +38,14 @@
         android:name="edu.upb.tumejorviaje.ui.fragments.UploadFragment"
         android:label="UploadFragment"
         tools:layout="@layout/fragment_upload"/>
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="edu.upb.tumejorviaje.ui.fragments.PostDetailsFragment"
+        android:label="PostDetailsFragment"
+        tools:layout="@layout/fragment_post_details"/>
+    <activity
+        android:id="@+id/directChatActivity"
+        android:name="edu.upb.tumejorviaje.ui.activities.DirectChatActivity"
+        android:label="activity_direct_chat"
+        tools:layout="@layout/activity_direct_chat"/>
 </navigation>
