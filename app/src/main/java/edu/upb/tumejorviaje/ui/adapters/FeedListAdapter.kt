@@ -1,4 +1,4 @@
-package edu.upb.tumejorviaje.ui.adapter
+package edu.upb.tumejorviaje.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +11,7 @@ import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.model.Post
 
 class FeedListAdapter : RecyclerView.Adapter<FeedListViewHolder>() {
-    val elementList : MutableList<Post> = mutableListOf()
+    private val elementList : MutableList<Post> = mutableListOf()
     private var onFeedItemClickListener: ((post: Post) -> Unit)? = null
 
     fun addAll(newElementList: MutableList<Post>){

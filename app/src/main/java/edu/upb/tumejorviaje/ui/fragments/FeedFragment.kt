@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.data.TempDataSource
-import edu.upb.tumejorviaje.ui.adapter.FeedListAdapter
+import edu.upb.tumejorviaje.ui.adapters.FeedListAdapter
 
 class FeedFragment: Fragment(){
 
@@ -27,14 +27,15 @@ class FeedFragment: Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvFeed)
         recyclerView.adapter = feedListAdapter
-
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
         feedListAdapter.addAll(TempDataSource.feedList)
 
+
         feedListAdapter.setOnFeedItemClickListener {
-            findNavController().navigate(R.id.action_feedFragment_to_postDetailsFragment)
+            val directions = FeedFragmentDirections.actionFeedFragmentToPostDetailsFragment(it)
+            findNavController().navigate(directions)
         }
     }
 
 }
+
