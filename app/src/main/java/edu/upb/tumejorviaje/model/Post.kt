@@ -4,4 +4,6 @@ data class Post(val publisher : String,
                 val title : String,
                 val shortDescription : String,
                 val postUrl: String,
-                val profileUrl : String)
+                val profileUrl : String,
+                val longDescription: String
+)
