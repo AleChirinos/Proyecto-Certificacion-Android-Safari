@@ -31,7 +31,22 @@ class FeedFragment: Fragment(){
         feedListAdapter.addAll(TempDataSource.feedList)
 
         feedListAdapter.setOnFeedItemClickListener {
-            findNavController().navigate(R.id.postDetailsFragment)
+            //val arguments = Bundle().apply {
+            //    putSerializable("post", it)
+            //}
+
+            //val fragment = PostDetailsFragment().apply {
+            //    this.arguments = arguments
+            //}
+
+            //val transaction = parentFragmentManager.beginTransaction()
+            //transaction.add(R.id.container, PostDetailsFragment())
+            //transaction.addToBackStack("Test")
+            //transaction.commit()
+
+            findNavController().navigate(R.id.action_feedFragment_to_postDetailsFragment, arguments)
+            //val directions = FeedFragmentDirections.actionFeedFragmentToPostDetailsFragment(it)
+            //findNavController().navigate(directions)
         }
     }
 

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.model.Post
+import edu.upb.tumejorviaje.ui.interfaces.OnFeedItemClickListener
 
 class FeedListAdapter : RecyclerView.Adapter<FeedListViewHolder>() {
     private val elementList : MutableList<Post> = mutableListOf()
@@ -31,6 +32,9 @@ class FeedListAdapter : RecyclerView.Adapter<FeedListViewHolder>() {
 
     override fun onBindViewHolder(holder: FeedListViewHolder, position: Int) {
         holder.bind(elementList[position])
+        holder.itemView.setOnClickListener{
+            onFeedItemClickListener?.invoke(elementList[position])
+        }
     }
 
     override fun getItemCount(): Int {
@@ -38,7 +42,7 @@ class FeedListAdapter : RecyclerView.Adapter<FeedListViewHolder>() {
     }
 }
 
-class FeedListViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView){
+class FeedListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val imagePostFeed = itemView.findViewById<ImageView>(R.id.PostImageFeed)
     private val imageProfileFeed = itemView.findViewById<ImageView>(R.id.ProfilePictureFeed)
     private val textUsername = itemView.findViewById<TextView>(R.id.UsernameFeed)
