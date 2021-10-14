@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.upb.tumejorviaje.R
@@ -37,11 +38,9 @@ class ChatFragment: StepsBaseFragment(){
         chatListAdapter.addAll(ChatsTempDataSource.chatsList)
 
         //Para establecer la funcion de click de la interfaz en los recyclerView
-        chatListAdapter.setOnItemClickListener(object : ChatListAdapter.onItemClickListener{
-            override fun onItemClick() {
-                onSuccess?.invoke()
-            }
-        })
+        chatListAdapter.setOnItemClickListener {
+            findNavController().navigate(R.id.action_chatFragment_to_directChatActivity, arguments)
+        }
 
         //Para invocar al DialogFragment de ChatFragment
         btNewChat.setOnClickListener {

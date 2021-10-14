@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import edu.upb.tumejorviaje.R
+import edu.upb.tumejorviaje.dpToPx
 import edu.upb.tumejorviaje.model.Post
 
 class PostDetailsFragment : Fragment() {
@@ -23,11 +25,16 @@ class PostDetailsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val imagePostFeed = view.findViewById<ImageView>(R.id.PostImageFeed)
-        val imageProfileFeed = view.findViewById<ImageView>(R.id.ProfilePictureFeed)
-        val textUsername = view.findViewById<TextView>(R.id.UsernameFeed)
-        val textTittle = view.findViewById<TextView>(R.id.TittleFeed)
-        val textDescription = view.findViewById<TextView>(R.id.DescriptionFeed)
+        val imagePostFeed = view.findViewById<ImageView>(R.id.ivPostImage)
+        val imageProfileFeed = view.findViewById<ImageView>(R.id.ivPostProfileUser)
+        val textUsername = view.findViewById<TextView>(R.id.ivPostPublisher)
+        val textTittle = view.findViewById<TextView>(R.id.ivPostTitle)
+        val textDescription = view.findViewById<TextView>(R.id.ivPostInitDescription)
+        val container = view.findViewById<ConstraintLayout>(R.id.container)
+
+        textDescription.setOnClickListener {
+            container.maxHeight= requireContext()!!.dpToPx(800)
+        }
 
         post = arguments?.getSerializable("post") as Post?
 

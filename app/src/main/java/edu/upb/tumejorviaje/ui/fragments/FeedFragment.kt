@@ -31,9 +31,9 @@ class FeedFragment: Fragment(){
         feedListAdapter.addAll(TempDataSource.feedList)
 
         feedListAdapter.setOnFeedItemClickListener {
-            //val arguments = Bundle().apply {
-            //    putSerializable("post", it)
-            //}
+            val arguments = Bundle().apply {
+                putSerializable("post", it)
+            }
 
             //val fragment = PostDetailsFragment().apply {
             //    this.arguments = arguments

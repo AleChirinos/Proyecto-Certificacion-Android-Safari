@@ -1,8 +1,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:maxHeight="470dp"
     android:clickable="true"
     android:focusable="true">
@@ -10,7 +11,7 @@
     <ImageView
         android:id="@+id/postFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
@@ -195,7 +196,7 @@
         android:layout_marginEnd="12dp"
         android:fontFamily="@font/roboto"
         android:justificationMode="inter_word"
-        tools:text="Fue durante mi trayecto desde Bolivia a Italia para mi diplomado donde pude experimentar por primera vez cómo es visitar un nuevo país de manera oficial. como una adulta. Uno pensaría que eso fuera muy fácil, pero nada más alejado de la realidad: Sacar papeles para ingresar al territorio, encontrar en Airbnb algun departamento que esté en un lugar cercano a la Universidad y que no me asalten en la noche, averiguar los precios de cada transporte, en fin, toda una odisea que fue..."
+        android:text="Fue durante mi trayecto desde Bolivia a Italia para mi diplomado donde pude experimentar por primera vez cómo es visitar un nuevo país de manera oficial. como una adulta. Uno pensaría que eso fuera muy fácil, pero nada más alejado de la realidad: Sacar papeles para ingresar al territorio, encontrar en Airbnb algun departamento que esté en un lugar cercano a la Universidad y que no me asalten en la noche, averiguar los precios de cada transporte, en fin, toda una odisea que fue..."
         android:textColor="?attr/colorOnSurface"
         android:textSize="16dp"
         android:maxHeight="60dp"
