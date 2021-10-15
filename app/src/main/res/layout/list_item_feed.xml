@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorSecondaryVariant">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/PostImageFeed"
             android:layout_width="0dp"
             android:layout_height="200dp"
@@ -23,7 +23,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            tools:srcCompat="@tools:sample/backgrounds/scenic"
+            app:shapeAppearanceOverlay="@style/TopRounded"/>
 
         <ImageView
             android:id="@+id/ProfileBackground"

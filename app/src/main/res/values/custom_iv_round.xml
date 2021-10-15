@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TopRounded">
+        <item name="cornerSizeTopLeft">35dp</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeTopRight">35dp</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+    </style>
+</resources>
