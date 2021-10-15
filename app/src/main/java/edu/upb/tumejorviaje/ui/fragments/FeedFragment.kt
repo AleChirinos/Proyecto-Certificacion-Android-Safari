@@ -22,6 +22,7 @@ class FeedFragment: Fragment(){
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.fragment_feed, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

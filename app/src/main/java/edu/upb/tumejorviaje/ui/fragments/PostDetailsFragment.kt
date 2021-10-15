@@ -8,13 +8,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.dpToPx
 import edu.upb.tumejorviaje.model.Post
 
 class PostDetailsFragment : Fragment() {
-    var post: Post? = null
+    private lateinit var post: Post
+   // private val args: PostDetailsFragmentArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,23 +31,29 @@ class PostDetailsFragment : Fragment() {
         val imagePostFeed = view.findViewById<ImageView>(R.id.ivPostImage)
         val imageProfileFeed = view.findViewById<ImageView>(R.id.ivPostProfileUser)
         val textUsername = view.findViewById<TextView>(R.id.ivPostPublisher)
-        val textTittle = view.findViewById<TextView>(R.id.ivPostTitle)
-        val textDescription = view.findViewById<TextView>(R.id.ivPostInitDescription)
+        val textTitle = view.findViewById<TextView>(R.id.ivPostTitle)
+        val textShortDescription = view.findViewById<TextView>(R.id.ivPostInitDescription)
+        val textLongDescription = view.findViewById<TextView>(R.id.ivLongDescription)
+
         val container = view.findViewById<ConstraintLayout>(R.id.container)
 
-        textDescription.setOnClickListener {
-            container.maxHeight= requireContext()!!.dpToPx(800)
+        textShortDescription.setOnClickListener {
+            container.maxHeight = requireContext()!!.dpToPx(800)
         }
 
-        post = arguments?.getSerializable("post") as Post?
-
-        post?.let{
-            Glide.with(view)
-                .load(it.postUrl)
-                .into(imagePostFeed)
-            textUsername.text = it.publisher
-            textTittle.text = it.title
-            textDescription.text = it.shortDescription
-        }
+//        post = args.post
+//
+//
+//        Glide.with(view)
+//            .load(post.postUrl)
+//            .into(imagePostFeed)
+//        textUsername.text = post.publisher
+//        textTitle.text = post.title
+//        textShortDescription.text = post.shortDescription
+//        textLongDescription.text = post.longDescription
+//
+//
+//
+//    }
     }
 }

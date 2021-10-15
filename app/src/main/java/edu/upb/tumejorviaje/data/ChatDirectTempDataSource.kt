@@ -1,9 +1,10 @@
 package edu.upb.tumejorviaje.data
 
 import edu.upb.tumejorviaje.model.ChatBubble
+import edu.upb.tumejorviaje.ui.adapters.ChatBubbleListAdapter
 
 object ChatDirectTempDataSource {
-    val chatBubbleList= mutableListOf(
+    private var chatBubbleList= mutableListOf(
         ChatBubble("Esto ya no es divertido, es triste","9:50","https://i1.sndcdn.com/artworks-000151844204-04fr65-t500x500.jpg"),
         ChatBubble("Te pasaste de lanza con ese chiste","9:50","https://i1.sndcdn.com/artworks-000151844204-04fr65-t500x500.jpg"),
         ChatBubble("Por favor, para con esto","9:51","https://i1.sndcdn.com/artworks-000151844204-04fr65-t500x500.jpg"),
@@ -14,4 +15,12 @@ object ChatDirectTempDataSource {
         ChatBubble("El chiste estaba algo gracioso","9:53","https://i1.sndcdn.com/artworks-000151844204-04fr65-t500x500.jpg"),
         ChatBubble("XDXDXD","9:53","https://i1.sndcdn.com/artworks-000151844204-04fr65-t500x500.jpg")
     )
+
+    fun getChatBubbleList():List<ChatBubble>{
+        return chatBubbleList
+    }
+    fun setChatBubbleList(chatBubbleList:List<ChatBubble>){
+        this.chatBubbleList=chatBubbleList.toMutableList()
+    }
+
 }

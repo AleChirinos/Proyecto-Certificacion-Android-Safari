@@ -11,20 +11,22 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import edu.upb.tumejorviaje.R
+import edu.upb.tumejorviaje.databinding.ListItemBubbleBinding
 import edu.upb.tumejorviaje.model.ChatBubble
 
 class ChatBubbleListAdapter: RecyclerView.Adapter<ChatBubbleViewHolder>(){
-    val elementList:MutableList<ChatBubble> = mutableListOf()
+    private val elementList:MutableList<ChatBubble> = mutableListOf()
 
-    fun addAll(newElementList:MutableList<ChatBubble>){
+
+    fun addAll(newElementList:List<ChatBubble>){
         elementList.clear()
         elementList.addAll(newElementList)
         notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatBubbleViewHolder {
-        val view=LayoutInflater.from(parent.context).inflate(R.layout.list_item_bubble,parent,false)
-        return ChatBubbleViewHolder(view)
+        val binding=ListItemBubbleBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return ChatBubbleViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ChatBubbleViewHolder, position: Int) {
@@ -37,15 +39,10 @@ class ChatBubbleListAdapter: RecyclerView.Adapter<ChatBubbleViewHolder>(){
 
 }
 
-class ChatBubbleViewHolder(val itemView: View):RecyclerView.ViewHolder(itemView) {
-    private val tvPostProfileImage=itemView.findViewById<ImageView>(R.id.userImage)
-    private val tvPostChatText=itemView.findViewById<TextView>(R.id.chatCommentText)
-    private val tvPostChatTime=itemView.findViewById<TextView>(R.id.chatCommentTime)
+class ChatBubbleViewHolder(val binding: ListItemBubbleBinding):RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(chatBubble:ChatBubble){
-        Glide.with(itemView).load(chatBubble.profileImageUrl).transform(CenterCrop(), RoundedCorners(24)).into(tvPostProfileImage)
-        tvPostChatText.text=chatBubble.textComment
-        tvPostChatTime.text=chatBubble.time
+    fun bind(chatBubble: ChatBubble){
+        binding.chatBubble=chatBubble
     }
 
 }

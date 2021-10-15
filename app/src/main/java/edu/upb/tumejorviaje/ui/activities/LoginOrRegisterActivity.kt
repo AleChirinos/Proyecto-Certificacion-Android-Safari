@@ -22,6 +22,7 @@ class LoginOrRegisterActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             val intent : Intent=Intent(this, MenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

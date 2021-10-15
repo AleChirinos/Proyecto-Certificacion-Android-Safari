@@ -42,4 +42,5 @@
     <string name="validatedUpload">Validado</string>
     <string name="new_chat_start_new_chat">Comenzar un nuevo chat</string>
     <string name="uploadAuthor">"Por: "</string>
+    <string name="emptyPostPhoto">Se requiere una foto disponible para el post</string>
 </resources>

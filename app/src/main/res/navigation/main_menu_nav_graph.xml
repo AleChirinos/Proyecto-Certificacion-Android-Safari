@@ -48,4 +48,5 @@
         android:name="edu.upb.tumejorviaje.ui.activities.DirectChatActivity"
         android:label="activity_direct_chat"
         tools:layout="@layout/activity_direct_chat"/>
+
 </navigation>

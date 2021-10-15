@@ -3,6 +3,7 @@ package edu.upb.tumejorviaje.data
 import edu.upb.tumejorviaje.model.Post
 
 object TempDataProfile {
+
     val feedList = mutableListOf<Post>(
         Post(
             publisher = "dv.Valdivia",

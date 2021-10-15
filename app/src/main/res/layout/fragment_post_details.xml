@@ -196,7 +196,7 @@
         android:layout_marginEnd="12dp"
         android:fontFamily="@font/roboto"
         android:justificationMode="inter_word"
-        android:text="Fue durante mi trayecto desde Bolivia a Italia para mi diplomado donde pude experimentar por primera vez cómo es visitar un nuevo país de manera oficial. como una adulta. Uno pensaría que eso fuera muy fácil, pero nada más alejado de la realidad: Sacar papeles para ingresar al territorio, encontrar en Airbnb algun departamento que esté en un lugar cercano a la Universidad y que no me asalten en la noche, averiguar los precios de cada transporte, en fin, toda una odisea que fue..."
+        tools:text="Fue durante mi trayecto desde Bolivia a Italia para mi diplomado donde pude experimentar por primera vez cómo es visitar un nuevo país de manera oficial. como una adulta. Uno pensaría que eso fuera muy fácil, pero nada más alejado de la realidad: Sacar papeles para ingresar al territorio, encontrar en Airbnb algun departamento que esté en un lugar cercano a la Universidad y que no me asalten en la noche, averiguar los precios de cada transporte, en fin, toda una odisea que fue..."
         android:textColor="?attr/colorOnSurface"
         android:textSize="16dp"
         android:maxHeight="60dp"

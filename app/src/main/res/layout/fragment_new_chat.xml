@@ -17,7 +17,8 @@
         app:layout_constraintBottom_toTopOf="@+id/start_new_chat_buttom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/list_item_new_chat"/>
 
     <ImageView
         android:id="@+id/start_new_chat_buttom"

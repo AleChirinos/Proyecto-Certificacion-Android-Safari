@@ -1,91 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="?attr/colorSecondaryVariant">
-    android:background="?attr/colorSecondary">
-
-    <ImageView
-        android:id="@+id/PostImageFeed"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="25dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-    <ImageView
-        android:id="@+id/ProfileBackground"
-        android:layout_width="70dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/PostImageFeed"
-        app:layout_constraintTop_toBottomOf="@+id/PostImageFeed"
-        app:srcCompat="@drawable/wallper_feed"
-        />
-
-    <ImageView
-        android:id="@+id/ProfilePictureFeed"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:scaleType="centerCrop"
-        app:tint="?attr/colorOnPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/ProfileBackground"
-        app:layout_constraintTop_toBottomOf="@+id/PostImageFeed"
-        app:srcCompat="@drawable/icons8_profile" />
-
-    <ImageView
-        android:id="@+id/WallperFeed"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/PostImageFeed"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
-        app:layout_constraintTop_toBottomOf="@+id/PostImageFeed"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/wallper_feed"/>
-
-    <TextView
-        android:id="@+id/UsernameFeed"
-        android:background="?attr/colorPrimaryVariant"
-        android:layout_width="0dp"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="post"
+            type="edu.upb.tumejorviaje.model.Post" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
-        app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
-        app:layout_constraintTop_toTopOf="@+id/WallperFeed"
-        android:textSize="18sp"
-        tools:text="Username"/>
+        android:background="?attr/colorSecondaryVariant">
 
-    <TextView
-        android:id="@+id/TittleFeed"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
-        app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
-        app:layout_constraintTop_toBottomOf="@+id/UsernameFeed"
-        android:textSize="17sp"
-        android:background="?attr/colorPrimary"
-        android:textColor="?attr/colorOnPrimary"
-        tools:text="Title"/>
+        <ImageView
+            android:id="@+id/PostImageFeed"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="25dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-    <TextView
-        android:id="@+id/DescriptionFeed"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="?attr/colorOnPrimary"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
-        app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
-        app:layout_constraintTop_toBottomOf="@+id/TittleFeed"
-        tools:text="Description" />
+        <ImageView
+            android:id="@+id/ProfileBackground"
+            android:layout_width="70dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/PostImageFeed"
+            app:layout_constraintTop_toBottomOf="@+id/PostImageFeed"
+            app:srcCompat="@drawable/wallper_feed"
+            />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/ProfilePictureFeed"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:scaleType="centerCrop"
+            app:tint="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ProfileBackground"
+            app:layout_constraintTop_toBottomOf="@+id/PostImageFeed"
+            app:srcCompat="@drawable/icons8_profile" />
+
+        <ImageView
+            android:id="@+id/WallperFeed"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/PostImageFeed"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
+            app:layout_constraintTop_toBottomOf="@+id/PostImageFeed"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/wallper_feed"/>
+
+        <TextView
+            android:id="@+id/UsernameFeed"
+            android:background="?attr/colorPrimaryVariant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
+            app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
+            app:layout_constraintTop_toTopOf="@+id/WallperFeed"
+            android:textSize="18sp"
+            tools:text="Username"/>
+
+        <TextView
+            android:id="@+id/TittleFeed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
+            app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
+            app:layout_constraintTop_toBottomOf="@+id/UsernameFeed"
+            android:textSize="17sp"
+            android:background="?attr/colorPrimary"
+            android:textColor="?attr/colorOnPrimary"
+            tools:text="Title"/>
+
+        <TextView
+            android:id="@+id/DescriptionFeed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnPrimary"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
+            app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
+            app:layout_constraintTop_toBottomOf="@+id/TittleFeed"
+            tools:text="Description" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

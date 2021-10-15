@@ -43,4 +43,5 @@
     <string name="chat_button_name">My chats</string>
     <string name="new_chat_start_new_chat">Start new chat</string>
     <string name="uploadAuthor">"By: "</string>
+    <string name="emptyPostPhoto">Post photo required</string>
 </resources>
