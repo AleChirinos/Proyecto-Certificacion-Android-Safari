@@ -16,6 +16,7 @@ import edu.upb.tumejorviaje.model.Post
 
 class PostDetailsFragment : Fragment() {
     private lateinit var post: Post
+
    // private val args: PostDetailsFragmentArgs by navArgs()
 
 
