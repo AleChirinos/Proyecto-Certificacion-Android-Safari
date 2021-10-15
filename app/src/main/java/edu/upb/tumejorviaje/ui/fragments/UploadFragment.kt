@@ -72,12 +72,14 @@ class UploadFragment: StepsBaseFragment(){
         }
     }
 
+    //Llama al dialogo de seleccionar una imagen desde el dispositivo
     private fun pickImage(){
         val intent=Intent(Intent.ACTION_PICK)
         intent.type="image/*"
         startActivityForResult(intent,100)
     }
 
+    //En lo que el activityForResult (obtener imagen) sea iniciado, se debe de poner la imagen en el ImgeView, quitando los textos e iconos
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode==100 && resultCode==RESULT_OK){
