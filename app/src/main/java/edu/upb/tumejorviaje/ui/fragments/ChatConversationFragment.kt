@@ -18,9 +18,9 @@ import edu.upb.tumejorviaje.ui.viewmodels.ChatBubbleViewModel
 class ChatConversationFragment: Fragment() {
 
     private val chatBubbleListAdapter= ChatBubbleListAdapter()
-    private lateinit var binding:FragmentChatProgressBinding
+    private lateinit var binding: FragmentChatProgressBinding
     private val chatBubbleViewModel:ChatBubbleViewModel by activityViewModels()
-    
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
