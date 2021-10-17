@@ -21,7 +21,7 @@ import edu.upb.tumejorviaje.ui.viewmodels.ChatsViewModel
 
 
 class ChatFragment: StepsBaseFragment(){
-    lateinit var btNewChat : View
+    //lateinit var btNewChat : View
     private val chatListAdapter = ChatListAdapter()
     private val newChatFragment = NewChatFragment()
     private val chatsViewModel: ChatsViewModel by activityViewModels()

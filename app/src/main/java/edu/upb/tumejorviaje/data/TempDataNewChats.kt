@@ -2,9 +2,10 @@ package edu.upb.tumejorviaje.data
 
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.model.NewChat
+import edu.upb.tumejorviaje.model.SavedChat
 
 object TempDataNewChats {
-    val chatsList = mutableListOf(
+    private var chatsList = mutableListOf(
         NewChat(
             chatName = "Carlos Villagran",
         ),
@@ -30,4 +31,11 @@ object TempDataNewChats {
             chatName = "Inés Ireneo",
         )
     )
+    fun getNewChatList(): List<NewChat> {
+        return chatsList
+    }
+
+    fun setNewChatList(chatList: List<NewChat>) {
+        this.chatsList = chatList.toMutableList()
+    }
 }

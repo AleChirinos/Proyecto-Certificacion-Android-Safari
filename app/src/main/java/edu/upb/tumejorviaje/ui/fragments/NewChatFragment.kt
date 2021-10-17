@@ -12,20 +12,27 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.data.TempDataNewChats
+import edu.upb.tumejorviaje.databinding.FragmentChatBinding
+import edu.upb.tumejorviaje.databinding.FragmentNewChatBinding
 import edu.upb.tumejorviaje.ui.activities.DirectChatActivity
 import edu.upb.tumejorviaje.ui.adapters.NewChatListAdapter
 import edu.upb.tumejorviaje.ui.base.StepsBaseFragment
+import edu.upb.tumejorviaje.ui.viewmodels.ChatsViewModel
+import edu.upb.tumejorviaje.ui.viewmodels.NewChatsViewModel
 import java.lang.ClassCastException
 
 class NewChatFragment : DialogFragment(){
     private val newChatListAdapter = NewChatListAdapter()
-    private lateinit var btnDirectChatActivity: View
-    lateinit var recyclerView : View
-
+    //private lateinit var btnDirectChatActivity: View
+    //lateinit var recyclerView : View
+    private lateinit var binding: FragmentNewChatBinding
+    private val newChatsViewModel: NewChatsViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -33,8 +40,8 @@ class NewChatFragment : DialogFragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        return inflater.inflate(R.layout.fragment_new_chat, container, false)
+        binding = FragmentNewChatBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -48,10 +55,7 @@ class NewChatFragment : DialogFragment(){
 
 
             val v : View = inflater.inflate(R.layout.fragment_new_chat, null)
-            btnDirectChatActivity=v.findViewById(R.id.start_new_chat_buttom)
-            btnDirectChatActivity.setOnClickListener{
 
-            }
             // Inflate and set the layout for the dialog
             // Pass null as the parent view because its going in the dialog layout
             builder.setView(v)
@@ -63,7 +67,7 @@ class NewChatFragment : DialogFragment(){
 
             recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-            newChatListAdapter.addAll(TempDataNewChats.chatsList)
+            newChatListAdapter.addAll(TempDataNewChats.getNewChatList())
 
             builder.create()
 
@@ -71,5 +75,20 @@ class NewChatFragment : DialogFragment(){
         } ?: throw IllegalStateException("Activity cannot be null")
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.rvNewChat.adapter = newChatListAdapter
+        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvNewChat.layoutManager = layoutManager
 
+        LinearSnapHelper().attachToRecyclerView(binding.rvNewChat)
+
+        binding.startNewChatButtom.setOnClickListener{
+
+        }
+
+
+        newChatsViewModel.newChats.observe(viewLifecycleOwner){
+            newChatListAdapter.addAll(it)
+        }
+    }
 }
