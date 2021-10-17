@@ -28,10 +28,9 @@ class ProfileFragment: Fragment(){
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rvProfile)
-        recyclerView.adapter = feedListAdapter
+        binding.rvProfile.adapter = feedListAdapter
 
-        recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvProfile.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
         feedListAdapter.addAll(TempDataProfile.feedList)
     }
