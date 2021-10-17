@@ -16,3 +16,9 @@ fun setTextInTimeFormat(textView: TextView, time:Long){
     val minutes = time.div(60)
     textView.text="$minutes min"
 }
+
+@BindingAdapter ("srcImage")
+fun setSrcImage(imageView: ImageView, identificador:Int){
+    if(identificador==null) return
+    imageView.setImageResource(identificador)
+}

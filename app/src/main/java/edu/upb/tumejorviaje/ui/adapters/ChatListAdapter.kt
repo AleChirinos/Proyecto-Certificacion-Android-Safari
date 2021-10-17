@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import edu.upb.tumejorviaje.R
+import edu.upb.tumejorviaje.databinding.ListItemChatsBinding
 import edu.upb.tumejorviaje.model.Post
 import edu.upb.tumejorviaje.model.SavedChat
 
@@ -19,7 +20,7 @@ class ChatListAdapter() : RecyclerView.Adapter<ChatListViewHolder>() {
     private val elementList: MutableList<SavedChat> = mutableListOf()
     private var onPrivateItemClickListener: ((savedChat: SavedChat) -> Unit)? = null
 
-    fun addAll(newElementList: MutableList<SavedChat>) {
+    fun addAll(newElementList: List<SavedChat>) {
         elementList.clear()
         elementList.addAll(newElementList)
         notifyDataSetChanged()
@@ -36,8 +37,8 @@ class ChatListAdapter() : RecyclerView.Adapter<ChatListViewHolder>() {
     //}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatListViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item_chats, parent, false)
-        return ChatListViewHolder(view)
+        val binding = ListItemChatsBinding.inflate(LayoutInflater.from(parent.context),parent, false)
+        return ChatListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ChatListViewHolder, position: Int) {
@@ -56,7 +57,12 @@ class ChatListAdapter() : RecyclerView.Adapter<ChatListViewHolder>() {
 }
 
 //Añadimos listener para que interactue con la interfaz
-class ChatListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+class ChatListViewHolder(val binding: ListItemChatsBinding): RecyclerView.ViewHolder(binding.root) {
+    fun bind(chat: SavedChat) {
+        binding.chat = chat
+    }
+
+/*  Codigo reemplazado por ViewBinding
 
     private val ivChatImage = itemView.findViewById<ImageView>(R.id.chat_circle_profile)
     private val tvChatName = itemView.findViewById<TextView>(R.id.chat_name)
@@ -74,7 +80,7 @@ class ChatListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         tvChatName.text = savedChat.chatName
         tvChatLastMessage.text = savedChat.chatLastMessage
 
-    }
+    }*/
 
 
 }

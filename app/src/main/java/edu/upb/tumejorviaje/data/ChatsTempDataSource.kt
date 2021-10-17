@@ -4,7 +4,7 @@ import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.model.SavedChat
 
 object ChatsTempDataSource {
-    val chatsList = mutableListOf(
+    private var chatsList = mutableListOf(
         SavedChat(
             chatName = "Maria Marcela",
             chatLastMessage = "Aún estoy esperando.",
@@ -21,4 +21,11 @@ object ChatsTempDataSource {
             profileImg = R.drawable.ic_circle_profile_3
         )
     )
+    fun getChatList(): List<SavedChat> {
+        return chatsList
+    }
+
+    fun setChatList(chatList: List<SavedChat>) {
+        this.chatsList = chatList.toMutableList()
+    }
 }
