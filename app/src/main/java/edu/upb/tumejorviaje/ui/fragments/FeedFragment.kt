@@ -29,9 +29,8 @@ class FeedFragment: Fragment(){
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rvFeed)
-        recyclerView.adapter = feedListAdapter
-        recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvFeed.adapter = feedListAdapter
+        binding.rvFeed.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         feedListAdapter.addAll(TempDataSource.feedList)
 
         feedListAdapter.setOnFeedItemClickListener {
