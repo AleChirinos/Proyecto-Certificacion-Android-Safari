@@ -10,18 +10,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.data.TempDataSource
+import edu.upb.tumejorviaje.databinding.FragmentFeedBinding
 import edu.upb.tumejorviaje.ui.adapters.FeedListAdapter
 
 class FeedFragment: Fragment(){
 
     private val feedListAdapter = FeedListAdapter()
+    private lateinit var binding : FragmentFeedBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_feed, container, false)
+        binding = FragmentFeedBinding.inflate(inflater, container, false)
+        return binding.root
 
     }
 
