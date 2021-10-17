@@ -4,15 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.findFragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import edu.upb.tumejorviaje.R
+import edu.upb.tumejorviaje.databinding.ActivityMenuBinding
 import edu.upb.tumejorviaje.ui.fragments.*
 
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var menuNavigationView: BottomNavigationView
+    private lateinit var binding :ActivityMenuBinding
 
     private val profileFragment = ProfileFragment()
     private val feedFragment = FeedFragment()
@@ -23,7 +26,8 @@ class MenuActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        binding = ActivityMenuBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //Para ir a directChatActivity como nueva ventana de chat
         chatFragment.setOnSuccessListener {
@@ -37,12 +41,12 @@ class MenuActivity : AppCompatActivity() {
         }
 
         //Para navegar por los fragments
-        menuNavigationView=findViewById(R.id.menuNavigationView)
+        binding.menuNavigationView
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
 
-        menuNavigationView.setupWithNavController(navController)
+        binding.menuNavigationView.setupWithNavController(navController)
 //        menuNavigationView.setOnItemSelectedListener {
 //            when(it.itemId){
 //                R.id.menuItemProfile->{

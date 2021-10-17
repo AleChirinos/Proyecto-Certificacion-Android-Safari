@@ -9,25 +9,28 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.data.TempDataProfile
+import edu.upb.tumejorviaje.databinding.FragmentProfileBinding
+import edu.upb.tumejorviaje.databinding.FragmentSearchBinding
 import edu.upb.tumejorviaje.ui.adapters.FeedListAdapter
 
 class ProfileFragment: Fragment(){
 
     private val feedListAdapter = FeedListAdapter()
+    private lateinit var binding : FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rvProfile)
-        recyclerView.adapter = feedListAdapter
+        binding.rvProfile.adapter = feedListAdapter
 
-        recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvProfile.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
         feedListAdapter.addAll(TempDataProfile.feedList)
     }

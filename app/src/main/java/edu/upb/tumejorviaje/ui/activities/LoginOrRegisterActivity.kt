@@ -5,20 +5,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import edu.upb.tumejorviaje.R
+import edu.upb.tumejorviaje.databinding.ActivityLoginOrRegisterBinding
 
 class LoginOrRegisterActivity : AppCompatActivity() {
     lateinit var registerButton : Button
     lateinit var loginButton: Button
+    private lateinit var binding : ActivityLoginOrRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_or_register)
-        registerButton = findViewById(R.id.RegisterButton1)
+        binding = ActivityLoginOrRegisterBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
+        registerButton = binding.RegisterButton1
         registerButton.setOnClickListener {
             val intent : Intent=Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-       loginButton= findViewById(R.id.buttonLogin)
+       loginButton= binding.buttonLogin
         loginButton.setOnClickListener {
             val intent : Intent=Intent(this, MenuActivity::class.java)
             startActivity(intent)
