@@ -44,7 +44,7 @@ class FeedFragment: Fragment(){
 
         }
 
-        feedViewModel.posts.observe(viewLifecycleOwner){
+        feedViewModel.post.observe(viewLifecycleOwner){
             feedListAdapter.addAll(it)
         }
     }
