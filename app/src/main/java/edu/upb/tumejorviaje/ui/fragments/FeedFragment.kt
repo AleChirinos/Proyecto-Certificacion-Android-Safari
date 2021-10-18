@@ -36,10 +36,10 @@ class FeedFragment: Fragment(){
         binding.rvFeed.adapter = feedListAdapter
         binding.rvFeed.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         LinearSnapHelper().attachToRecyclerView(binding.rvFeed)
-        //feedListAdapter.addAll(TempDataSource.getNewFeedList())
+
 
         feedListAdapter.setOnFeedItemClickListener {
-            val directions = FeedFragmentDirections.actionFeedFragmentToPostDetailsFragment()
+            val directions = FeedFragmentDirections.actionFeedFragmentToPostDetailsFragment(it)
             findNavController().navigate(directions)
 
         }

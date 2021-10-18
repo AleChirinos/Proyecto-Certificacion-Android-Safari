@@ -42,7 +42,10 @@
         android:id="@+id/postDetailsFragment"
         android:name="edu.upb.tumejorviaje.ui.fragments.PostDetailsFragment"
         android:label="PostDetailsFragment"
-        tools:layout="@layout/fragment_post_details"/>
+        tools:layout="@layout/fragment_post_details">
+        <argument android:name="post"
+            app:argType="edu.upb.tumejorviaje.model.Post"/>
+    </fragment>
     <activity
         android:id="@+id/directChatActivity"
         android:name="edu.upb.tumejorviaje.ui.activities.DirectChatActivity"

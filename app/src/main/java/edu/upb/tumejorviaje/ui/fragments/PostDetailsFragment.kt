@@ -16,9 +16,7 @@ import edu.upb.tumejorviaje.model.Post
 
 class PostDetailsFragment : Fragment() {
     private lateinit var post: Post
-
-   // private val args: PostDetailsFragmentArgs by navArgs()
-
+    private val args: PostDetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,19 +40,14 @@ class PostDetailsFragment : Fragment() {
             container.maxHeight = requireContext()!!.dpToPx(800)
         }
 
-//        post = args.post
-//
-//
-//        Glide.with(view)
-//            .load(post.postUrl)
-//            .into(imagePostFeed)
-//        textUsername.text = post.publisher
-//        textTitle.text = post.title
-//        textShortDescription.text = post.shortDescription
-//        textLongDescription.text = post.longDescription
-//
-//
-//
-//    }
+        post = args.post
+
+        Glide.with(view)
+            .load(post.postUrl)
+            .into(imagePostFeed)
+        textUsername.text = post.publisher
+        textTitle.text = post.title
+        textShortDescription.text = post.shortDescription
+        textLongDescription.text = post.longDescription
     }
 }
