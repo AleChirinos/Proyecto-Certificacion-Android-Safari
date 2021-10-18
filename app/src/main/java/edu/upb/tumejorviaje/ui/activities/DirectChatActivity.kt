@@ -33,6 +33,7 @@ class DirectChatActivity : AppCompatActivity() {
 
         chatBubbleViewModel.savedChat.observe(this){
             binding.chatName.text = it.chatName
+           binding.chatDirectIcon.setImageResource(it.profileImg)
         }
     }
 
