@@ -44,7 +44,7 @@ class ChatFragment: StepsBaseFragment(){
         LinearSnapHelper().attachToRecyclerView(binding.rvChats)
 
         chatListAdapter.setOnItemClickListener {
-            val directions = ChatFragmentDirections.actionChatFragmentToDirectChatActivity()
+            val directions = ChatFragmentDirections.actionChatFragmentToDirectChatActivity(it)
             findNavController().navigate(directions)
 
         }
