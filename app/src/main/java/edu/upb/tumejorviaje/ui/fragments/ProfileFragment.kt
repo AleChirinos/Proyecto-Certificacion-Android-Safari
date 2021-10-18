@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.data.TempDataProfile
@@ -35,7 +36,9 @@ class ProfileFragment: Fragment(){
 
         binding.rvProfile.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        feedListAdapter.addAll(TempDataProfile.getNewFeedList())
+        LinearSnapHelper().attachToRecyclerView(binding.rvProfile)
+
+//        feedListAdapter.addAll(TempDataProfile.getNewFeedList())
 
         profileViewModel.myPosts.observe(viewLifecycleOwner) {
             feedListAdapter.addAll(it)
