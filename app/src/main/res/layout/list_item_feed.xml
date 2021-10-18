@@ -10,15 +10,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorSecondaryVariant">
+        android:layout_marginTop="20dp"
+        android:background="@drawable/wallper_text_and_icon">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/PostImageFeed"
             android:layout_width="0dp"
             android:layout_height="200dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
             android:scaleType="centerCrop"
             app:srcUrl="@{post.postUrl}"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +40,20 @@
             app:srcCompat="@drawable/icons8_profile"
             app:civ_border_color="?attr/colorSecondary"
             app:civ_border_width="5dp"
+            app:civ_circle_background_color="?attr/colorOnPrimary"
             app:srcUrl="@{post.profileUrl}"/>
+
+        <ImageView
+            android:id="@+id/WallperUser"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="7dp"
+            app:layout_constraintEnd_toEndOf="@+id/PostImageFeed"
+            app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
+            app:layout_constraintTop_toBottomOf="@+id/PostImageFeed"
+            app:layout_constraintBottom_toTopOf="@id/WallperFeed"
+            android:background="@drawable/wallper_feed"
+            />
 
         <ImageView
             android:id="@+id/WallperFeed"
@@ -48,33 +62,36 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/PostImageFeed"
             app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="1dp"
             app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
-            app:layout_constraintTop_toBottomOf="@+id/PostImageFeed"
+            app:layout_constraintTop_toBottomOf="@+id/WallperUser"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/wallper_feed"/>
+            app:srcCompat="?attr/colorSecondaryVariant"/>
 
         <TextView
             android:id="@+id/UsernameFeed"
-            android:background="?attr/colorPrimaryVariant"
             android:layout_width="0dp"
+            android:padding="10dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
+            app:layout_constraintEnd_toEndOf="@+id/WallperUser"
             app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
-            app:layout_constraintTop_toTopOf="@+id/WallperFeed"
+            app:layout_constraintTop_toTopOf="@+id/WallperUser"
             android:text="@{post.publisher}"
             android:textSize="18sp"
             tools:text="Username"/>
 
         <TextView
-            android:id="@+id/TittleFeed"
+            android:id="@+id/TitleFeed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
             app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
             app:layout_constraintTop_toBottomOf="@+id/UsernameFeed"
             android:text="@{post.title}"
-            android:textSize="17sp"
-            android:background="?attr/colorPrimary"
+            android:textSize="15sp"
+            android:textStyle="bold|italic"
+            android:background="?attr/colorSecondaryVariant"
             android:textColor="?attr/colorOnPrimary"
             tools:text="Title"/>
 
@@ -83,12 +100,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="?attr/colorOnPrimary"
-            android:background="?attr/colorPrimary"
+            android:background="?attr/colorSecondaryVariant"
             android:text="@{post.shortDescription}"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="11dp"
+            app:layout_constraintBottom_toBottomOf="@id/WallperFeed"
             app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
             app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
-            app:layout_constraintTop_toBottomOf="@+id/TittleFeed"
+            app:layout_constraintTop_toBottomOf="@+id/TitleFeed"
             tools:text="Description" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -62,7 +62,7 @@
             tools:text="Username"/>
 
         <TextView
-            android:id="@+id/TittleFeed"
+            android:id="@+id/TitleFeed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
@@ -81,7 +81,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/WallperFeed"
             app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
-            app:layout_constraintTop_toBottomOf="@+id/TittleFeed"
+            app:layout_constraintTop_toBottomOf="@+id/TitleFeed"
             android:text="@{myPosts.shortDescription}"
             tools:text="Description" />
 
