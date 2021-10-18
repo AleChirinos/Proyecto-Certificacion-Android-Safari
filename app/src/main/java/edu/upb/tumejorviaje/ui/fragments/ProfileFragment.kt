@@ -28,6 +28,8 @@ class ProfileFragment: Fragment(){
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
+        binding.profileViewModel=profileViewModel
+        binding.lifecycleOwner=this
         return binding.root
     }
 
