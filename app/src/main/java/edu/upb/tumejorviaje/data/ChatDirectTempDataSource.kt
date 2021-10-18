@@ -2,7 +2,6 @@ package edu.upb.tumejorviaje.data
 
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.model.ChatBubble
-import edu.upb.tumejorviaje.ui.adapters.ChatBubbleListAdapter
 
 object ChatDirectTempDataSource {
     private var chatBubbleList= mutableListOf(

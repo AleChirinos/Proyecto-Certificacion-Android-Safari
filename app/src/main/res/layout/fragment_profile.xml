@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="profileViewModel"
-            type="edu.upb.tumejorviaje.ui.viewmodels.ProfileViewModel" />
+            type="edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

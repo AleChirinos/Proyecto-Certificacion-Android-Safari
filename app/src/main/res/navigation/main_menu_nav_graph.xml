@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="edu.upb.tumejorviaje.ui.fragments.FeedFragment"
+        android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.feed.FeedFragment"
         android:label="FeedFragment"
         tools:layout="@layout/fragment_feed">
         <action
@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="edu.upb.tumejorviaje.ui.fragments.ProfileFragment"
+        android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
     <fragment
         android:id="@+id/chatFragment"
-        android:name="edu.upb.tumejorviaje.ui.fragments.ChatFragment"
+        android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.chat.ChatFragment"
         android:label="ChatFragment"
         tools:layout="@layout/fragment_chat">
         <action
@@ -30,17 +30,17 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="edu.upb.tumejorviaje.ui.fragments.SearchFragment"
+        android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search"/>
     <fragment
         android:id="@+id/uploadFragment"
-        android:name="edu.upb.tumejorviaje.ui.fragments.UploadFragment"
+        android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.upload.UploadFragment"
         android:label="UploadFragment"
         tools:layout="@layout/fragment_upload"/>
     <fragment
         android:id="@+id/postDetailsFragment"
-        android:name="edu.upb.tumejorviaje.ui.fragments.PostDetailsFragment"
+        android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.postDetails.PostDetailsFragment"
         android:label="PostDetailsFragment"
         tools:layout="@layout/fragment_post_details">
         <argument android:name="post"
@@ -48,7 +48,7 @@
     </fragment>
     <activity
         android:id="@+id/directChatActivity"
-        android:name="edu.upb.tumejorviaje.ui.activities.DirectChatActivity"
+        android:name="edu.upb.tumejorviaje.ui.directChat.DirectChatActivity"
         android:label="activity_direct_chat"
         tools:layout="@layout/activity_direct_chat">
         <argument

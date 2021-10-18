@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="uploadPhotoViewModel"
-            type="edu.upb.tumejorviaje.ui.viewmodels.UploadPhotoViewModel" />
+            type="edu.upb.tumejorviaje.ui.mainmenu.tabs.upload.UploadPhotoViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
