@@ -6,5 +6,5 @@ import edu.upb.tumejorviaje.data.TempDataProfile
 
 class ProfileViewModel : ViewModel() {
     val myPosts = MutableLiveData(TempDataProfile.getNewFeedList())
-
+    val user=MutableLiveData(TempDataProfile.getUser())
 }
