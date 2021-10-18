@@ -7,7 +7,7 @@ object TempDataSource {
         Post(
             publisher = "MariaLopez34",
             title = "De camino a mi maestría en China",
-            shortDescription = "hace unos meses me llego la carta de aceptación en una de las mejores universidades...",
+            shortDescription = "Hace unos meses me llego la carta de aceptación en una de las mejores universidades...",
             postUrl = "https://sociable.co/wp-content/uploads/2019/05/guiyang-china-skyline-750x450.jpg",
             profileUrl = "https://cdn-icons-png.flaticon.com/512/2922/2922561.png",
             longDescription = "El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal. El uso de Lorem Ipsum permite a los diseñadores reunir los diseños y la forma del contenido antes de que el contenido se haya creado, dando al diseño y al proceso de producción más libertad.\n" +
