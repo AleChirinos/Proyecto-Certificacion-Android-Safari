@@ -72,13 +72,13 @@
         android:id="@+id/ivPostUserSection"
         android:layout_width="200dp"
         android:layout_height="60dp"
+        android:layout_marginStart="20dp"
         android:background="@drawable/status_section_post"
         app:layout_constraintStart_toStartOf="@id/ivPostImage"
         app:layout_constraintTop_toTopOf="@id/ivPostImage" />
 
-    <!--    < de.hdodenhof.circleimageview.CircleImageView-->
-    <ImageView
-        app:tint="?attr/colorOnPrimary"
+    <de.hdodenhof.circleimageview.CircleImageView
+
         android:id="@+id/ivPostProfileUser"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -86,7 +86,10 @@
         app:layout_constraintBottom_toBottomOf="@id/ivPostUserSection"
         app:layout_constraintStart_toStartOf="@id/ivPostUserSection"
         app:layout_constraintTop_toTopOf="@id/ivPostUserSection"
-        app:srcCompat="@drawable/icons8_profile" />
+        app:srcCompat="@drawable/icons8_profile"
+        app:civ_border_color="?attr/colorOnPrimary"
+        app:civ_border_width="3dp"
+        />
 
     <TextView
         android:id="@+id/ivPostPublisher"
@@ -122,6 +125,7 @@
         android:id="@+id/ivPostStatsSection"
         android:layout_width="150dp"
         android:layout_height="60dp"
+        android:layout_marginStart="20dp"
         android:background="@drawable/status_section_post"
         app:layout_constraintStart_toStartOf="@id/ivPostImage"
         app:layout_constraintBottom_toBottomOf="@id/ivPostImage" />
