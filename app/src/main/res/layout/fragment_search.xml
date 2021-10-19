@@ -44,6 +44,6 @@
         app:layout_constraintStart_toStartOf="@+id/wallper_search"
         app:layout_constraintTop_toTopOf="@+id/wallper_search"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/icon_search" />
+        app:srcCompat="@drawable/ic_search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

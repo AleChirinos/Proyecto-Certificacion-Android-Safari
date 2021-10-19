@@ -44,4 +44,6 @@
     <string name="uploadAuthor">"Por: "</string>
     <string name="emptyPostPhoto">Se requiere una foto disponible para el post</string>
     <string name="uploadDate">"Subido en "</string>
+    <string name="new_here">¿No tienes una cuenta aún?</string>
+    <string name="socialNetwork">¿Usando otras redes sociales?</string>
 </resources>

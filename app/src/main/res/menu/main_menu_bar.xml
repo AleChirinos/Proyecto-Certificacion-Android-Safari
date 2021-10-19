@@ -7,26 +7,26 @@
     <item
         android:id="@+id/profileFragment"
         android:title="@string/profile_button_name"
-        android:icon="@drawable/icons8_profile"
+        android:icon="@drawable/ic_profile"
         />
     <item
         android:id="@+id/chatFragment"
         android:title="@string/chat_button_name"
-        android:icon="@drawable/icons8_chat"
+        android:icon="@drawable/ic_chat"
         />
     <item
         android:id="@+id/feedFragment"
         android:title="@string/home_button_name"
-        android:icon="@drawable/icons8_home"
+        android:icon="@drawable/ic_home"
         />
     <item
         android:id="@+id/searchFragment"
         android:title="@string/search_button_name"
-        android:icon="@drawable/icons8_search"
+        android:icon="@drawable/ic_search_menu"
         />
     <item
         android:id="@+id/uploadFragment"
         android:title="@string/upload_button_name"
-        android:icon="@drawable/icons8_upload"
+        android:icon="@drawable/ic_upload_menu"
         />
 </menu>

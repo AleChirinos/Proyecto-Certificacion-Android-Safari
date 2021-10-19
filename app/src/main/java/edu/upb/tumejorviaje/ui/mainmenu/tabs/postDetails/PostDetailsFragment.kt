@@ -62,10 +62,7 @@ class PostDetailsFragment : Fragment() {
         textLongDescription.text = post.longDescription
         tvLikes.text="${post.likes}"
         tvComments.text="${post.comments}"
-
-        //Para mostrar la fecha
-        val format=SimpleDateFormat("dd/MM/yyyy")
-        tvPostDate.text=String.format(getString(R.string.uploadDate) + "%s",format.format(post.uploaded))
+        tvPostDate.text=String.format(getString(R.string.uploadDate) + "%s",post.uploaded)
 
     }
 }

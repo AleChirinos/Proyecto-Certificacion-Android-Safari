@@ -45,4 +45,6 @@
     <string name="uploadAuthor">"By: "</string>
     <string name="emptyPostPhoto">Post photo required</string>
     <string name="uploadDate">"Uploaded at "</string>
+    <string name="new_here">Are you new in our platform?</string>
+    <string name="socialNetwork">Using more social networks?</string>
 </resources>

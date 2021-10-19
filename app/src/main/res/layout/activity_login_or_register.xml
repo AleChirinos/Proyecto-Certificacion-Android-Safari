@@ -50,6 +50,8 @@
         android:id="@+id/textRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textStyle="bold"
         android:text="@string/text_login"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="32sp"
@@ -64,6 +66,8 @@
         android:id="@+id/textLogin2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textStyle="bold"
         android:text="@string/text_login2"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="17sp"
@@ -126,6 +130,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="60dp"
         android:text="@string/radioButton_rememberme"
+        android:fontFamily="@font/poppins_medium"
+        android:textStyle="bold"
         android:textColor="?attr/colorOnSecondary"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
@@ -139,10 +145,22 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="@string/button_login"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="?attr/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="@+id/imageShape3"
         app:layout_constraintStart_toStartOf="@+id/imageShape3"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/tvSociaNetworks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/socialNetwork"
+        app:layout_constraintEnd_toEndOf="@id/imageShape3"
+        app:layout_constraintStart_toStartOf="@id/imageShape3"
+        app:layout_constraintBottom_toTopOf="@id/imageWallperLoginApp"
+        app:layout_constraintTop_toBottomOf="@id/buttonLogin"
+        />
 
     <ImageView
         android:id="@+id/imageWallperLoginApp"
@@ -153,7 +171,7 @@
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="@+id/imageShape3"
         app:layout_constraintStart_toStartOf="@+id/imageShape3"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+        app:layout_constraintTop_toBottomOf="@+id/tvSociaNetworks"
         app:srcCompat="@drawable/wallper_login_app"/>
 
     <ImageView
@@ -166,7 +184,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageWallperLoginApp"
         app:layout_constraintVertical_bias="0.533"
         app:tint="?attr/colorOnPrimary"
-        app:srcCompat="@drawable/icon_google" />
+        app:srcCompat="@drawable/ic_google" />
 
     <TextView
         android:id="@+id/textView4"
@@ -204,7 +222,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView10"
         app:layout_constraintStart_toStartOf="@+id/imageView10"
         app:layout_constraintTop_toTopOf="@+id/imageView10"
-        app:srcCompat="@drawable/icon_facebook" />
+        app:srcCompat="@drawable/ic_facebook" />
 
     <TextView
         android:id="@+id/textView5"
@@ -221,6 +239,17 @@
         app:layout_constraintStart_toEndOf="@+id/imageView11"
         app:layout_constraintTop_toTopOf="@+id/imageView10" />
 
+    <TextView
+        android:id="@+id/tvNewHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_here"
+        app:layout_constraintEnd_toEndOf="@id/imageShape3"
+        app:layout_constraintStart_toStartOf="@id/imageShape3"
+        app:layout_constraintBottom_toTopOf="@id/RegisterButton1"
+        app:layout_constraintTop_toBottomOf="@id/imageView11"
+        />
+
     <Button
         android:id="@+id/RegisterButton1"
         android:layout_width="0dp"
@@ -229,6 +258,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/button_register"
         android:textColor="?attr/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/imageShape3"

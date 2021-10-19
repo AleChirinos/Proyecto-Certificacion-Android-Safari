@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/backgrounds/scenic"
             app:shapeAppearanceOverlay="@style/TopRounded"/>
-
+        //Se ha creado un style para redondear los bordes de arriba del imageview
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ProfilePictureFeed"
@@ -37,7 +37,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/PostImageFeed"
             app:layout_constraintTop_toBottomOf="@+id/PostImageFeed"
-            app:srcCompat="@drawable/icons8_profile"
+            app:srcCompat="@drawable/ic_profile"
             app:civ_border_color="?attr/colorSecondary"
             app:civ_border_width="5dp"
             app:civ_circle_background_color="?attr/colorOnPrimary"
@@ -74,6 +74,7 @@
             android:layout_width="0dp"
             android:padding="10dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
             app:layout_constraintEnd_toEndOf="@+id/WallperUser"
             app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
             app:layout_constraintTop_toTopOf="@+id/WallperUser"
@@ -108,6 +109,72 @@
             app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
             app:layout_constraintTop_toBottomOf="@+id/TitleFeed"
             tools:text="Description" />
+
+        <ImageView
+            android:id="@+id/likeicon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:srcCompat="@drawable/ic_like"
+            app:layout_constraintStart_toStartOf="@id/PostImageFeed"
+            app:layout_constraintBottom_toBottomOf="@id/PostImageFeed"
+            android:layout_margin="10dp"
+            app:tint="?attr/colorPrimary"
+             />
+
+        <ImageView
+            android:id="@+id/commenticon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:srcCompat="@drawable/ic_comments"
+            app:layout_constraintStart_toEndOf="@id/likeicon"
+            app:layout_constraintBottom_toBottomOf="@id/PostImageFeed"
+            android:layout_margin="5dp"
+            app:tint="?attr/colorPrimary"
+            />
+
+        <TextView
+            android:id="@+id/tvlikeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            tools:text="12"
+            android:text="@{String.valueOf(post.likes)}"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:textColor="?attr/colorOnPrimary"
+            app:layout_constraintEnd_toEndOf="@id/likeicon"
+            app:layout_constraintTop_toTopOf="@id/likeicon"
+            app:layout_constraintStart_toStartOf="@id/likeicon"
+            app:layout_constraintBottom_toBottomOf="@id/likeicon"/>
+
+        <TextView
+            android:id="@+id/tvcommentNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            tools:text="12"
+            android:layout_marginBottom="5dp"
+            android:text="@{String.valueOf(post.comments)}"
+            android:textColor="?attr/colorOnPrimary"
+            app:layout_constraintEnd_toEndOf="@id/commenticon"
+            app:layout_constraintTop_toTopOf="@id/commenticon"
+            app:layout_constraintStart_toStartOf="@id/commenticon"
+            app:layout_constraintBottom_toBottomOf="@id/commenticon"/>
+
+        <TextView
+            android:id="@+id/ivdatePost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            tools:text="Subido el 27/10/2011"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/PostImageFeed"
+            app:layout_constraintBottom_toBottomOf="@id/PostImageFeed"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@{@string/uploadDate + post.uploaded}"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 

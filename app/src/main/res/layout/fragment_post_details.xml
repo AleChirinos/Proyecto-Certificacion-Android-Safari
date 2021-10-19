@@ -85,7 +85,7 @@
         app:layout_constraintBottom_toBottomOf="@id/ivPostUserSection"
         app:layout_constraintStart_toStartOf="@id/ivPostUserSection"
         app:layout_constraintTop_toTopOf="@id/ivPostUserSection"
-        app:srcCompat="@drawable/icons8_profile"
+        app:srcCompat="@drawable/ic_profile"
         app:civ_border_color="?attr/colorSecondary"
         app:civ_border_width="3dp"
         />
@@ -99,6 +99,7 @@
         android:textColor="?attr/colorOnPrimary"
         android:textSize="13dp"
         android:textStyle="bold"
+        android:fontFamily="@font/poppins_medium"
         app:layout_constraintBottom_toTopOf="@id/ivPostDate"
         app:layout_constraintStart_toEndOf="@id/ivPostProfileUser"
         app:layout_constraintTop_toTopOf="@id/ivPostUserSection"
@@ -111,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="6dp"
         android:textColor="?attr/colorOnPrimary"
-        android:textSize="9dp"
+        android:textSize="10dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@id/ivPostUserSection"
         app:layout_constraintStart_toStartOf="@id/ivPostPublisher"
@@ -139,7 +140,7 @@
         app:layout_constraintStart_toStartOf="@id/ivPostUserSection"
         app:layout_constraintEnd_toStartOf="@id/ivPostComments"
         app:layout_constraintTop_toTopOf="@id/ivPostStatsSection"
-        app:srcCompat="@drawable/icons8_like" />
+        app:srcCompat="@drawable/ic_like" />
 
     <ImageView
         app:tint="?attr/colorOnPrimary"
@@ -150,7 +151,7 @@
         app:layout_constraintStart_toEndOf="@id/ivPostLikes"
         app:layout_constraintEnd_toStartOf="@id/ivPostShare"
         app:layout_constraintTop_toTopOf="@id/ivPostStatsSection"
-        app:srcCompat="@drawable/icons8_comentarios" />
+        app:srcCompat="@drawable/ic_comments" />
 
     <ImageView
         app:tint="?attr/colorOnPrimary"
@@ -162,7 +163,7 @@
         app:layout_constraintTop_toTopOf="@id/ivPostStatsSection"
         app:layout_constraintEnd_toEndOf="@id/ivPostStatsSection"
         app:layout_constraintBottom_toBottomOf="@id/ivPostStatsSection"
-        app:srcCompat="@drawable/icons8_compartir" />
+        app:srcCompat="@drawable/ic_share" />
 
     <TextView
         android:id="@+id/ivPostLikeN"

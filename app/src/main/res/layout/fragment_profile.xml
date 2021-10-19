@@ -21,7 +21,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/user_icon"
+            app:srcCompat="@drawable/ic_user_template"
             app:srcUrl="@{profileViewModel.user.profileUrl}"
             />
 
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/profile"
             app:layout_constraintTop_toBottomOf="@+id/profile"
-            app:srcCompat="@drawable/icon_bolivia" />
+            app:srcCompat="@drawable/ic_bolivia_flag" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -39,14 +39,14 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@+id/profile"
             app:layout_constraintTop_toBottomOf="@+id/profile"
-            app:srcCompat="@drawable/icon_estados_unidos" />
+            app:srcCompat="@drawable/ic_usa_flag" />
 
         <ImageView
             android:id="@+id/imageView8"
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView6"
@@ -58,6 +58,8 @@
             android:layout_height="wrap_content"
             android:text="@{profileViewModel.user.username}"
             android:textSize="30sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/imageView8"
             app:layout_constraintStart_toStartOf="@+id/imageView8"
             app:layout_constraintTop_toTopOf="@+id/imageView8"
@@ -72,11 +74,11 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:text="@{profileViewModel.user.description}"
-            tools:text="Soy auditor financiero, con un master en big data y otro en accounting management"
             app:layout_constraintBottom_toBottomOf="@+id/imageView8"
             app:layout_constraintEnd_toEndOf="@+id/imageView8"
             app:layout_constraintStart_toStartOf="@+id/imageView8"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            tools:text="Soy auditor financiero, con un master en big data y otro en accounting management" />
 
         <ImageView
             android:id="@+id/Profilebackground"
@@ -111,6 +113,8 @@
             android:layout_marginEnd="8dp"
             android:text="@string/post_text"
             android:textSize="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imageView15"
             app:layout_constraintEnd_toEndOf="@+id/imageView15"
             app:layout_constraintStart_toStartOf="@+id/imageView15"
@@ -121,8 +125,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="@id/Profilebackground"
             app:layout_constraintEnd_toEndOf="@id/Profilebackground"
             app:layout_constraintStart_toStartOf="@id/Profilebackground"

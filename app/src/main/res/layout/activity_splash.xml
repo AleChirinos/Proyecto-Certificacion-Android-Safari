@@ -40,7 +40,7 @@
         android:id="@+id/imageIconPlane"
         android:layout_width="172dp"
         android:layout_height="151dp"
-        android:src="@drawable/icon_plane"
+        android:src="@drawable/ic_plane_logo"
         app:layout_constraintBottom_toTopOf="@+id/textFirstText"
         app:layout_constraintEnd_toEndOf="@+id/imageShape1"
         app:layout_constraintHorizontal_bias="0.496"
@@ -51,11 +51,11 @@
         android:id="@+id/imageShape2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/wallper_text"
+        android:src="@drawable/wallper_feed"
         app:layout_constraintBottom_toBottomOf="@+id/imageShape1"
         app:layout_constraintEnd_toEndOf="@+id/imageShape1"
         app:layout_constraintStart_toStartOf="@+id/imageShape1"
-        app:layout_constraintTop_toTopOf="@+id/textFirstText" />
+        app:layout_constraintTop_toBottomOf="@+id/imageIconPlane" />
 
     <TextView
         android:id="@+id/textFirstText"
@@ -63,7 +63,9 @@
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textColor="?attr/colorOnPrimary"
+        android:layout_margin="10dp"
         android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageWallper"
         app:layout_constraintEnd_toEndOf="@+id/imageShape1"
         app:layout_constraintHorizontal_bias="0.488"

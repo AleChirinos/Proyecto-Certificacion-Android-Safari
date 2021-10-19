@@ -1,6 +1,7 @@
 package edu.upb.tumejorviaje.model
 
 import java.io.Serializable
+
 import java.util.*
 
 data class Post(val publisher : String,
@@ -11,5 +12,5 @@ data class Post(val publisher : String,
                 val longDescription: String,
                 val likes: Int,
                 val comments: Int,
-                val uploaded: Date
+                val uploaded: String
 ) : Serializable
