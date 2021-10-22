@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
@@ -15,7 +16,7 @@ import edu.upb.tumejorviaje.ui.mainmenu.tabs.feed.FeedListAdapter
 class FeedFragment: Fragment(){
 
     private val feedListAdapter = FeedListAdapter()
-    private val feedViewModel : FeedViewModel by activityViewModels()
+    private val feedViewModel : FeedViewModel by viewModels()
     private lateinit var binding : FragmentFeedBinding
 
     override fun onCreateView(
@@ -37,12 +38,12 @@ class FeedFragment: Fragment(){
         feedListAdapter.setOnFeedItemClickListener {
             val directions = FeedFragmentDirections.actionFeedFragmentToPostDetailsFragment(it)
             findNavController().navigate(directions)
-
         }
 
         feedViewModel.post.observe(viewLifecycleOwner){
             feedListAdapter.addAll(it)
         }
+    //        feedViewModel.getAllPosts(requireContext())
     }
 
 }

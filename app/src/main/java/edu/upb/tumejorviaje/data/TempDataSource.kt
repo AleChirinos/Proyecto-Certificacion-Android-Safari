@@ -72,7 +72,7 @@ object TempDataSource {
             likes = 100,
             comments = 52,
             uploaded = "29/11/2020"
-        ),
+        )
     )
 
 

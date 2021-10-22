@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import edu.upb.tumejorviaje.NetworkUtils
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.databinding.ActivityMenuBinding
 import edu.upb.tumejorviaje.ui.directChat.DirectChatActivity
@@ -51,5 +52,8 @@ class MenuActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
 
         binding.menuNavigationView.setupWithNavController(navController)
+
+
+        NetworkUtils.updateIsOnline(this)
     }
 }
