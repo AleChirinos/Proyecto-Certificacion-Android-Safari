@@ -10,23 +10,26 @@ import java.lang.Exception
 
 class FeedRepository     (
     val network: FeedNetworkController,
-    val persistency: FeedPersistencyController
+    val persistence: FeedPersistencyController
 ) {
-    fun getAllPostList(): Flow<List<Post>>{
-        return flow {
-            emit(persistency.getAllPosts())
-            try{
-                val posts=network.getAllPosts()
-                persistency.savePosts(posts)
-                emit(posts)
-            } catch (e:Exception){
-                Log.e("ERROR",e.message!!)
-            }
-        }
+    fun getAllPostList(): Flow<List<Post>> {
+        return persistence.getAllPosts()
     }
 
-    fun searchPosts(query:String):List<Post>{
-        return persistency.searchPosts(query)
+    fun searchPosts(query: String): List<Post> {
+        return persistence.searchPosts(query)
+    }
+
+    fun updatePosts(): Flow<Any> {
+        return flow {
+            try {
+                val posts = network.getAllPosts()
+                persistence.savePosts(posts)
+                emit(posts)
+            } catch (e: Exception) {
+                Log.e("ERROR", e.message!!)
+            }
+        }
     }
 
 }

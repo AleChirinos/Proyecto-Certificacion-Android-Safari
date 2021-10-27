@@ -1,16 +1,18 @@
 package edu.upb.tumejorviaje.ui.mainmenu.tabs.feed
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import edu.upb.tumejorviaje.data.TempDataSource
 import edu.upb.tumejorviaje.data.feed.FeedRepository
 import edu.upb.tumejorviaje.data.feed.network.FeedNetworkControllerImp
 import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistencyControllerImp
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.launchIn
 
 class FeedViewModel : ViewModel() {
     val feedRepository = FeedRepository(FeedNetworkControllerImp(), FeedPersistencyControllerImp())
-    val post = feedRepository.getAllPostList().asLiveData()
+    val post = feedRepository.getAllPostList().asLiveData(Dispatchers.IO)
 
 
     //    fun getAllPosts(context: Context) {
@@ -26,6 +28,10 @@ class FeedViewModel : ViewModel() {
         } else {
             feedRepository.searchPosts("")
         }
+    }
+
+    fun updateFeed(): Job {
+        return feedRepository.updatePosts().launchIn(CoroutineScope(Dispatchers.IO))
     }
 
 

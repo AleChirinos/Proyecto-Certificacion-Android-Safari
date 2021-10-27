@@ -14,6 +14,7 @@ object TempDataProfile {
     //sin esto, el LocalDate no nos podra funcionar, ya que nos indica que requiere un API minimo de 26
     private var feedList = mutableListOf(
         Post(
+            id=1,
             publisher = "dv.Valdivia",
             title = "De camino a mi maestría Estados Unidos",
             shortDescription = "Hace unos meses me llego la carta de aceptación en una de las mejores universidades...",
@@ -27,6 +28,7 @@ object TempDataProfile {
             uploaded = "28/12/2020"
         ),
         Post(
+            id=2,
             publisher = "dv.Valdivia",
             title = "Mi primera maestría en el extranjero",
             shortDescription = "Despues de acabar la carrera de contabilidad mi sueño siempre fue...",
@@ -40,6 +42,7 @@ object TempDataProfile {
             uploaded = "29/04/2021"
         ),
         Post(
+            id=3,
             publisher = "dv.Valdivia",
             title = "Vacaciones en Europa",
             shortDescription = "Mi sueño siempre fue conocer europa, conoci alrededor de quince países en tres semanas...",

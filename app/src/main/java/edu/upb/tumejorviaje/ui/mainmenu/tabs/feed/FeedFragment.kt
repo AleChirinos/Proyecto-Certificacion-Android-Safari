@@ -43,6 +43,17 @@ class FeedFragment: Fragment(){
         feedViewModel.post.observe(viewLifecycleOwner){
             feedListAdapter.addAll(it)
         }
+
+        binding.swiperefresh.setOnRefreshListener {
+            feedViewModel.updateFeed().invokeOnCompletion {
+                binding.swiperefresh.isRefreshing = false
+            }
+        }
+
+        feedViewModel.updateFeed()
+
+
+
     //        feedViewModel.getAllPosts(requireContext())
     }
 

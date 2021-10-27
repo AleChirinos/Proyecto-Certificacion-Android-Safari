@@ -1,10 +1,15 @@
 package edu.upb.tumejorviaje.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 
 import java.util.*
 
-data class Post(val publisher : String,
+@Entity
+data class Post(
+    @PrimaryKey val id:Int,
+    val publisher : String,
                 val title : String,
                 val shortDescription : String,
                 val postUrl: String,
