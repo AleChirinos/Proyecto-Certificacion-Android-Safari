@@ -14,7 +14,7 @@
 
         <!-- Customize your theme here. -->
 
-        <item name="background">@color/raisinBlack</item>
+        <item name="background">@color/middle_frenchSkyBlue</item>
         <item name="android:fontFamily">@font/allerta</item>
         <item name="colorOnSurface">@color/teal_200</item>
     </style>
