@@ -8,13 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
+import edu.upb.tumejorviaje.data.ChatDirectTempDataSource
 import edu.upb.tumejorviaje.databinding.FragmentChatProgressBinding
 import edu.upb.tumejorviaje.ui.directChat.ChatBubbleListAdapter
 import edu.upb.tumejorviaje.ui.directChat.ChatBubbleViewModel
 
 class ChatConversationFragment: Fragment() {
 
-    private val chatBubbleListAdapter= ChatBubbleListAdapter()
+    private val chatBubbleListAdapter= ChatBubbleListAdapter(ChatDirectTempDataSource.user)
     private lateinit var binding: FragmentChatProgressBinding
     private val chatBubbleViewModel: ChatBubbleViewModel by activityViewModels()
 

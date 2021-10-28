@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.databinding.ListItemFeedBinding
 import edu.upb.tumejorviaje.model.Post
-import edu.upb.tumejorviaje.ui.interfaces.OnFeedItemClickListener
 
 class FeedListAdapter : RecyclerView.Adapter<FeedListViewHolder>() {
     private val elementList : MutableList<Post> = mutableListOf()
