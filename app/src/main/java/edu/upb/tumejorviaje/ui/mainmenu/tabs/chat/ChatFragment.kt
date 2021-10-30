@@ -40,7 +40,6 @@ class ChatFragment: StepsBaseFragment(){
         chatListAdapter.setOnItemClickListener {
             val directions = ChatFragmentDirections.actionChatFragmentToDirectChatActivity(it)
             findNavController().navigate(directions)
-
         }
 
         binding.newChatButtom.setOnClickListener {
