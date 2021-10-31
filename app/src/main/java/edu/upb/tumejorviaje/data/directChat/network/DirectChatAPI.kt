@@ -6,4 +6,5 @@ import retrofit2.http.GET
 interface DirectChatAPI {
     @GET("/directChatBubbles")
     suspend fun getAllChatBubbles():List<ChatBubble>
+
 }

@@ -2,22 +2,39 @@ package edu.upb.tumejorviaje.ui.mainmenu.tabs.upload
 
 
 import android.app.Activity.RESULT_OK
+import android.content.ContentResolver
+import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.media.Image
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import coil.ImageLoader
+import coil.request.ImageRequest
+import com.google.android.material.dialog.MaterialDialogs
 
 
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.databinding.FragmentUploadBinding
+import edu.upb.tumejorviaje.model.Post
 import edu.upb.tumejorviaje.ui.base.StepsBaseFragment
+import edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileViewModel
+import kotlinx.coroutines.launch
+import org.koin.android.ext.android.bind
+import java.io.InputStream
 
 class UploadFragment: StepsBaseFragment(){
     private lateinit var binding: FragmentUploadBinding
     private val uploadPhotoViewModel: UploadPhotoViewModel by viewModels()
+    private val userViewModel:ProfileViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,7 +72,6 @@ class UploadFragment: StepsBaseFragment(){
                 binding.editTextTitle.error=null
                 binding.editTextDescInit.error=null
                 binding.editTextPostBody.error = null
-                Toast.makeText(context,"Sucess",Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -72,11 +88,21 @@ class UploadFragment: StepsBaseFragment(){
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode==100 && resultCode==RESULT_OK){
-            binding.photoClickView.setImageURI(data?.data)
+
+            val imageData=data?.data
+            val imageStream= activity?.applicationContext?.contentResolver?.openInputStream(imageData!!)
+            val selectedImage=BitmapFactory.decodeStream(imageStream)
+            binding.photoClickView.setImageBitmap(selectedImage)
+
+
             binding.photoClickView.adjustViewBounds
             uploadPhotoViewModel.photoPassed.postValue(true)
+            binding.photoClickView.drawingCache
         }
     }
+
+
+
 
 }
 
