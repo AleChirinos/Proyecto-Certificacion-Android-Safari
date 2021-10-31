@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimary"
@@ -158,59 +159,35 @@
         android:text="@string/socialNetwork"
         app:layout_constraintEnd_toEndOf="@id/imageShape3"
         app:layout_constraintStart_toStartOf="@id/imageShape3"
-        app:layout_constraintBottom_toTopOf="@id/imageWallperLoginApp"
+        app:layout_constraintBottom_toTopOf="@id/go_button_login"
         app:layout_constraintTop_toBottomOf="@id/buttonLogin"
         />
 
-    <ImageView
-        android:id="@+id/imageWallperLoginApp"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/go_button_login"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageShape3"
-        app:layout_constraintStart_toStartOf="@+id/imageShape3"
-        app:layout_constraintTop_toBottomOf="@+id/tvSociaNetworks"
-        app:srcCompat="@drawable/wallper_login_app"/>
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageWallperLoginApp"
-        app:layout_constraintStart_toStartOf="@+id/imageWallperLoginApp"
-        app:layout_constraintTop_toTopOf="@+id/imageWallperLoginApp"
-        app:layout_constraintVertical_bias="0.533"
-        app:tint="?attr/colorOnPrimary"
-        app:srcCompat="@drawable/ic_google" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/loginGoogle"
-        android:textColor="?attr/colorOnPrimary"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageWallperLoginApp"
-        app:layout_constraintEnd_toEndOf="@+id/imageWallperLoginApp"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageWallperLoginApp" />
+        app:layout_constraintEnd_toEndOf="@id/imageShape3"
+        app:layout_constraintStart_toStartOf="@id/imageShape3"
+        app:layout_constraintBottom_toTopOf="@id/fb_login_button"
+        app:layout_constraintTop_toBottomOf="@id/tvSociaNetworks"
+        />
 
     <com.facebook.login.widget.LoginButton
+        xmlns:facebook="http://schemas.android.com/apk/res-auto"
         android:id="@+id/fb_login_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        facebook:com_facebook_login_text="@string/loginFacebook"
         app:layout_constraintStart_toStartOf="@id/imageShape3"
         app:layout_constraintEnd_toEndOf="@id/imageShape3"
-        app:layout_constraintTop_toBottomOf="@id/imageWallperLoginApp"
+        app:layout_constraintTop_toBottomOf="@id/go_button_login"
         app:layout_constraintBottom_toTopOf="@id/tvNewHere"/>
 
     <TextView
