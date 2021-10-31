@@ -52,7 +52,7 @@ class ChatBubbleListAdapter(val user: User): RecyclerView.Adapter<RecyclerView.V
 
     override fun getItemViewType(position: Int): Int {
 
-        if(elementList[position].provenient.username==user.username){
+        if(elementList[position].provenientUsername == user.username){
             return userViewType
         } else {
             return otherViewType

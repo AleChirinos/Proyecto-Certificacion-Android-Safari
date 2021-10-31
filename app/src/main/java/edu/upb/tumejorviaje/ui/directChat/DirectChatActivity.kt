@@ -3,6 +3,7 @@ package edu.upb.tumejorviaje.ui.directChat
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.bumptech.glide.Glide
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.databinding.ActivityDirectChatBinding
 import edu.upb.tumejorviaje.ui.replaceFragment
@@ -29,8 +30,8 @@ class DirectChatActivity : AppCompatActivity() {
         chatBubbleViewModel.savedChat.postValue(arguments.savedChat)
 
         chatBubbleViewModel.savedChat.observe(this){
-            binding.chatName.text = it.chatName
-           binding.chatDirectIcon.setImageResource(it.profileImg)
+            binding.chatName.text = it.user.username
+            Glide.with(this).load(it.user.profileUrl).into(binding.chatDirectIcon)
         }
     }
 

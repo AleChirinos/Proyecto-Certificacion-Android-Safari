@@ -11,7 +11,7 @@ class DirectChatNetworkControllerImp:DirectChatNetworkController {
         .build()
         .create(DirectChatAPI::class.java)
 
-    override suspend fun getAllChatBubbles(): List<ChatBubble> {
-        return client.getAllChatBubbles()
+    override suspend fun getAllChatBubblesForChatId(chatId: String): List<ChatBubble> {
+        return client.getAllChatBubbles(chatId)
     }
 }

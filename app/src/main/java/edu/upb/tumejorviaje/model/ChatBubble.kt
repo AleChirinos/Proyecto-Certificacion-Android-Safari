@@ -9,7 +9,7 @@ data class ChatBubble(
     @PrimaryKey val id:Int,
     val textComment: String,
     val time: String,
-    val profileImg: Int,
-    val provenient: User
+    val provenientUsername: String,
+    val chatId: String
 ) : Serializable {
 }

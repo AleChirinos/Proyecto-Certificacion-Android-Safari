@@ -1,26 +1,23 @@
 package edu.upb.tumejorviaje.data
 
-import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.model.SavedChat
 
 object ChatsTempDataSource {
     private var chatsList = mutableListOf(
         SavedChat(
-            chatName = "Maria Marcela",
-            chatLastMessage = "Aún estoy esperando.",
-            profileImg = R.drawable.ic_circle_profile_1
+            user = UserTempDataSource.otherUser,
+            chatLastMessage = "Aún estoy esperando."
         ),
         SavedChat(
-            chatName = "Rodrigo Cárdenas",
-            chatLastMessage = "Espero funcione.",
-            profileImg = R.drawable.ic_circle_profile_2
+            user = UserTempDataSource.otherUser,
+            chatLastMessage = "Espero funcione."
         ),
         SavedChat(
-            chatName = "Daniel Delgado",
-            chatLastMessage = "Ya lo sabía",
-            profileImg = R.drawable.ic_circle_profile_3
+            user = UserTempDataSource.otherUser,
+            chatLastMessage = "Ya lo sabía"
         )
     )
+
     fun getChatList(): List<SavedChat> {
         return chatsList
     }
