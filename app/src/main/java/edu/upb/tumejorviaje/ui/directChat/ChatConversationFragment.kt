@@ -14,7 +14,7 @@ import edu.upb.tumejorviaje.databinding.FragmentChatProgressBinding
 
 class ChatConversationFragment: Fragment() {
 
-    private val chatBubbleListAdapter= ChatBubbleListAdapter(UserTempDataSource.myUser)
+    private lateinit var chatBubbleListAdapter: ChatBubbleListAdapter
     private lateinit var binding: FragmentChatProgressBinding
     private val chatBubbleViewModel: ChatBubbleViewModel by activityViewModels()
 
@@ -28,6 +28,8 @@ class ChatConversationFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        chatBubbleListAdapter = ChatBubbleListAdapter(UserTempDataSource.myUser, chatBubbleViewModel.savedChat.value!!.user)
+
         binding.rvChatBubbles.adapter=chatBubbleListAdapter
        val layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
         binding.rvChatBubbles.layoutManager=layoutManager

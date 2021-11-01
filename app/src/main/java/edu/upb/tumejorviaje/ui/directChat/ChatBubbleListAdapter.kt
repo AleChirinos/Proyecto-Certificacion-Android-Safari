@@ -15,7 +15,7 @@ import edu.upb.tumejorviaje.databinding.ListItemBubbleFromUserBinding
 import edu.upb.tumejorviaje.model.ChatBubble
 import edu.upb.tumejorviaje.model.User
 
-class ChatBubbleListAdapter(val user: User): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class ChatBubbleListAdapter(val myUser: User, val otherUser: User): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     private val elementList:MutableList<ChatBubble> = mutableListOf()
 
@@ -41,8 +41,8 @@ class ChatBubbleListAdapter(val user: User): RecyclerView.Adapter<RecyclerView.V
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
-            is ChatBubbleViewHolder ->  holder.bind(elementList[position])
-            is ChatBubbleFromUserViewHolder -> holder.bind(elementList[position])
+            is ChatBubbleViewHolder ->  holder.bind(elementList[position], otherUser)
+            is ChatBubbleFromUserViewHolder -> holder.bind(elementList[position], myUser)
         }
     }
 
@@ -52,7 +52,7 @@ class ChatBubbleListAdapter(val user: User): RecyclerView.Adapter<RecyclerView.V
 
     override fun getItemViewType(position: Int): Int {
 
-        if(elementList[position].provenientUsername == user.username){
+        if(elementList[position].provenientUsername == myUser.username){
             return userViewType
         } else {
             return otherViewType
@@ -63,15 +63,17 @@ class ChatBubbleListAdapter(val user: User): RecyclerView.Adapter<RecyclerView.V
 
 
 class ChatBubbleFromUserViewHolder(val binding: ListItemBubbleFromUserBinding):RecyclerView.ViewHolder(binding.root){
-    fun bind(chatBubble: ChatBubble){
+    fun bind(chatBubble: ChatBubble, user: User){
         binding.chatBubble=chatBubble
+        binding.user = user
     }
 }
 
 class ChatBubbleViewHolder(val binding: ListItemBubbleBinding):RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(chatBubble: ChatBubble){
-        binding.chatBubble=chatBubble
+    fun bind(chatBubble: ChatBubble, user: User){
+        binding.chatBubble = chatBubble
+        binding.user = user
     }
 
 }

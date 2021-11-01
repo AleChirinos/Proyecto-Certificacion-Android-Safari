@@ -20,12 +20,8 @@ class ChatBubbleViewModel:ViewModel() {
     val chatBubbles=chatBubbleRepository.getAllChatBubbles().asLiveData(Dispatchers.IO)
 
     fun updateChatBubbles(user: User): Job {
-        return chatBubbleRepository.updateChatBubbles(getChatId(user)).launchIn(CoroutineScope(Dispatchers.IO))
+        return chatBubbleRepository.updateChatBubbles(user.username).launchIn(CoroutineScope(Dispatchers.IO))
     }
 
     val savedChat = MutableLiveData<SavedChat>()
-
-    fun getChatId(user2: User): String {
-        return UserTempDataSource.myUser.username + "_" + user2.username
-    }
 }

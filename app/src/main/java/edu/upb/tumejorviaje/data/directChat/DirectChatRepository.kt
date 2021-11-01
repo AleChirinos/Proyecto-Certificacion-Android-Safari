@@ -16,7 +16,7 @@ class DirectChatRepository(val network:DirectChatNetworkController, val persiste
     fun updateChatBubbles(chatId: String):Flow<Any>{
         return flow{
             try {
-                val chatBubbles=network.getAllChatBubblesForChatId(chatId)
+                val chatBubbles = network.getAllChatBubblesForChatId(chatId)
                 persistence.saveChatBubbles(chatBubbles)
                 emit(chatBubbles)
             } catch (e:Exception){
