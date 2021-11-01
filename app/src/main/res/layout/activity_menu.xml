@@ -16,11 +16,23 @@
         android:textColor="?attr/colorOnPrimary"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/logout_ic"
         app:layout_constraintBottom_toTopOf="@id/guidelineTitle"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="4dp" />
+
+    <ImageView
+        android:id="@+id/logout_ic"
+        android:layout_width="45sp"
+        android:layout_height="45sp"
+        android:src="@drawable/ic_logout"
+        app:tint="?attr/colorOnPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTitle"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="6dp"
+        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/menuNavigationView"

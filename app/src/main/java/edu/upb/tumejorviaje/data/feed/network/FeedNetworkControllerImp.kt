@@ -10,7 +10,7 @@ class FeedNetworkControllerImp: FeedNetworkController {
     //[ipWifiIPV4]:1880
 
     val client= Retrofit.Builder()
-        .baseUrl("http://192.168.0.13:1880")
+        .baseUrl("http://192.168.0.7:1880")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(FeedAPI::class.java)

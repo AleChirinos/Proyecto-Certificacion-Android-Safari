@@ -8,13 +8,17 @@ import java.time.LocalDate
 import java.util.*
 
 object TempDataProfile {
-    private var user: User?=User("dt.valdivia","Soy auditor financiero, con un master en big data y otro en accounting management", "https://vevico.files.wordpress.com/2019/08/tachuri-siete-colores.png?crop")
+    private var user: User? = User(
+        "dt.valdivia",
+        "Soy auditor financiero, con un master en big data y otro en accounting management",
+        "https://vevico.files.wordpress.com/2019/08/tachuri-siete-colores.png?crop"
+    )
 
 
     //sin esto, el LocalDate no nos podra funcionar, ya que nos indica que requiere un API minimo de 26
     private var feedList = mutableListOf(
         Post(
-            id=1,
+            id = 1,
             publisher = "dv.Valdivia",
             title = "De camino a mi maestría Estados Unidos",
             shortDescription = "Hace unos meses me llego la carta de aceptación en una de las mejores universidades...",
@@ -28,7 +32,7 @@ object TempDataProfile {
             uploaded = "28/12/2020"
         ),
         Post(
-            id=2,
+            id = 2,
             publisher = "dv.Valdivia",
             title = "Mi primera maestría en el extranjero",
             shortDescription = "Despues de acabar la carrera de contabilidad mi sueño siempre fue...",
@@ -42,7 +46,7 @@ object TempDataProfile {
             uploaded = "29/04/2021"
         ),
         Post(
-            id=3,
+            id = 3,
             publisher = "dv.Valdivia",
             title = "Vacaciones en Europa",
             shortDescription = "Mi sueño siempre fue conocer europa, conoci alrededor de quince países en tres semanas...",
@@ -58,16 +62,16 @@ object TempDataProfile {
     )
 
 
-    fun getNewFeedList() : List<Post>{
+    fun getNewFeedList(): List<Post> {
         return feedList
     }
 
-    fun getUser():User?{
+    fun getUser(): User? {
         return user
     }
 
 
-    fun setNewFeedList(itemFeedList : List<Post>){
+    fun setNewFeedList(itemFeedList: List<Post>) {
         this.feedList = itemFeedList.toMutableList()
     }
 }

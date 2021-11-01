@@ -9,7 +9,7 @@
     <string name="loginFacebook">Ingresa con Facebook</string>
     <string name="loginGoogle">Ingresa con Google</string>
     <string name="button_register">Registrate</string>
-    <string name="register_title">¡Registrate!</string>
+    <string name="register_title">¡Bienvenido a Tu Mejor Viaje!</string>
     <string name="register_username">Nombre de usuario</string>
     <string name="register_password">Contraseña</string>
     <string name="register_confirm_password">Confirmar contraseña</string>

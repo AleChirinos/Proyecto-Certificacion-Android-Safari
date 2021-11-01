@@ -23,29 +23,27 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageWallper2"
         app:layout_constraintEnd_toEndOf="@+id/imageWallper2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imageWallper2"
         app:layout_constraintTop_toTopOf="@+id/imageWallper2"
         app:srcCompat="@drawable/wallper_text_and_icon" />
 
     <ImageView
         android:id="@+id/imageShape4"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="550dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageShape3"
+        app:layout_constraintBottom_toTopOf="@id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageShape3"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageShape3"
         app:layout_constraintTop_toTopOf="@+id/imageShape3"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/wallper_text" />
 
     <TextView
@@ -54,31 +52,25 @@
         android:layout_height="wrap_content"
         android:text="@string/register_title"
         android:textColor="?attr/colorOnPrimary"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:fontFamily="@font/poppins_medium"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageShape4"
         app:layout_constraintEnd_toEndOf="@+id/imageShape4"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/imageShape4"
-        app:layout_constraintTop_toTopOf="@+id/imageShape4"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toTopOf="@+id/imageShape4" />
 
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
-        android:layout_height="460dp"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/RegisterButton1"
+        app:layout_constraintBottom_toTopOf="@id/RegisterButton1"
         app:layout_constraintEnd_toEndOf="@+id/imageShape3"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageShape3"
         app:layout_constraintTop_toBottomOf="@+id/imageShape4"
-        app:layout_constraintVertical_bias="0.666"
         app:srcCompat="@drawable/wallper_login" />
 
     <Button
@@ -87,18 +79,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/register_sign_in"
         android:fontFamily="@font/poppins_medium"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageShape3"
         app:layout_constraintEnd_toEndOf="@+id/imageShape3"
-        app:layout_constraintStart_toStartOf="@+id/imageShape3" />
+        app:layout_constraintStart_toStartOf="@+id/imageShape3"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@id/imageView2"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/RegisterProfileImage"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
         android:layout_marginTop="10dp"
         app:tint="?attr/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -127,41 +121,55 @@
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/RegisterProfileImage" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/RegisterPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:ems="12"
-        android:textStyle="italic"
-        android:textSize="15dp"
-        android:inputType="textPassword"
-        android:hint="@string/register_password"
         android:textColorHint="?attr/colorOnSecondary"
-        android:textColorHighlight="?attr/colorOnSecondary"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/RegisterUserName"
+        app:passwordToggleEnabled="true">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="12"
+            android:background="?attr/colorPrimaryVariant"
+            android:textStyle="italic"
+            android:textSize="15dp"
+            android:inputType="textPassword"
+            android:hint="@string/register_password"
+             />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/RegisterConfirmPasword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:ems="12"
-        android:textStyle="italic"
-        android:textSize="15dp"
-        android:inputType="textPassword"
-        android:hint="@string/register_confirm_password"
         android:textColorHint="?attr/colorOnSecondary"
-        android:textColorHighlight="?attr/colorOnSecondary"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/RegisterPassword">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="12"
+            android:background="?attr/colorPrimaryVariant"
+            android:textStyle="italic"
+            android:textSize="15dp"
+            android:inputType="textPassword"
+            android:hint="@string/register_confirm_password"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/RegisterEmail"
@@ -185,21 +193,21 @@
         android:id="@+id/RegisterDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="29dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
         android:ems="12"
-        android:gravity="start|top"
         android:textStyle="italic"
         android:textSize="15dp"
+        android:maxLines="4"
         android:hint="@string/register_description"
         android:inputType="textMultiLine"
         android:textColorHint="?attr/colorOnSecondary"
         android:textColorHighlight="?attr/colorOnSecondary"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/RegisterEmail"
+        app:layout_constraintBottom_toBottomOf="@id/imageView2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

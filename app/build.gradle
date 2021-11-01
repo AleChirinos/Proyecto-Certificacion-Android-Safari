@@ -90,4 +90,7 @@ dependencies {
 
     //Google
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
+
+    //ZoomImage
+    implementation 'com.zolad:zoominimageview:1.0.0'
 }

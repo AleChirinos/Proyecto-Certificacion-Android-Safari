@@ -76,4 +76,72 @@ msg.payload=[
 ]
 return msg;
 
+/directChatBubbles/{{chatId}}
+msg.payload=[
+        {
+            "id": 1,
+            "textComment" : "Esto ya no es divertido, es triste",
+            "time" : "9:50",
+            "provenientUsername" : "dt.valdivia",
+            "chatId" : "Maria Marcela"
+        },
+        {
+            "id":2,
+            "textComment": "Te pasaste de lanza con ese chiste",
+            "time": "9:50",
+            "provenientUsername" : "dt.valdivia",
+            "chatId" : "Maria Marcela"
+        },
+        {
+            "id":3,
+            "textComment": "Por favor, para con esto",
+            "time":"9:51",
+            "provenientUsername" : "dt.valdivia",
+            "chatId" : "Maria Marcela"
+        },
+        {
+            "id": 4,
+            "textComment":"Lo siento, no lo volveré a hacer, es triste",
+            "time": "9:50",
+            "provenientUsername" : "dt.valdivia",
+            "chatId" : "Maria Marcela"
+        },
+        {
+            "id": 5,
+            "textComment" : "No quiero ofenderte",
+            "time" : "9:51",
+            "provenientUsername" : "dt.valdivia",
+            "chatId" : "Maria Marcela"
+        },
+        {
+           "id": 6,
+           "textComment" : "Sabes que eres mi amigo",
+           "time" : "9:52",
+           "provenientUsername" : "dt.valdivia",
+           "chatId" : "Maria Marcela"
+
+        },
+        {
+            "id": 7,
+            "textComment" : "Te perdono, amigo",
+            "time" : "9:52",
+            "provenientUsername" : "dt.valdivia",
+            "chatId" : "Maria Marcela"
+        },
+        {
+            "id": 8,
+            "textComment" : "El chiste estaba algo gracioso",
+            "time" : "9:53",
+            "provenientUsername" : "dt.valdivia",
+            "chatId" : "Maria Marcela"
+        },
+        {
+            "id": 8,
+            "textComment" : "XDXDXD",
+            "time" : "9:53",
+            "provenientUsername" : "dt.valdivia",
+            "chatId" : "Maria Marcela"
+        }
+]
+return msg
 //

@@ -11,6 +11,6 @@ object UserTempDataSource {
     var otherUser: User = User(
         "Maria Marcela",
         "Careta",
-        "https://pbs.twimg.com/media/D8_Xkz9XYAAVC78.jpg"
+        "https://i.pinimg.com/originals/3e/b1/43/3eb143771338702d4bacb845d1fd93fa.jpg"
     )
 }

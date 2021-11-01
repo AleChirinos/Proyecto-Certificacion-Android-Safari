@@ -2,6 +2,7 @@ package edu.upb.tumejorviaje.ui.mainmenu
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
@@ -11,6 +12,7 @@ import edu.upb.tumejorviaje.NetworkUtils
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.databinding.ActivityMenuBinding
 import edu.upb.tumejorviaje.ui.directChat.DirectChatActivity
+import edu.upb.tumejorviaje.ui.loginRegister.LoginOrRegisterActivity
 import edu.upb.tumejorviaje.ui.mainmenu.tabs.chat.ChatFragment
 import edu.upb.tumejorviaje.ui.mainmenu.tabs.feed.FeedFragment
 import edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileFragment
@@ -19,13 +21,9 @@ import edu.upb.tumejorviaje.ui.mainmenu.tabs.upload.UploadFragment
 
 class MenuActivity : AppCompatActivity() {
 
-    private lateinit var menuNavigationView: BottomNavigationView
-    private lateinit var binding :ActivityMenuBinding
+    private lateinit var binding : ActivityMenuBinding
 
-    private val profileFragment = ProfileFragment()
-    private val feedFragment = FeedFragment()
     private val chatFragment = ChatFragment()
-    private val searchFragment = SearchFragment()
     private val uploadFragment = UploadFragment()
 
 
@@ -55,5 +53,14 @@ class MenuActivity : AppCompatActivity() {
 
 
         NetworkUtils.updateIsOnline(this)
+
+        binding.logoutIc.setOnClickListener {
+            val intent=Intent(this,LoginOrRegisterActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
+
+
+
 }

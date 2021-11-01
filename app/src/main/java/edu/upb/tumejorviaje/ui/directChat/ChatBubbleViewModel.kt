@@ -18,10 +18,12 @@ import kotlinx.coroutines.flow.launchIn
 class ChatBubbleViewModel:ViewModel() {
     private val chatBubbleRepository=DirectChatRepository(DirectChatNetworkControllerImp(),DirectChatPersistenceControllerImp())
     val chatBubbles=chatBubbleRepository.getAllChatBubbles().asLiveData(Dispatchers.IO)
+    val savedChat = MutableLiveData<SavedChat>()
 
     fun updateChatBubbles(user: User): Job {
         return chatBubbleRepository.updateChatBubbles(user.username).launchIn(CoroutineScope(Dispatchers.IO))
     }
 
-    val savedChat = MutableLiveData<SavedChat>()
+
+
 }

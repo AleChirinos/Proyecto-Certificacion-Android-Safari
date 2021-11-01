@@ -4,7 +4,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:maxHeight="470dp"
     android:clickable="true"
     android:focusable="true">
 
@@ -53,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@id/ivPostTitle"
         tools:text="Durante los 5 meses que fui a la Universidad de Venecia para mi diplomado en Software, esto fué lo que viví" />
 
-    <ImageView
+    <com.zolad.zoominimageview.ZoomInImageView
         android:id="@+id/ivPostImage"
         android:layout_width="0dp"
         android:layout_height="250dp"
@@ -65,7 +64,6 @@
         app:layout_constraintStart_toStartOf="@id/postFrame"
         app:layout_constraintTop_toBottomOf="@id/ivPostInitDescription"
         tools:srcCompat="@tools:sample/backgrounds/scenic"
-
         />
 
     <ImageView

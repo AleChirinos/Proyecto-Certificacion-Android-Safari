@@ -96,6 +96,8 @@ class LoginOrRegisterActivity : AppCompatActivity() {
             // Signed in successfully, show authenticated UI.
             Toast.makeText(this,"NOi",Toast.LENGTH_SHORT).show()
         } catch (e: ApiException) {
+            Toast.makeText(this,"NO",Toast.LENGTH_SHORT).show()
+            Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
 

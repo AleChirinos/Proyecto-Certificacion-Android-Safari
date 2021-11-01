@@ -2,6 +2,7 @@ package edu.upb.tumejorviaje.ui.mainmenu.tabs.postDetails
 
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,8 +34,13 @@ class PostDetailsFragment : Fragment() {
         post = args.post
 
         binding.ivLongDescription.setOnClickListener {
-            binding.container.maxHeight = requireContext()!!.dpToPx(800)
+
+            val params:ViewGroup.LayoutParams=binding.container.layoutParams
+            params.height=ViewGroup.LayoutParams.MATCH_PARENT
+            binding.container.layoutParams=params
+            binding.ivLongDescription.maxHeight=requireContext()!!.dpToPx(250)
         }
+        binding.ivLongDescription.movementMethod=ScrollingMovementMethod()
 
         Glide.with(view)
             .load(post.postUrl)

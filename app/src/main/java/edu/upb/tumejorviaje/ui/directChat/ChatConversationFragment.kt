@@ -11,11 +11,13 @@ import androidx.recyclerview.widget.LinearSnapHelper
 import edu.upb.tumejorviaje.data.ChatDirectTempDataSource
 import edu.upb.tumejorviaje.data.UserTempDataSource
 import edu.upb.tumejorviaje.databinding.FragmentChatProgressBinding
+import edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileViewModel
 
 class ChatConversationFragment: Fragment() {
 
     private lateinit var chatBubbleListAdapter: ChatBubbleListAdapter
     private lateinit var binding: FragmentChatProgressBinding
+    private val profileViewModel: ProfileViewModel by activityViewModels()
     private val chatBubbleViewModel: ChatBubbleViewModel by activityViewModels()
 
     override fun onCreateView(

@@ -7,10 +7,6 @@
         <variable
             name="chat"
             type="edu.upb.tumejorviaje.model.SavedChat" />
-
-        <variable
-            name="user"
-            type="edu.upb.tumejorviaje.model.User" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -37,7 +33,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/chat_shape"
             app:layout_constraintStart_toStartOf="@+id/chat_shape"
             app:layout_constraintTop_toTopOf="@+id/chat_shape"
-            app:srcUrl="@{user.profileUrl}"
+            app:srcUrl="@{chat.user.profileUrl}"
             app:srcCompat="@drawable/ic_circle_profile_1" />
 
         <TextView
@@ -47,7 +43,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="@{user.username}"
+            android:text="@{chat.user.username}"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="20sp"
             android:textStyle="bold"

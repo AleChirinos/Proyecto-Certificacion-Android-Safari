@@ -131,6 +131,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="60dp"
         android:text="@string/radioButton_rememberme"
+        android:buttonTint="?attr/colorPrimary"
         android:fontFamily="@font/poppins_medium"
         android:textStyle="bold"
         android:textColor="?attr/colorOnSecondary"
