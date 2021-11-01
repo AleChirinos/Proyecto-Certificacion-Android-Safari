@@ -47,4 +47,7 @@
     <string name="uploadDate">"Uploaded at "</string>
     <string name="new_here">Are you new in our platform?</string>
     <string name="socialNetwork">Using more social networks?</string>
+    <string name="facebook_app_id">1259889437860147</string>
+    <string name="fb_login_protocol_scheme">fb1259889437860147</string>
+
 </resources>

@@ -82,4 +82,12 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
 
+    //Coil
+    implementation("io.coil-kt:coil:1.4.0")
+
+    //Facebook
+    implementation 'com.facebook.android:facebook-login:latest.release'
+
+    //Google
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
 }

@@ -46,4 +46,7 @@
     <string name="uploadDate">"Subido en "</string>
     <string name="new_here">¿No tienes una cuenta aún?</string>
     <string name="socialNetwork">¿Usando otras redes sociales?</string>
+    <string name="facebook_app_id">1259889437860147</string>
+    <string name="fb_login_protocol_scheme">fb1259889437860147</string>
+
 </resources>
