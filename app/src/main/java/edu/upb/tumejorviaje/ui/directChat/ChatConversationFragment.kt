@@ -38,7 +38,6 @@ class ChatConversationFragment: Fragment() {
         chatBubbleViewModel.chatBubbles.observe(viewLifecycleOwner){
             chatBubbleListAdapter.addAll(it)
         }
-
         chatBubbleViewModel.updateChatBubbles(chatBubbleViewModel.savedChat.value!!.user)
     }
 

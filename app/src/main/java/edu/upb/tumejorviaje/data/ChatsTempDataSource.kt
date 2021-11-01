@@ -6,7 +6,7 @@ object ChatsTempDataSource {
     private var chatsList = mutableListOf(
         SavedChat(
             user = UserTempDataSource.otherUser,
-            chatLastMessage = "Aún estoy esperando."
+            chatLastMessage = "Aún estoy esperando.",
         ),
         SavedChat(
             user = UserTempDataSource.otherUser,

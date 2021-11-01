@@ -19,6 +19,7 @@ class ChatBubbleListAdapter(val myUser: User, val otherUser: User): RecyclerView
 
     private val elementList:MutableList<ChatBubble> = mutableListOf()
 
+
     private val userViewType=1
     private val otherViewType=2
 
@@ -41,8 +42,8 @@ class ChatBubbleListAdapter(val myUser: User, val otherUser: User): RecyclerView
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
-            is ChatBubbleViewHolder ->  holder.bind(elementList[position], otherUser)
-            is ChatBubbleFromUserViewHolder -> holder.bind(elementList[position], myUser)
+            is ChatBubbleViewHolder ->  holder.bind(elementList[position],otherUser)
+            is ChatBubbleFromUserViewHolder -> holder.bind(elementList[position],myUser)
         }
     }
 
