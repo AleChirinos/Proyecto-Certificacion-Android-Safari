@@ -21,7 +21,7 @@
     <string name="button_register">Register</string>
     <string name="loginGoogle">Login with Google</string>
     <string name="loginFacebook">Login with Facebook</string>
-    <string name="radioButton_rememberme">Remember me</string>
+    <string name="radioButton_rememberme">Keep me logged in</string>
     <string name="button_login">Login</string>
     <string name="text_hint_password">Password</string>
     <string name="text_hint_username_email">Username or email</string>

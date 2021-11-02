@@ -5,7 +5,7 @@
     <string name="text_hint_username_email">Nombre de usuario o email</string>
     <string name="text_hint_password">Contraseña</string>
     <string name="button_login">Ingresar</string>
-    <string name="radioButton_rememberme">Recuerdame</string>
+    <string name="radioButton_rememberme">Mantener mi sesión iniciada</string>
     <string name="loginFacebook">Ingresa con Facebook</string>
     <string name="loginGoogle">Ingresa con Google</string>
     <string name="button_register">Registrate</string>
