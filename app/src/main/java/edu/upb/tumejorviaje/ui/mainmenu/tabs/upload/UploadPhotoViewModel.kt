@@ -19,7 +19,11 @@ import kotlinx.coroutines.Dispatchers
 
 class UploadPhotoViewModel: ViewModel() {
     val photoPassed = MutableLiveData(false)
+    val valid=MutableLiveData(false)
 
+    fun goOn(sequence: String,sequence2: String,sequence3: String): Boolean {
+        return sequence.isBlank() || sequence2.isBlank() || sequence3.isBlank()
+    }
 
 
 

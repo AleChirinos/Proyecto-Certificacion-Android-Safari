@@ -10,10 +10,12 @@ import android.graphics.BitmapFactory
 import android.media.Image
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -53,25 +55,44 @@ class UploadFragment: StepsBaseFragment(){
             pickImage()
         }
 
-        binding.uploadPostButton.setOnClickListener {
-            val regTitle =binding.editTextTitle.text.toString()
-            val regShortD=binding.editTextDescInit.text.toString()
-            val regBodyPost=binding.editTextPostBody.text.toString()
-
-            if(regTitle.isEmpty()){
-                binding.editTextTitle.error = getString(R.string.emptyTitle)
-            }
-            else if(regShortD.isEmpty()){
-                binding.editTextDescInit.error = getString(R.string.emptyInitDescription)
-            }
-            else if(regBodyPost.isEmpty()){
-                binding.editTextPostBody.error = getString(R.string.emptyPostBody)
-            } else if (!uploadPhotoViewModel.photoPassed.value!!){
-                Toast.makeText(context,getString(R.string.emptyPostPhoto),Toast.LENGTH_SHORT).show()
+        binding.editTextTitle.editText?.doOnTextChanged { text, start, before, count ->
+            if(text!!.isEmpty()){
+                binding.editTextTitle.error="Required"
             } else{
                 binding.editTextTitle.error=null
+            }
+        }
+        binding.editTextDescInit.editText?.doOnTextChanged { text, start, before, count ->
+            if(text!!.isEmpty()){
+                binding.editTextDescInit.error="Required"
+            } else{
                 binding.editTextDescInit.error=null
-                binding.editTextPostBody.error = null
+            }
+        }
+        binding.editTextPostBody.editText?.doOnTextChanged { text, start, before, count ->
+            if(text!!.isEmpty()){
+                binding.editTextPostBody.error="Required"
+            } else{
+                binding.editTextPostBody.error=null
+            }
+        }
+
+
+        binding.uploadPostButton.setOnClickListener {
+            if (!uploadPhotoViewModel.photoPassed.value!!) {
+                Toast.makeText(context, getString(R.string.emptyPostPhoto), Toast.LENGTH_SHORT)
+                    .show()
+            } else if (uploadPhotoViewModel.goOn(
+                    binding.editTextPostBody.editText?.text.toString().trim()!!,
+                    binding.editTextTitle.editText?.text.toString().trim()!!,
+                    binding.editTextDescInit.editText?.text.toString().trim()!!
+                )
+            ) {
+                Toast.makeText(context, "Faltan datos", Toast.LENGTH_SHORT)
+                    .show()
+            } else{
+                Toast.makeText(context, "Ready", Toast.LENGTH_SHORT)
+                    .show()
             }
 
         }
@@ -88,13 +109,10 @@ class UploadFragment: StepsBaseFragment(){
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode==100 && resultCode==RESULT_OK){
-
             val imageData=data?.data
             val imageStream= activity?.applicationContext?.contentResolver?.openInputStream(imageData!!)
             val selectedImage=BitmapFactory.decodeStream(imageStream)
             binding.photoClickView.setImageBitmap(selectedImage)
-
-
             binding.photoClickView.adjustViewBounds
             uploadPhotoViewModel.photoPassed.postValue(true)
             binding.photoClickView.drawingCache
