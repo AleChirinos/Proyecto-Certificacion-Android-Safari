@@ -21,7 +21,7 @@
     <string name="button_register">Register</string>
     <string name="loginGoogle">Login with Google</string>
     <string name="loginFacebook">Login with Facebook</string>
-    <string name="radioButton_rememberme">Remember me</string>
+    <string name="radioButton_rememberme">Keep me logged in</string>
     <string name="button_login">Login</string>
     <string name="text_hint_password">Password</string>
     <string name="text_hint_username_email">Username or email</string>
@@ -49,5 +49,7 @@
     <string name="socialNetwork">Using more social networks?</string>
     <string name="facebook_app_id">1259889437860147</string>
     <string name="fb_login_protocol_scheme">fb1259889437860147</string>
+    <string name="required">Required field</string>
+    <string name="requirement_photo">Jpg/png. (400*400 to 1500 * 1500)</string>
 
 </resources>
