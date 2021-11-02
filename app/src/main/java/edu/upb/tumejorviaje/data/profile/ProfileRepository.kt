@@ -3,9 +3,7 @@ package edu.upb.tumejorviaje.data.profile
 import android.content.Context
 import android.util.Log
 import edu.upb.tumejorviaje.data.profile.network.ProfileNetworkController
-import edu.upb.tumejorviaje.data.profile.network.ProfileNetworkControllerImp
 import edu.upb.tumejorviaje.data.profile.persistency.ProfilePersistencyController
-import edu.upb.tumejorviaje.data.profile.persistency.ProfilePersistencyControllerImp
 import edu.upb.tumejorviaje.isNetworkConnected
 import edu.upb.tumejorviaje.model.Post
 import edu.upb.tumejorviaje.model.User
