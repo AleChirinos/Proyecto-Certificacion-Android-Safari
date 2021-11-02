@@ -13,7 +13,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 class ProfileViewModel : ViewModel() {
-    val scope = CoroutineScope(Dispatchers.IO)
     val profileRepository = ProfileRepository(ProfileNetworkControllerImp(), ProfilePersistencyControllerImp())
 
     val myPosts = MutableLiveData<List<Post>>()
@@ -23,7 +22,7 @@ class ProfileViewModel : ViewModel() {
         //profileRepository.getAllPostProfile(context).launchIn(CoroutineScope(Dispatchers.IO))
         profileRepository.getAllPostProfile(context).onEach {
             myPosts.postValue(it)
-        }.launchIn(scope)
+        }.launchIn(CoroutineScope(Dispatchers.IO))
 
     }
 
