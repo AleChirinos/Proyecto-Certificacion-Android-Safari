@@ -46,8 +46,8 @@ class LoginOrRegisterActivity : AppCompatActivity() {
         }
        loginButton= binding.buttonLogin
         loginButton.setOnClickListener {
-            val username = binding.editTextTextUserName.editText?.text.toString()
-            val password = binding.editTextTextPassword.editText?.text.toString()
+            val username = binding.editTextTextUserName.editText?.text.toString().trim()
+            val password = binding.editTextTextPassword.editText?.text.toString().trim()
 
             try {
                 loginOrRegisterViewModel.login(username, password).invokeOnCompletion {
@@ -56,7 +56,7 @@ class LoginOrRegisterActivity : AppCompatActivity() {
                     finish()
                 }
             } catch (e:Exception){
-                Toast.makeText(this@LoginOrRegisterActivity, "Login Failed", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@LoginOrRegisterActivity, e.toString(), Toast.LENGTH_LONG).show()
             }
         }
         callbackManager= CallbackManager.Factory.create()

@@ -20,8 +20,8 @@ class RegisterActivity : AppCompatActivity() {
         binding.RegisterProfileImage.setImageDrawable(resources.getDrawable(R.drawable.ic_profile))
 
         binding.RegisterButton1.setOnClickListener{
-            val username = binding.RegisterUserName.editText?.text.toString()
-            val password = binding.RegisterPassword.editText?.text.toString()
+            val username = binding.RegisterUserName.editText?.text.toString().trim()
+            val password = binding.RegisterPassword.editText?.text.toString().trim()
 
             try {
                 registerViewModel.register(username, password).invokeOnCompletion {

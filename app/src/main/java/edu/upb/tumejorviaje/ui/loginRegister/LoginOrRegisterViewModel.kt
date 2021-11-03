@@ -6,10 +6,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
-import org.koin.java.KoinJavaComponent
+import org.koin.java.KoinJavaComponent.inject
 
 class LoginOrRegisterViewModel: ViewModel() {
-    private val userRepository by KoinJavaComponent.inject(UserRepository::class.java)
+    private val userRepository by inject(UserRepository::class.java)
 
     fun login(username: String, password: String): Job {
         return userRepository.login(username, password).launchIn(CoroutineScope(Dispatchers.Main))

@@ -10,5 +10,5 @@ interface UserAPI {
     suspend fun login(@Body loginRequest: LoginRequest)
 
     @POST("/register")
-    suspend fun register(@Body loginRequest: RegisterRequest)
+    suspend fun register(@Body registerRequest: RegisterRequest)
 }

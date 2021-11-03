@@ -7,6 +7,9 @@ import edu.upb.tumejorviaje.data.feed.network.FeedNetworkController
 import edu.upb.tumejorviaje.data.feed.network.FeedNetworkControllerImp
 import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistenceController
 import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistenceControllerImp
+import edu.upb.tumejorviaje.data.user.UserRepository
+import edu.upb.tumejorviaje.data.user.network.UserNetworkController
+import edu.upb.tumejorviaje.data.user.network.UserNetworkControllerImp
 import edu.upb.tumejorviaje.databases.AppDatabase
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -22,6 +25,8 @@ class App:Application() {
         single<FeedPersistenceController> { FeedPersistenceControllerImp() }
         single<FeedNetworkController> { FeedNetworkControllerImp() }
         single { FeedRepository(get(),get()) }
+        single<UserNetworkController>{UserNetworkControllerImp()}
+        single { UserRepository(get()) }
     }
 
     override fun onCreate() {
