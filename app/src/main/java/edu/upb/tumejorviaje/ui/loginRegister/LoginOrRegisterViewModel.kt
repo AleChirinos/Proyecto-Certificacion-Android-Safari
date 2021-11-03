@@ -11,8 +11,8 @@ import org.koin.java.KoinJavaComponent.inject
 class LoginOrRegisterViewModel: ViewModel() {
     private val userRepository by inject(UserRepository::class.java)
 
-    fun login(username: String, password: String): Job {
-        return userRepository.login(username, password).launchIn(CoroutineScope(Dispatchers.Main))
+    fun login(usernamEmail: String, password: String): Job {
+        return userRepository.login(usernamEmail, password).launchIn(CoroutineScope(Dispatchers.Main))
     }
 
 }

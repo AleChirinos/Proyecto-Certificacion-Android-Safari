@@ -52,5 +52,11 @@
     <string name="required">Required field</string>
     <string name="requirement_photo">Jpg/png. (400*400 to 1500 * 1500)</string>
     <string name="missingFields">Some fields are missing</string>
+    <string name="doesNotEqualPW">Passwords are not the same</string>
+    <string name="invalidString">Invalid email address</string>
+    <string name="emptyName">Username required</string>
+    <string name="emptyPassword">Password required</string>
+    <string name="emptyEmail">Email required</string>
+    <string name="emptyDescription">User description required</string>
 
 </resources>

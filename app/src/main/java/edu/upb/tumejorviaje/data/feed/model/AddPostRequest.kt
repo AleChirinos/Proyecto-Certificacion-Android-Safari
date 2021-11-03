@@ -1,4 +1,4 @@
-package edu.upb.tumejorviaje.model
+package edu.upb.tumejorviaje.data.feed.model
 
 data class AddPostRequest(val publisher: String,
                           val title: String,

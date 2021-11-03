@@ -1,264 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="?attr/colorPrimary"
-    tools:context=".ui.loginRegister.LoginOrRegisterActivity">
-
-    <ImageView
-        android:id="@+id/imageWallper2"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="registerViewModel"
+            type="edu.upb.tumejorviaje.ui.loginRegister.RegisterViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/wallpaper_travel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:background="?attr/colorPrimary"
+        tools:context=".ui.loginRegister.LoginOrRegisterActivity">
 
-    <ImageView
-        android:id="@+id/imageShape3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageWallper2"
-        app:layout_constraintEnd_toEndOf="@+id/imageWallper2"
-        app:layout_constraintStart_toStartOf="@id/imageWallper2"
-        app:layout_constraintTop_toTopOf="@+id/imageWallper2"
-        app:srcCompat="@drawable/wallper_text_and_icon" />
-
-    <ImageView
-        android:id="@+id/imageShape4"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintBottom_toTopOf="@id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageShape3"
-        app:layout_constraintStart_toStartOf="@+id/imageShape3"
-        app:layout_constraintTop_toTopOf="@+id/imageShape3"
-        app:srcCompat="@drawable/wallper_text" />
-
-    <TextView
-        android:id="@+id/textRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register_title"
-        android:textColor="?attr/colorOnPrimary"
-        android:textSize="20sp"
-        android:fontFamily="@font/poppins_medium"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageShape4"
-        app:layout_constraintEnd_toEndOf="@+id/imageShape4"
-        app:layout_constraintStart_toStartOf="@+id/imageShape4"
-        app:layout_constraintTop_toTopOf="@+id/imageShape4" />
-
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@id/RegisterButton1"
-        app:layout_constraintEnd_toEndOf="@+id/imageShape3"
-        app:layout_constraintStart_toStartOf="@+id/imageShape3"
-        app:layout_constraintTop_toBottomOf="@+id/imageShape4"
-        app:srcCompat="@drawable/wallper_login" />
-
-    <Button
-        android:id="@+id/RegisterButton1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="32dp"
-        android:text="@string/register_sign_in"
-        android:fontFamily="@font/poppins_medium"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageShape3"
-        app:layout_constraintStart_toStartOf="@+id/imageShape3"
-        app:layout_constraintTop_toBottomOf="@id/imageView2"
-        app:layout_constraintBottom_toBottomOf="@id/imageView2"/>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/RegisterProfileImage"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="10dp"
-        app:tint="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:srcCompat="@drawable/ic_user_template"
-        app:civ_border_color="?attr/colorOnPrimary"
-        app:civ_border_width="3dp"
-        />
-
-    <TextView
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:text="@string/requirement_photo"
-        android:textAlignment="center"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="@id/RegisterProfileImage"
-        app:layout_constraintEnd_toEndOf="@id/RegisterProfileImage"
-        app:layout_constraintStart_toStartOf="@id/RegisterProfileImage"
-        android:textColor="@color/white"
-        />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/RegisterUserName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        app:startIconDrawable="@drawable/ic_profile"
-        app:startIconTint="?attr/colorOnPrimary"
-        app:helperText="@string/required"
-        app:helperTextTextColor="?attr/colorPrimary"
-        app:boxStrokeColor="?attr/colorOnPrimary"
-        android:textColorHint="?attr/colorOnSecondary"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterProfileImage">
-
-        <com.google.android.material.textfield.TextInputEditText
+        <ImageView
+            android:id="@+id/imageWallper2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?attr/colorPrimaryVariant"
-            android:ems="12"
-            android:hint="@string/register_username"
-            android:inputType="textPersonName"
-            android:textSize="12dp"
-            android:textStyle="italic" />
+            android:src="@drawable/wallpaper_travel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:id="@+id/imageShape3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/imageWallper2"
+            app:layout_constraintEnd_toEndOf="@+id/imageWallper2"
+            app:layout_constraintStart_toStartOf="@id/imageWallper2"
+            app:layout_constraintTop_toTopOf="@+id/imageWallper2"
+            app:srcCompat="@drawable/wallper_text_and_icon" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/RegisterPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        app:helperText="@string/required"
-        app:helperTextTextColor="?attr/colorPrimary"
-        app:boxStrokeColor="?attr/colorOnPrimary"
-        android:textColorHint="?attr/colorOnSecondary"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterUserName"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="?attr/colorOnPrimary">
+        <ImageView
+            android:id="@+id/imageShape4"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageShape3"
+            app:layout_constraintStart_toStartOf="@+id/imageShape3"
+            app:layout_constraintTop_toTopOf="@+id/imageShape3"
+            app:srcCompat="@drawable/wallper_text" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="?attr/colorPrimaryVariant"
-            android:ems="12"
-            android:hint="@string/register_password"
-            android:inputType="textPassword"
-            android:textSize="12dp"
-            android:textStyle="italic" />
+        <TextView
+            android:id="@+id/textRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/register_title"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageShape4"
+            app:layout_constraintEnd_toEndOf="@+id/imageShape4"
+            app:layout_constraintStart_toStartOf="@+id/imageShape4"
+            app:layout_constraintTop_toTopOf="@+id/imageShape4" />
 
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/RegisterConfirmPasword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:textColorHint="?attr/colorOnSecondary"
-        app:boxStrokeColor="?attr/colorOnPrimary"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="?attr/colorOnPrimary"
-        app:helperText="@string/required"
-        app:helperTextTextColor="?attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterPassword">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="12"
-            android:background="?attr/colorPrimaryVariant"
-            android:textStyle="italic"
-            android:textSize="12dp"
-            android:inputType="textPassword"
-            android:hint="@string/register_confirm_password"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toTopOf="@id/RegisterButton1"
+            app:layout_constraintEnd_toEndOf="@+id/imageShape3"
+            app:layout_constraintStart_toStartOf="@+id/imageShape3"
+            app:layout_constraintTop_toBottomOf="@+id/imageShape4"
+            app:srcCompat="@drawable/wallper_login" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/RegisterEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:textColorHint="?attr/colorOnSecondary"
-        app:boxStrokeColor="?attr/colorOnPrimary"
-        app:helperText="@string/required"
-        app:helperTextTextColor="?attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterConfirmPasword" >
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="12"
-            android:textStyle="italic"
-            android:textSize="12dp"
-            android:background="?attr/colorPrimaryVariant"
-            android:inputType="textEmailAddress"
-            android:hint="@string/register_email"
-            />
+        <Button
+            android:id="@+id/RegisterButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/register_sign_in"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageShape3"
+            app:layout_constraintStart_toStartOf="@+id/imageShape3"
+            app:layout_constraintTop_toBottomOf="@id/imageView2" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/RegisterProfileImage"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="10dp"
+            app:civ_border_color="?attr/colorOnPrimary"
+            app:civ_border_width="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:srcCompat="@drawable/ic_user_template"
+            app:tint="?attr/colorOnPrimary" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/RegisterDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="29dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="10dp"
-        android:textColorHint="?attr/colorOnSecondary"
-        app:helperText="@string/required"
-        app:helperTextTextColor="?attr/colorPrimary"
-        app:counterEnabled="true"
-        app:counterMaxLength="120"
-        app:counterTextColor="?attr/colorPrimary"
-        app:boxStrokeColor="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterEmail"
-        app:layout_constraintBottom_toBottomOf="@id/imageView2">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="12"
-            android:background="?attr/colorPrimaryVariant"
-            android:textStyle="italic"
-            android:textSize="12dp"
-            android:maxLength="120"
-            android:minLines="2"
-            android:hint="@string/register_description"
-            android:inputType="textMultiLine" />
+        <TextView
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/requirement_photo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/RegisterProfileImage"
+            app:layout_constraintEnd_toEndOf="@id/RegisterProfileImage"
+            app:layout_constraintStart_toStartOf="@id/RegisterProfileImage"
+            android:visibility="@{registerViewModel.photoPassed ? View.INVISIBLE : View.VISIBLE}"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/RegisterUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:textColorHint="?attr/colorOnSecondary"
+            app:boxStrokeColor="?attr/colorOnPrimary"
+            app:helperText="@string/required"
+            app:helperTextTextColor="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/RegisterProfileImage"
+            app:startIconDrawable="@drawable/ic_profile"
+            app:startIconTint="?attr/colorOnPrimary">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimaryVariant"
+                android:ems="12"
+                android:hint="@string/register_username"
+                android:inputType="textPersonName"
+                android:textSize="12dp"
+                android:textStyle="italic" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/RegisterPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:textColorHint="?attr/colorOnSecondary"
+            app:boxStrokeColor="?attr/colorOnPrimary"
+            app:helperText="@string/required"
+            app:helperTextTextColor="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/RegisterUserName"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="?attr/colorOnPrimary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimaryVariant"
+                android:ems="12"
+                android:hint="@string/register_password"
+                android:inputType="textPassword"
+                android:textSize="12dp"
+                android:textStyle="italic" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/RegisterConfirmPasword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:textColorHint="?attr/colorOnSecondary"
+            app:boxStrokeColor="?attr/colorOnPrimary"
+            app:helperText="@string/required"
+            app:helperTextTextColor="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/RegisterPassword"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="?attr/colorOnPrimary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimaryVariant"
+                android:ems="12"
+                android:hint="@string/register_confirm_password"
+                android:inputType="textPassword"
+                android:textSize="12dp"
+                android:textStyle="italic" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/RegisterEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:textColorHint="?attr/colorOnSecondary"
+            app:boxStrokeColor="?attr/colorOnPrimary"
+            app:helperText="@string/required"
+            app:helperTextTextColor="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/RegisterConfirmPasword">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimaryVariant"
+                android:ems="12"
+                android:hint="@string/register_email"
+                android:inputType="textEmailAddress"
+                android:textSize="12dp"
+                android:textStyle="italic" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/RegisterDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="29dp"
+            android:textColorHint="?attr/colorOnSecondary"
+            app:boxStrokeColor="?attr/colorOnPrimary"
+            app:counterEnabled="true"
+            app:counterMaxLength="120"
+            app:counterTextColor="?attr/colorPrimary"
+            app:helperText="@string/required"
+            app:helperTextTextColor="?attr/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/RegisterEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimaryVariant"
+                android:ems="12"
+                android:hint="@string/register_description"
+                android:inputType="textMultiLine"
+                android:maxLength="120"
+                android:minLines="2"
+                android:textSize="12dp"
+                android:textStyle="italic" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

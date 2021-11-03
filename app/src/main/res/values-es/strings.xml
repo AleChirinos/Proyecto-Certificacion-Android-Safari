@@ -52,5 +52,11 @@
     <string name="required">Campo obligatorio</string>
     <string name="requirement_photo">Jpg/png. (400*400 a 1500 * 1500)</string>
     <string name="missingFields">Faltan datos</string>
+    <string name="doesNotEqualPW">Las contraseñas no coinciden</string>
+    <string name="invalidString">La dirección de email no es válida</string>
+    <string name="emptyName">Se requiere un nombre de usuario</string>
+    <string name="emptyPassword">Se requiere una contraseña</string>
+    <string name="emptyEmail">Se requiere un correo electronico</string>
+    <string name="emptyDescription">Se requiere una descripción del usuario</string>
 
 </resources>

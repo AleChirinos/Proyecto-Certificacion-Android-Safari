@@ -1,6 +1,6 @@
 package edu.upb.tumejorviaje.data.feed.network
 
-import edu.upb.tumejorviaje.model.AddPostRequest
+import edu.upb.tumejorviaje.data.feed.model.AddPostRequest
 import edu.upb.tumejorviaje.model.Post
 import retrofit2.http.Body
 import retrofit2.http.GET

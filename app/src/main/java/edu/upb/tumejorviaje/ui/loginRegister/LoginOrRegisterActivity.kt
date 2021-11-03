@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -46,11 +45,11 @@ class LoginOrRegisterActivity : AppCompatActivity() {
         }
        loginButton= binding.buttonLogin
         loginButton.setOnClickListener {
-            val username = binding.editTextTextUserName.editText?.text.toString().trim()
+            val usernamEmail = binding.editTextTextUserName.editText?.text.toString().trim()
             val password = binding.editTextTextPassword.editText?.text.toString().trim()
 
             try {
-                loginOrRegisterViewModel.login(username, password).invokeOnCompletion {
+                loginOrRegisterViewModel.login(usernamEmail, password).invokeOnCompletion {
                     val intent: Intent = Intent(this, MenuActivity::class.java)
                     startActivity(intent)
                     finish()

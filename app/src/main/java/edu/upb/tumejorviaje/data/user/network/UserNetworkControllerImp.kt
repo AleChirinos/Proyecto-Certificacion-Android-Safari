@@ -12,11 +12,19 @@ class UserNetworkControllerImp : UserNetworkController{
         .build()
         .create(UserAPI::class.java)
 
-    override suspend fun login(username: String, password: String) {
-        return client.login(LoginRequest(username, password))
+    override suspend fun login(usernamEmail: String, password: String) {
+        return client.login(LoginRequest(usernamEmail, password))
     }
 
-    override suspend fun register(username: String, password: String) {
-        return client.register(RegisterRequest(username, password))
+    override suspend fun register(
+        username: String,
+        password: String,
+        email: String,
+        description: String,
+        photo: String
+    ) {
+        return client.register(RegisterRequest(username, password,email,description,photo))
     }
+
+
 }
