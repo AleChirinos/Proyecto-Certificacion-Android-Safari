@@ -40,5 +40,7 @@ class ProfileFragment: Fragment(){
         profileViewModel.myPosts.observe(viewLifecycleOwner) {
             feedListAdapter.addAll(it)
         }
+
+        profileViewModel.getAllPostsProfile(requireContext())
     }
 }
