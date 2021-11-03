@@ -4,7 +4,7 @@ import edu.upb.tumejorviaje.App
 import edu.upb.tumejorviaje.model.Post
 import kotlinx.coroutines.flow.Flow
 
-class FeedPersistencyControllerImp: FeedPersistencyController {
+class FeedPersistenceControllerImp: FeedPersistenceController {
     private val db= App.db
 
     override fun getAllPosts(): Flow<List<Post>> {

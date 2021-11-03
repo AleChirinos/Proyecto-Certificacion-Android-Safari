@@ -41,6 +41,14 @@ class ProfileFragment: Fragment(){
             feedListAdapter.addAll(it)
         }
 
-        profileViewModel.getAllPostsProfile(requireContext())
+        binding.swiperefresh.setOnRefreshListener {
+            profileViewModel.updatePostsProfile().invokeOnCompletion {
+                binding.swiperefresh.isRefreshing = false
+            }
+        }
+
+        profileViewModel.updatePostsProfile()
+
+        //profileViewModel.getAllPostsProfile(requireContext())
     }
 }

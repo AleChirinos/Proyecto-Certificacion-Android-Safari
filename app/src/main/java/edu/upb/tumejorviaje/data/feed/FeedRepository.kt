@@ -2,7 +2,7 @@ package edu.upb.tumejorviaje.data.feed
 
 import android.util.Log
 import edu.upb.tumejorviaje.data.feed.network.FeedNetworkController
-import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistencyController
+import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistenceController
 import edu.upb.tumejorviaje.model.Post
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -10,7 +10,7 @@ import java.lang.Exception
 
 class FeedRepository     (
     val network: FeedNetworkController,
-    val persistence: FeedPersistencyController
+    val persistence: FeedPersistenceController
 ) {
     fun getAllPostList(): Flow<List<Post>> {
         return persistence.getAllPosts()
@@ -29,6 +29,12 @@ class FeedRepository     (
             } catch (e: Exception) {
                 Log.e("ERROR", e.message!!)
             }
+        }
+    }
+
+    fun addPost(post:Post): Flow<Any>{
+        return flow{
+            network.addAPost(post)
         }
     }
 

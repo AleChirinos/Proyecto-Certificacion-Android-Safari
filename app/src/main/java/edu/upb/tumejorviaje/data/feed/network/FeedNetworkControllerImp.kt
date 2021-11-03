@@ -10,12 +10,16 @@ class FeedNetworkControllerImp: FeedNetworkController {
     //[ipWifiIPV4]:1880
 
     val client= Retrofit.Builder()
-        .baseUrl("http://192.168.31.110:1880")
+        .baseUrl("http://192.168.0.9:1880")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(FeedAPI::class.java)
 
     override suspend fun getAllPosts(): List<Post> {
         return client.getAllPosts()
+    }
+
+    override suspend fun addAPost(post: Post) {
+        return client.addNewPost(AddPostRequest(post.publisher, post.title, post.shortDescription, post.postUrl, post.profileUrl, post.longDescription, post.likes, post.comments, post.uploaded))
     }
 }

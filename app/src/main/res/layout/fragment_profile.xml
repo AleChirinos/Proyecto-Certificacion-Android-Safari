@@ -102,7 +102,7 @@
             app:layout_constraintStart_toStartOf="@id/Profilebackground"
             app:layout_constraintEnd_toEndOf="@id/Profilebackground"
             app:layout_constraintTop_toTopOf="@id/Profilebackground"
-            app:layout_constraintBottom_toTopOf="@id/rvProfile"
+            app:layout_constraintBottom_toTopOf="@id/swiperefresh"
             app:srcCompat="@drawable/wallper_text" />
 
         <TextView
@@ -120,18 +120,26 @@
             app:layout_constraintStart_toStartOf="@+id/imageView15"
             app:layout_constraintTop_toTopOf="@+id/imageView15" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvProfile"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefresh"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="@id/Profilebackground"
             app:layout_constraintEnd_toEndOf="@id/Profilebackground"
             app:layout_constraintStart_toStartOf="@id/Profilebackground"
             app:layout_constraintTop_toBottomOf="@+id/imageView15"
-            tools:listitem="@layout/list_item_feed"/>
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                tools:listitem="@layout/list_item_feed"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -7,12 +7,12 @@ import retrofit2.create
 
 class ProfileNetworkControllerImp : ProfileNetworkController{
     val client = Retrofit.Builder()
-        .baseUrl("http://192.168.31.110:1880")
+        .baseUrl("http://192.168.0.9:1880")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(ProfileAPI::class.java)
 
-    override suspend fun getAllPostsProfile() : List<Post>{
-         return client.getAllPostsProfile()
+    override suspend fun getAllPostsProfile(username:String) : List<Post>{
+         return client.getAllPostsProfile(username)
     }
 }
