@@ -18,7 +18,6 @@
         <item name="android:fontFamily">@font/allerta</item>
         <item name="colorOnSurface">@color/blue_material900</item>
 
-
     </style>
 
     <style name="MenuTheme" parent="Theme.TuMejorViaje">

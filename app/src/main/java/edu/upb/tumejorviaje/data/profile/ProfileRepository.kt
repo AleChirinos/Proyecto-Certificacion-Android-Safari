@@ -17,7 +17,7 @@ class ProfileRepository (val network : ProfileNetworkController, val persistency
             emit(persistency.getNewFeedList())
             try {
                 if (isNetworkConnected(context)){
-                    val posts = network.getAllPostsProfile()
+                    val posts = network.getAllPostsProfile(persistency.getUser()!!.username)
                     persistency.savePosts(posts)
                     emit(posts)
                 }

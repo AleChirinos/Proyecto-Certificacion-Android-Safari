@@ -8,12 +8,18 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import edu.upb.tumejorviaje.R
 
-import java.util.*
+
+import android.graphics.BitmapFactory
+import android.util.Base64
+import java.lang.Byte.decode
+
 
 @BindingAdapter ("srcUrl")
 fun setSrcUrl(imageView: ImageView, url:String){
     if(url==null) return
-    Glide.with(imageView).load(url).into(imageView)
+    val decodedByteArray: ByteArray = Base64.decode(url, Base64.NO_WRAP)
+    val decodedBitmap = BitmapFactory.decodeByteArray(decodedByteArray, 0, decodedByteArray.size)
+    imageView.setImageBitmap(decodedBitmap)
 }
 
 @BindingAdapter("textInTimeFormat")

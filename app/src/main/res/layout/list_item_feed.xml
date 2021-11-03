@@ -47,11 +47,10 @@
             android:id="@+id/WallperUser"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="7dp"
             app:layout_constraintEnd_toEndOf="@+id/PostImageFeed"
             app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
             app:layout_constraintTop_toBottomOf="@+id/PostImageFeed"
-            app:layout_constraintBottom_toTopOf="@id/WallperFeed"
+            app:layout_constraintBottom_toTopOf="@id/TitleFeed"
             android:background="@drawable/wallper_feed"
             />
 
@@ -61,12 +60,10 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/PostImageFeed"
-            app:layout_constraintHorizontal_bias="0.0"
             android:layout_marginBottom="15dp"
             android:layout_marginEnd="1dp"
             app:layout_constraintStart_toEndOf="@+id/ProfilePictureFeed"
             app:layout_constraintTop_toBottomOf="@+id/WallperUser"
-            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="?attr/colorSecondaryVariant"/>
 
         <TextView

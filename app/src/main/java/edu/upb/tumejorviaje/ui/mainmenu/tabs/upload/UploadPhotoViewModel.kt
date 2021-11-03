@@ -1,29 +1,25 @@
 package edu.upb.tumejorviaje.ui.mainmenu.tabs.upload
 
-import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import coil.ImageLoader
-import coil.request.ImageRequest
-import coil.request.SuccessResult
 import edu.upb.tumejorviaje.data.feed.FeedRepository
-import edu.upb.tumejorviaje.data.feed.network.FeedNetworkControllerImp
-import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistencyControllerImp
 import edu.upb.tumejorviaje.model.Post
-import edu.upb.tumejorviaje.ui.mainmenu.tabs.feed.FeedViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.launchIn
+import org.koin.java.KoinJavaComponent.inject
 
 class UploadPhotoViewModel: ViewModel() {
+
+    val feedRepository by inject(FeedRepository::class.java)
+    fun savePost(post: Post): Job {
+        return feedRepository.addPost(post).launchIn(CoroutineScope(Dispatchers.Main))
+    }
+
     val photoPassed = MutableLiveData(false)
     val valid=MutableLiveData(false)
 
-    fun goOn(sequence: String,sequence2: String,sequence3: String): Boolean {
-        return sequence.isBlank() || sequence2.isBlank() || sequence3.isBlank()
-    }
 
 
 

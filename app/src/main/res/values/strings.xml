@@ -50,5 +50,6 @@
     <string name="fb_login_protocol_scheme">fb1259889437860147</string>
     <string name="required">Campo obligatorio</string>
     <string name="requirement_photo">Jpg/png. (400*400 a 1500 * 1500)</string>
+    <string name="missingFields">Faltan datos</string>
 
 </resources>
