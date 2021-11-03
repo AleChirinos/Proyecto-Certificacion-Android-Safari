@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.activity.viewModels
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
@@ -30,6 +31,7 @@ class LoginOrRegisterActivity : AppCompatActivity() {
     lateinit var gologinButton: SignInButton
     private lateinit var callbackManager: CallbackManager
     private lateinit var binding : ActivityLoginOrRegisterBinding
+    private val loginOrRegisterViewModel: LoginOrRegisterViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +46,18 @@ class LoginOrRegisterActivity : AppCompatActivity() {
         }
        loginButton= binding.buttonLogin
         loginButton.setOnClickListener {
-            val intent : Intent=Intent(this, MenuActivity::class.java)
-            startActivity(intent)
-            finish()
+            val username = binding.editTextTextUserName.editText?.text.toString()
+            val password = binding.editTextTextPassword.editText?.text.toString()
+
+            try {
+                loginOrRegisterViewModel.login(username, password).invokeOnCompletion {
+                    val intent: Intent = Intent(this, MenuActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            } catch (e:Exception){
+                Toast.makeText(this@LoginOrRegisterActivity, "Login Failed", Toast.LENGTH_LONG).show()
+            }
         }
         callbackManager= CallbackManager.Factory.create()
 
@@ -79,6 +90,7 @@ class LoginOrRegisterActivity : AppCompatActivity() {
             val signinIntent=mGoogleSignInClient.signInIntent
             startActivityForResult(signinIntent,123)
         }
+
 
     }
 

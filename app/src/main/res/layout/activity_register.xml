@@ -131,15 +131,16 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/RegisterProfileImage">
+
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:ems="12"
             android:background="?attr/colorPrimaryVariant"
-            android:textStyle="italic"
-            android:textSize="12dp"
+            android:ems="12"
+            android:hint="@string/register_username"
             android:inputType="textPersonName"
-            android:hint="@string/register_username" />
+            android:textSize="12dp"
+            android:textStyle="italic" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -163,13 +164,12 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:ems="12"
             android:background="?attr/colorPrimaryVariant"
-            android:textStyle="italic"
-            android:textSize="12dp"
-            android:inputType="textPassword"
+            android:ems="12"
             android:hint="@string/register_password"
-             />
+            android:inputType="textPassword"
+            android:textSize="12dp"
+            android:textStyle="italic" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

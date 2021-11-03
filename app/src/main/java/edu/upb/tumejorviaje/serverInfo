@@ -60,7 +60,7 @@ msg.payload=[
     "likes": 100,
     "comments": 52,
     "uploaded": "29/11/2020"
-  }
+  },
   {
     "id":6,
     "publisher": "luisgarXd",
@@ -190,3 +190,40 @@ msg.payload =[
 ]
 
 return msg;
+
+//
+POST
+/login
+
+var username = msg.payload.username
+var password = msg.payload.password
+var users = global.get("users") || []
+
+if(users.some(user => user.username === username && user.password === password)) {
+    msg.payload = ''
+    msg.statusCode = 200
+} else {
+    msg.payload = 'Username or password incorrect'
+    msg.statusCode = 401
+}
+return msg;
+
+// response sin status code
+
+POST
+/register
+
+var users = global.get("users") || []
+
+if(users.some(user => user.username === msg.payload.username)){
+    msg.statusCode = 400
+    msg.payload = "El usuario ya existe"
+} else {
+    global.set("users", [...(users),msg.payload])
+    msg.statusCode = 200
+}
+
+
+return msg;
+
+// response sin status code
