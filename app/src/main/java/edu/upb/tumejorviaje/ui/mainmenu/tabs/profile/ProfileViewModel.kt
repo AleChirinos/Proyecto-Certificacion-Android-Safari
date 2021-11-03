@@ -10,14 +10,16 @@ import edu.upb.tumejorviaje.data.profile.persistency.ProfilePersistencyControlle
 import edu.upb.tumejorviaje.model.Post
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 class ProfileViewModel : ViewModel() {
-    val profileRepository = ProfileRepository(ProfileNetworkControllerImp(), ProfilePersistencyControllerImp())
+    private val profileRepository = ProfileRepository(ProfileNetworkControllerImp(), ProfilePersistencyControllerImp())
 
-    val myPosts = profileRepository.getAllPostProfile().asLiveData()
+    val myPosts = profileRepository.getAllPostProfile().asLiveData(Dispatchers.IO)
     val user=MutableLiveData(profileRepository.getUserProfile())
+
 
     /*fun getAllPostsProfile(context: Context){
         //profileRepository.getAllPostProfile(context).launchIn(CoroutineScope(Dispatchers.IO))
@@ -27,4 +29,7 @@ class ProfileViewModel : ViewModel() {
 
     }*/
 
+    fun updatePostsProfile() :Job{
+        return profileRepository.updatePostsP().launchIn(CoroutineScope(Dispatchers.IO))
+    }
 }

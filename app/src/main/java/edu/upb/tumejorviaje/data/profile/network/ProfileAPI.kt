@@ -9,7 +9,4 @@ interface ProfileAPI {
     @GET("/postsprofile")
     suspend fun getAllPostsProfile (@Query("publisher") publisher:String) : List<Post>
 
-
-    @POST("/post/173867482")
-    suspend fun getUserProfile () : List<Post>
 }
