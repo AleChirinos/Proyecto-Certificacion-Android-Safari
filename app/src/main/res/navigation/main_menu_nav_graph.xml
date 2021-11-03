@@ -37,7 +37,11 @@
         android:id="@+id/uploadFragment"
         android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.upload.UploadFragment"
         android:label="UploadFragment"
-        tools:layout="@layout/fragment_upload"/>
+        tools:layout="@layout/fragment_upload">
+        <action
+            android:id="@+id/actionGoToFeedAfterUpload"
+            app:destination="@id/feedFragment" />
+    </fragment>
     <fragment
         android:id="@+id/postDetailsFragment"
         android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.postDetails.PostDetailsFragment"

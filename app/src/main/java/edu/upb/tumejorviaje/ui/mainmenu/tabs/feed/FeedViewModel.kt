@@ -4,14 +4,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import edu.upb.tumejorviaje.data.feed.FeedRepository
 import edu.upb.tumejorviaje.data.feed.network.FeedNetworkControllerImp
-import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistencyControllerImp
+import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistenceControllerImp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
 
 class FeedViewModel : ViewModel() {
-    val feedRepository = FeedRepository(FeedNetworkControllerImp(), FeedPersistencyControllerImp())
+    val feedRepository = FeedRepository(FeedNetworkControllerImp(), FeedPersistenceControllerImp())
     val post = feedRepository.getAllPostList().asLiveData(Dispatchers.IO)
 
 

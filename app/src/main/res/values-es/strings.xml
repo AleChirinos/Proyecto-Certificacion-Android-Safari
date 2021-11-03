@@ -16,7 +16,7 @@
     <string name="text_hint_username_email">Nombre de usuario o email</string>
     <string name="button_login">Ingresar</string>
     <string name="text_hint_password">Contraseña</string>
-    <string name="radioButton_rememberme">Recuerdame</string>
+    <string name="radioButton_rememberme">Mantener mi sesión iniciada</string>
     <string name="loginFacebook">Ingresa con Facebook</string>
     <string name="loginGoogle">Ingresa con Google</string>
     <string name="uploadInitialDescription">Descripción inicial (mostrado en el feed):</string>
@@ -49,5 +49,8 @@
     <string name="socialNetwork">¿Usando otras redes sociales?</string>
     <string name="facebook_app_id">1259889437860147</string>
     <string name="fb_login_protocol_scheme">fb1259889437860147</string>
+    <string name="required">Campo obligatorio</string>
+    <string name="requirement_photo">Jpg/png. (400*400 a 1500 * 1500)</string>
+    <string name="missingFields">Faltan datos</string>
 
 </resources>

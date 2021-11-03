@@ -1,8 +1,10 @@
 package edu.upb.tumejorviaje.ui.mainmenu.tabs.postDetails
 
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,10 +44,9 @@ class PostDetailsFragment : Fragment() {
         }
         binding.ivLongDescription.movementMethod=ScrollingMovementMethod()
 
-        Glide.with(view)
-            .load(post.postUrl)
-            .into(binding.ivPostImage)
-
+        val decodedByteArray: ByteArray = Base64.decode(post.postUrl, Base64.NO_WRAP)
+        val decodedBitmap = BitmapFactory.decodeByteArray(decodedByteArray, 0, decodedByteArray.size)
+        binding.ivPostImage.setImageBitmap(decodedBitmap)
         Glide.with(view).load(post.profileUrl).into(binding.ivPostProfileUser)
 
         binding.ivPostPublisher.text = String.format(getString(R.string.uploadAuthor) + " %s",post.publisher)
