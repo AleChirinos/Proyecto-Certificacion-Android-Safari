@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class DirectChatNetworkControllerImp:DirectChatNetworkController {
     val client= Retrofit.Builder()
-        .baseUrl("http://192.168.0.11:1880")
+        .baseUrl("http://192.168.0.9:1880")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(DirectChatAPI::class.java)
