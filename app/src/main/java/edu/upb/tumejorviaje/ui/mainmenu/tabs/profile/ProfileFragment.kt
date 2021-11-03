@@ -41,6 +41,6 @@ class ProfileFragment: Fragment(){
             feedListAdapter.addAll(it)
         }
 
-        profileViewModel.getAllPostsProfile(requireContext())
+        //profileViewModel.getAllPostsProfile(requireContext())
     }
 }

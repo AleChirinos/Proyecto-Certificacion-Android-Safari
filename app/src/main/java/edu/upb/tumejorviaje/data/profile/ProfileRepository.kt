@@ -2,6 +2,7 @@ package edu.upb.tumejorviaje.data.profile
 
 import android.content.Context
 import android.util.Log
+import edu.upb.tumejorviaje.NetworkUtils
 import edu.upb.tumejorviaje.data.profile.network.ProfileNetworkController
 import edu.upb.tumejorviaje.data.profile.persistency.ProfilePersistencyController
 import edu.upb.tumejorviaje.isNetworkConnected
@@ -12,11 +13,11 @@ import kotlinx.coroutines.flow.flow
 
 class ProfileRepository (val network : ProfileNetworkController, val persistency : ProfilePersistencyController ) {
 
-    fun getAllPostProfile(context : Context) : Flow<List<Post>> {
+    fun getAllPostProfile() : Flow<List<Post>> {
         return flow{
             emit(persistency.getNewFeedList())
             try {
-                if (isNetworkConnected(context)){
+                if (NetworkUtils.isOnline){
                     val posts = network.getAllPostsProfile()
                     persistency.savePosts(posts)
                     emit(posts)
