@@ -12,6 +12,7 @@ import edu.upb.tumejorviaje.data.ChatDirectTempDataSource
 import edu.upb.tumejorviaje.data.UserTempDataSource
 import edu.upb.tumejorviaje.databinding.FragmentChatProgressBinding
 import edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileViewModel
+import kotlinx.coroutines.Job
 
 class ChatConversationFragment: Fragment() {
 
@@ -19,6 +20,7 @@ class ChatConversationFragment: Fragment() {
     private lateinit var binding: FragmentChatProgressBinding
     private val profileViewModel: ProfileViewModel by activityViewModels()
     private val chatBubbleViewModel: ChatBubbleViewModel by activityViewModels()
+    var chatBubbleJob: Job ?= null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,7 +42,14 @@ class ChatConversationFragment: Fragment() {
         chatBubbleViewModel.chatBubbles.observe(viewLifecycleOwner){
             chatBubbleListAdapter.addAll(it)
         }
-        chatBubbleViewModel.updateChatBubbles(chatBubbleViewModel.savedChat.value!!.user)
+
+        chatBubbleJob= chatBubbleViewModel.updateChatBubbles(chatBubbleViewModel.savedChat.value!!.user)
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        chatBubbleJob?.cancel()
     }
 
 }

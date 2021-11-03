@@ -7,6 +7,6 @@ interface UserNetworkController {
         password: String,
         email: String,
         description: String,
-        photo: String
+        profileUrl: String
     )
 }

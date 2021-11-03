@@ -13,4 +13,12 @@ class DirectChatPersistenceControllerImp: DirectChatPersistenceController{
     override fun saveChatBubbles(conversations: List<ChatBubble>) {
         db.chatBubbleDao().saveChatBubbles(conversations)
     }
+
+    override fun getAllChatBubblesForChatId(chatId: String): Flow<List<ChatBubble>> {
+        return db.chatBubbleDao().getAllChatBubbleForChatId(chatId)
+    }
+
+    override fun addChatBubble(chatBubble: ChatBubble) {
+        return db.chatBubbleDao().addNewChatBubble(chatBubble)
+    }
 }

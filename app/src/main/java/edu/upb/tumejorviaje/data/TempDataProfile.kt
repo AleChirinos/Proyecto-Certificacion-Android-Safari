@@ -8,7 +8,7 @@ import java.time.LocalDate
 import java.util.*
 
 object TempDataProfile {
-    private var user: User? = User(
+   /* private var user: User? = User(
         "dt.valdivia",
         "Soy auditor financiero, con un master en big data y otro en accounting management",
         "https://vevico.files.wordpress.com/2019/08/tachuri-siete-colores.png?crop"
@@ -74,4 +74,6 @@ object TempDataProfile {
     fun setNewFeedList(itemFeedList: List<Post>) {
         this.feedList = itemFeedList.toMutableList()
     }
+
+    */
 }

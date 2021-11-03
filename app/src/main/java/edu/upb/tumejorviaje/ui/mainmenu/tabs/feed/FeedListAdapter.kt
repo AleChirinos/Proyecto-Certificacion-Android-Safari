@@ -1,13 +1,8 @@
 package edu.upb.tumejorviaje.ui.mainmenu.tabs.feed
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.databinding.ListItemFeedBinding
 import edu.upb.tumejorviaje.model.Post
 

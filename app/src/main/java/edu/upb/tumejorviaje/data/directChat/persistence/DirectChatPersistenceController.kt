@@ -6,4 +6,6 @@ import kotlinx.coroutines.flow.Flow
 interface DirectChatPersistenceController {
     fun getAllChatBubbles(): Flow<List<ChatBubble>>
     fun saveChatBubbles(conversations:List<ChatBubble>)
+    fun getAllChatBubblesForChatId(chatId: String): Flow<List<ChatBubble>>
+    fun addChatBubble(chatBubble: ChatBubble)
 }

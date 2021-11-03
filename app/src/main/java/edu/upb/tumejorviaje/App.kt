@@ -7,6 +7,11 @@ import edu.upb.tumejorviaje.data.feed.network.FeedNetworkController
 import edu.upb.tumejorviaje.data.feed.network.FeedNetworkControllerImp
 import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistenceController
 import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistenceControllerImp
+import edu.upb.tumejorviaje.data.search.SearchRepository
+import edu.upb.tumejorviaje.data.search.network.SearchNetworkController
+import edu.upb.tumejorviaje.data.search.network.SearchNetworkControllerImp
+import edu.upb.tumejorviaje.data.search.persistence.SearchPersistenceController
+import edu.upb.tumejorviaje.data.search.persistence.SearchPersistenceControllerImp
 import edu.upb.tumejorviaje.data.user.UserRepository
 import edu.upb.tumejorviaje.data.user.network.UserNetworkController
 import edu.upb.tumejorviaje.data.user.network.UserNetworkControllerImp
@@ -27,6 +32,9 @@ class App:Application() {
         single { FeedRepository(get(),get()) }
         single<UserNetworkController>{UserNetworkControllerImp()}
         single { UserRepository(get()) }
+        single<SearchPersistenceController>{SearchPersistenceControllerImp()}
+        single<SearchNetworkController>{ SearchNetworkControllerImp() }
+        single{SearchRepository(get(),get())}
     }
 
     override fun onCreate() {

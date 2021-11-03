@@ -48,16 +48,19 @@ class LoginOrRegisterActivity : AppCompatActivity() {
             val usernamEmail = binding.editTextTextUserName.editText?.text.toString().trim()
             val password = binding.editTextTextPassword.editText?.text.toString().trim()
 
-            try {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+            finish()
+            /*try {
                 loginOrRegisterViewModel.login(usernamEmail, password).invokeOnCompletion {
-                    val intent: Intent = Intent(this, MenuActivity::class.java)
-                    startActivity(intent)
-                    finish()
+
                 }
             } catch (e:Exception){
                 Toast.makeText(this@LoginOrRegisterActivity, e.toString(), Toast.LENGTH_LONG).show()
-            }
+            }*/
         }
+
+
         callbackManager= CallbackManager.Factory.create()
 
         fbloginButton=binding.fbLoginButton

@@ -19,7 +19,6 @@ class ChatBubbleListAdapter(val myUser: User, val otherUser: User): RecyclerView
 
     private val elementList:MutableList<ChatBubble> = mutableListOf()
 
-
     private val userViewType=1
     private val otherViewType=2
 

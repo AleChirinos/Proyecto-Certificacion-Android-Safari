@@ -14,4 +14,10 @@ interface ChatBubbleDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun saveChatBubbles(conversations: List<ChatBubble>)
+
+    @Query("SELECT * FROM chatbubble WHERE chatId = :chatId")
+    fun getAllChatBubbleForChatId(chatId: String):Flow<List<ChatBubble>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun addNewChatBubble(chatBubble: ChatBubble)
 }

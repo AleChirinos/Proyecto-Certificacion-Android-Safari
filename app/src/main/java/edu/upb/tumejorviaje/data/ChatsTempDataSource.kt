@@ -9,11 +9,11 @@ object ChatsTempDataSource {
             chatLastMessage = "Aún estoy esperando.",
         ),
         SavedChat(
-            user = UserTempDataSource.otherUser,
+            user = UserTempDataSource.otherUser2,
             chatLastMessage = "Espero funcione."
         ),
         SavedChat(
-            user = UserTempDataSource.otherUser,
+            user = UserTempDataSource.otherUser3,
             chatLastMessage = "Ya lo sabía"
         )
     )

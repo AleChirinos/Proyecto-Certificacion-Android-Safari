@@ -21,9 +21,9 @@ class UserNetworkControllerImp : UserNetworkController{
         password: String,
         email: String,
         description: String,
-        photo: String
+        profileUrl: String
     ) {
-        return client.register(RegisterRequest(username, password,email,description,photo))
+        return client.register(RegisterRequest(username, password,email,description,profileUrl))
     }
 
 
