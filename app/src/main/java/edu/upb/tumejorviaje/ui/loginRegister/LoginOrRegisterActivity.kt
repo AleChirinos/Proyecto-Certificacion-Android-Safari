@@ -48,19 +48,16 @@ class LoginOrRegisterActivity : AppCompatActivity() {
             val usernamEmail = binding.editTextTextUserName.editText?.text.toString().trim()
             val password = binding.editTextTextPassword.editText?.text.toString().trim()
 
-            val intent = Intent(this, MenuActivity::class.java)
-            startActivity(intent)
-            finish()
 
-
-
-            /*try {
+            try {
                 loginOrRegisterViewModel.login(usernamEmail, password).invokeOnCompletion {
-
+                    val intent = Intent(this, MenuActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
             } catch (e:Exception){
                 Toast.makeText(this@LoginOrRegisterActivity, e.toString(), Toast.LENGTH_LONG).show()
-            }*/
+            }
         }
 
 

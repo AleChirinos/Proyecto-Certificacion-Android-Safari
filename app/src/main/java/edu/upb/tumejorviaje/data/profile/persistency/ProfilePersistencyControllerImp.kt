@@ -12,11 +12,15 @@ class ProfilePersistencyControllerImp : ProfilePersistencyController{
     //sin esto, el LocalDate no nos podra funcionar, ya que nos indica que requiere un API minimo de 26
     //private var feedList : List<Post> = listOf()
 
-    override fun getNewFeedList() : Flow<List<Post>> {
-        return db.profilePostsDao().getAllPostsProfile()
+    override fun getNewFeedList(username:String) : Flow<List<Post>> {
+        return db.profilePostsDao().getAllPostsProfile(username)
     }
 
     override fun savePosts(posts : List<Post>){
         return db.profilePostsDao().saveAllPosts(posts)
     }
+
+
+
+
 }

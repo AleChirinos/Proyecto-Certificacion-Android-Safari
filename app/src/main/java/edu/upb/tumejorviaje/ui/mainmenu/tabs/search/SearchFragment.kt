@@ -48,7 +48,8 @@ class SearchFragment: Fragment(){
         }
 
         userFeedAdapter.setOnFeedItemClickListener {
-            val directions=SearchFragmentDirections.actionSearchFragmentToProfileFragment(it)
+            profileViewModel.userToShow.postValue(it)
+            val directions=SearchFragmentDirections.actionSearchFragmentToProfileFragment()
             findNavController().navigate(directions)
         }
 

@@ -20,11 +20,6 @@
         android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
-        <argument android:name="user"
-            app:argType="edu.upb.tumejorviaje.model.User"
-            app:nullable="true"
-            android:defaultValue="@null"
-            />
     </fragment>
 
     <fragment

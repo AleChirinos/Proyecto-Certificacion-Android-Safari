@@ -13,18 +13,18 @@ import kotlinx.coroutines.flow.flow
 
 class ProfileRepository (private val network : ProfileNetworkController, private val persistency : ProfilePersistencyController ) {
 
-    fun getAllPostProfile() : Flow<List<Post>> {
-        return persistency.getNewFeedList()
+    fun getAllPostProfile(username:String) : Flow<List<Post>> {
+        return persistency.getNewFeedList(username)
     }
 
     fun getUserProfile(): User?{
         return UserTempDataSource.myUser
     }
 
-    fun updatePostsP() : Flow<Any>{
+    fun updatePostsP(username: String) : Flow<List<Post>>{
          return flow{
             try {
-                val posts = network.getAllPostsProfile(UserTempDataSource.myUser.username)
+                val posts = network.getAllPostsProfile(username)
                 persistency.savePosts(posts)
                 emit(posts)
             }catch (e : Exception){

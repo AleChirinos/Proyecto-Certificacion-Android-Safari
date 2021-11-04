@@ -16,9 +16,9 @@ import kotlinx.coroutines.flow.onEach
 
 class ProfileViewModel : ViewModel() {
     private val profileRepository = ProfileRepository(ProfileNetworkControllerImp(), ProfilePersistencyControllerImp())
-
-    val myPosts = profileRepository.getAllPostProfile().asLiveData(Dispatchers.IO)
     val user=MutableLiveData(profileRepository.getUserProfile())
+    val myPosts = MutableLiveData<List<Post>>(listOf())
+    val userToShow=MutableLiveData(profileRepository.getUserProfile())
 
 
 
@@ -31,7 +31,11 @@ class ProfileViewModel : ViewModel() {
 
     }*/
 
-    fun updatePostsProfile() :Job{
-        return profileRepository.updatePostsP().launchIn(CoroutineScope(Dispatchers.IO))
-    }
+
+    fun updatePostsProfile(username:String) :Job{
+        return profileRepository.updatePostsP(username).onEach{
+            myPosts.postValue(it)
+        }
+            .launchIn(CoroutineScope(Dispatchers.IO))
+        }
 }

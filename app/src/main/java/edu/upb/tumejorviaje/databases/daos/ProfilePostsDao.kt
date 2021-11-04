@@ -1,3 +1,4 @@
+
 package edu.upb.tumejorviaje.databases.daos
 
 import androidx.room.Dao
@@ -10,11 +11,13 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ProfilePostsDao {
-    @Query("SELECT * FROM post")
-    fun getAllPostsProfile(): Flow<List<Post>>
+    @Query("SELECT * FROM post WHERE publisher = :publisher")
+    fun getAllPostsProfile(publisher:String): Flow<List<Post>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun saveAllPosts(posts: List<Post>)
+
+
 
 
 }

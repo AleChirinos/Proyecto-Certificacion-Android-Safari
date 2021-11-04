@@ -38,6 +38,7 @@
             app:layout_constraintEnd_toStartOf="@id/userImage"
             app:layout_constraintBottom_toTopOf="@id/chatCommentTime"
             app:layout_constraintTop_toTopOf="@id/userImage"
+            android:text="@{chatBubble.textComment}"
             tools:text="This is my message that will wrap into multiple lines and keep on going"
             android:textColor="?attr/colorOnSurface"
             android:background="@drawable/wallper_text"
@@ -51,6 +52,7 @@
             app:layout_constraintEnd_toStartOf="@id/userImage"
             app:layout_constraintTop_toBottomOf="@id/chatCommentText"
             tools:text="9:30"
+            android:text="@{chatBubble.time}"
             android:textColor="?attr/colorOnSurface"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>

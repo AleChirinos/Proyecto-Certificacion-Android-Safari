@@ -57,7 +57,7 @@ class ChatBubbleViewModel : ViewModel() {
 
     private fun getHour(): String {
         val date = Calendar.getInstance().time
-        val formatter = SimpleDateFormat("dd/MM/yyyy")
+        val formatter = SimpleDateFormat("h:mm a")
         return formatter.format(date).toString()
 
     }

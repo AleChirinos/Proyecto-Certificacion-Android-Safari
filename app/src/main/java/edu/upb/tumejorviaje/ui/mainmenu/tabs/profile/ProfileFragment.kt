@@ -14,8 +14,7 @@ import edu.upb.tumejorviaje.ui.mainmenu.tabs.feed.FeedListAdapter
 
 class ProfileFragment: Fragment(){
 
-    private val feedListAdapter = FeedListAdapter()
-    private val args:ProfileFragmentArgs by navArgs()
+    private var feedListAdapter = FeedListAdapter()
     private val profileViewModel : ProfileViewModel by activityViewModels()
     private lateinit var binding : FragmentProfileBinding
 
@@ -24,9 +23,6 @@ class ProfileFragment: Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        if (arguments!=null){
-            profileViewModel.user.postValue(args.user)
-        }
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         binding.profileViewModel=profileViewModel
         binding.lifecycleOwner=this
@@ -35,27 +31,26 @@ class ProfileFragment: Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.rvProfile.adapter = feedListAdapter
+            binding.rvProfile.adapter=feedListAdapter
+            binding.rvProfile.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            LinearSnapHelper().attachToRecyclerView(binding.rvProfile)
 
-        binding.rvProfile.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
-        LinearSnapHelper().attachToRecyclerView(binding.rvProfile)
-
-
-        profileViewModel.myPosts.observe(viewLifecycleOwner) {
-            feedListAdapter.addAll(it)
-        }
-
-        binding.swiperefresh.setOnRefreshListener {
-            profileViewModel.updatePostsProfile().invokeOnCompletion {
-                binding.swiperefresh.isRefreshing = false
+            profileViewModel.myPosts.observe(viewLifecycleOwner) {
+                feedListAdapter.addAll(it)
             }
-        }
+
+            binding.swiperefresh.setOnRefreshListener {
+                profileViewModel.updatePostsProfile(profileViewModel.userToShow.value!!.username).invokeOnCompletion {
+                    binding.swiperefresh.isRefreshing = false
+                }
+            }
+            profileViewModel.updatePostsProfile(profileViewModel.userToShow.value!!.username)
 
 
+    }
 
-        profileViewModel.updatePostsProfile()
-
-        //profileViewModel.getAllPostsProfile(requireContext())
+    override fun onDestroyView() {
+        super.onDestroyView()
+        profileViewModel.userToShow.postValue(profileViewModel.user.value)
     }
 }
