@@ -27,7 +27,7 @@ object UserTempDataSource {
         "pass",
         "careta@gmail.com",
         "Careta",
-        "https://i.pinimg.com/originals/3e/b1/43/3eb143771338702d4bacb845d1fd93fa.jpg"
+        "https://i.dailymail.co.uk/1s/2019/01/23/09/8878274-6622497-image-a-23_1548237108686.jpg"
     )
 
     var otherUser3: User = User(
@@ -35,7 +35,7 @@ object UserTempDataSource {
         "pass",
         "cata@gmail.com",
         "Careta",
-        "https://i.pinimg.com/originals/3e/b1/43/3eb143771338702d4bacb845d1fd93fa.jpg"
+        "https://pbs.twimg.com/media/ErYpWXbXYAAkhIT.jpg"
     )
 
 }
