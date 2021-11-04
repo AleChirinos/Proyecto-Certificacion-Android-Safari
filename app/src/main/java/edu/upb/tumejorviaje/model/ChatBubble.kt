@@ -6,10 +6,11 @@ import java.io.Serializable
 
 @Entity
 data class ChatBubble(
-    @PrimaryKey val id:Int,
+    @PrimaryKey (autoGenerate = true) val id:Int,
     val textComment: String,
     val time: String,
     val provenientUsername: String,
+    val provenientProfileUrl:String,
     val chatId: String
 ) : Serializable {
 }

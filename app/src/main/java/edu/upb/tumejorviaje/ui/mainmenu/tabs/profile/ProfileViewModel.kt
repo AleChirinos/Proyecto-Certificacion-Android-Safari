@@ -21,6 +21,8 @@ class ProfileViewModel : ViewModel() {
     val user=MutableLiveData(profileRepository.getUserProfile())
 
 
+
+
     /*fun getAllPostsProfile(context: Context){
         //profileRepository.getAllPostProfile(context).launchIn(CoroutineScope(Dispatchers.IO))
         profileRepository.getAllPostProfile(context).onEach {

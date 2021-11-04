@@ -2,11 +2,21 @@ package edu.upb.tumejorviaje
 
 import android.app.Application
 import androidx.room.Room
+import edu.upb.tumejorviaje.data.directChat.DirectChatRepository
+import edu.upb.tumejorviaje.data.directChat.network.DirectChatNetworkController
+import edu.upb.tumejorviaje.data.directChat.network.DirectChatNetworkControllerImp
+import edu.upb.tumejorviaje.data.directChat.persistence.DirectChatPersistenceController
+import edu.upb.tumejorviaje.data.directChat.persistence.DirectChatPersistenceControllerImp
 import edu.upb.tumejorviaje.data.feed.FeedRepository
 import edu.upb.tumejorviaje.data.feed.network.FeedNetworkController
 import edu.upb.tumejorviaje.data.feed.network.FeedNetworkControllerImp
 import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistenceController
 import edu.upb.tumejorviaje.data.feed.persistency.FeedPersistenceControllerImp
+import edu.upb.tumejorviaje.data.profile.ProfileRepository
+import edu.upb.tumejorviaje.data.profile.network.ProfileNetworkController
+import edu.upb.tumejorviaje.data.profile.network.ProfileNetworkControllerImp
+import edu.upb.tumejorviaje.data.profile.persistency.ProfilePersistencyController
+import edu.upb.tumejorviaje.data.profile.persistency.ProfilePersistencyControllerImp
 import edu.upb.tumejorviaje.data.search.SearchRepository
 import edu.upb.tumejorviaje.data.search.network.SearchNetworkController
 import edu.upb.tumejorviaje.data.search.network.SearchNetworkControllerImp
@@ -35,6 +45,12 @@ class App:Application() {
         single<SearchPersistenceController>{SearchPersistenceControllerImp()}
         single<SearchNetworkController>{ SearchNetworkControllerImp() }
         single{SearchRepository(get(),get())}
+        single<DirectChatPersistenceController>{ DirectChatPersistenceControllerImp() }
+        single<DirectChatNetworkController>{ DirectChatNetworkControllerImp() }
+        single{ DirectChatRepository(get(),get()) }
+        single<ProfileNetworkController>{ ProfileNetworkControllerImp() }
+        single<ProfilePersistencyController>{ ProfilePersistencyControllerImp() }
+        single{ProfileRepository(get(),get())}
     }
 
     override fun onCreate() {

@@ -11,12 +11,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import edu.upb.tumejorviaje.R
 import edu.upb.tumejorviaje.databinding.ActivityRegisterBinding
-import edu.upb.tumejorviaje.ui.mainmenu.MenuActivity
+import edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileViewModel
 import java.io.ByteArrayOutputStream
-import java.text.SimpleDateFormat
 import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityRegisterBinding
     private val registerViewModel: RegisterViewModel by viewModels()
     private lateinit var selectedImage: Bitmap
@@ -137,7 +137,6 @@ class RegisterActivity : AppCompatActivity() {
             binding.RegisterProfileImage.setImageBitmap(selectedImage)
             binding.RegisterProfileImage.adjustViewBounds
             registerViewModel.photoPassed.postValue(true)
-            binding.RegisterProfileImage.drawingCache
         }
     }
 

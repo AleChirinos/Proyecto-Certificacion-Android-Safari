@@ -5,6 +5,7 @@
     android:id="@+id/main_menu_nav_graph"
     app:startDestination="@id/feedFragment">
 
+
     <fragment
         android:id="@+id/feedFragment"
         android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.feed.FeedFragment"
@@ -18,7 +19,14 @@
         android:id="@+id/profileFragment"
         android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile">
+        <argument android:name="user"
+            app:argType="edu.upb.tumejorviaje.model.User"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
+    </fragment>
+
     <fragment
         android:id="@+id/chatFragment"
         android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.chat.ChatFragment"
@@ -32,7 +40,11 @@
         android:id="@+id/searchFragment"
         android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.search.SearchFragment"
         android:label="SearchFragment"
-        tools:layout="@layout/fragment_search"/>
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/uploadFragment"
         android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.upload.UploadFragment"

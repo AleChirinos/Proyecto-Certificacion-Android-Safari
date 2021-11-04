@@ -17,7 +17,10 @@ class DirectChatActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDirectChatBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+        arguments = DirectChatActivityArgs.fromBundle(intent.extras!!)
+        chatBubbleViewModel.savedChat.postValue(arguments.savedChat)
 
         binding = ActivityDirectChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -25,9 +28,8 @@ class DirectChatActivity : AppCompatActivity() {
         replaceFragment(R.id.containerChatDirectText,chatTextEnterFragment)
         replaceFragment(R.id.containerChatDirectShow,chatConversationFragment)
 
-        arguments = DirectChatActivityArgs.fromBundle(intent.extras!!)
 
-        chatBubbleViewModel.savedChat.postValue(arguments.savedChat)
+
 
         chatBubbleViewModel.savedChat.observe(this){
             binding.chatName.text = it.user.username

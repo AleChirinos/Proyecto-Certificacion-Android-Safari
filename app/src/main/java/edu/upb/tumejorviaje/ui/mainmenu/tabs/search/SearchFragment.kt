@@ -6,15 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import edu.upb.tumejorviaje.databinding.FragmentSearchBinding
 import edu.upb.tumejorviaje.ui.mainmenu.tabs.feed.FeedListAdapter
+import edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileViewModel
 
 class SearchFragment: Fragment(){
     private lateinit var binding : FragmentSearchBinding
     private val userFeedAdapter= UserSearchAdapter()
+    private val profileViewModel: ProfileViewModel by activityViewModels()
     private val searchViewModel: SearchViewModel by viewModels()
 
     override fun onCreateView(
@@ -43,7 +47,10 @@ class SearchFragment: Fragment(){
             searchViewModel.updateUsersSearch(binding.editTextSearch.text.toString())
         }
 
-
+        userFeedAdapter.setOnFeedItemClickListener {
+            val directions=SearchFragmentDirections.actionSearchFragmentToProfileFragment(it)
+            findNavController().navigate(directions)
+        }
 
         searchViewModel.updateUsersSearch("")
     }

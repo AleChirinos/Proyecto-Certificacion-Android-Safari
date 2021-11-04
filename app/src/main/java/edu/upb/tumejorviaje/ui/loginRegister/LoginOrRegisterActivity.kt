@@ -51,6 +51,9 @@ class LoginOrRegisterActivity : AppCompatActivity() {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
             finish()
+
+
+
             /*try {
                 loginOrRegisterViewModel.login(usernamEmail, password).invokeOnCompletion {
 
@@ -70,9 +73,11 @@ class LoginOrRegisterActivity : AppCompatActivity() {
             override fun onCancel() {
                 Toast.makeText(this@LoginOrRegisterActivity, "Login Cancelled", Toast.LENGTH_LONG).show()
             }
+
             override fun onError(exception: FacebookException) {
                 Toast.makeText(this@LoginOrRegisterActivity, exception.message, Toast.LENGTH_LONG).show()
             }
+
             override fun onSuccess(result: LoginResult) {
                 Log.d("TAG", "Success Login")
             }

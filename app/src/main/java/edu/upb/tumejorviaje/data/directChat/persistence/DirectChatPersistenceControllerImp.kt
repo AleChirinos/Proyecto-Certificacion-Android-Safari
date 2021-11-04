@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 class DirectChatPersistenceControllerImp: DirectChatPersistenceController{
     private val db= App.db
+
     override fun getAllChatBubbles(): Flow<List<ChatBubble>> {
         return db.chatBubbleDao().getAllChatBubbles()
     }
