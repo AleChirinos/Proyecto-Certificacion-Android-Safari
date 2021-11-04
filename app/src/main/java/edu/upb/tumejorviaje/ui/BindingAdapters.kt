@@ -26,6 +26,7 @@ import java.net.URL
 @BindingAdapter ("srcUrl")
 fun setSrcUrl(imageView: ImageView, url:String){
 
+    //Como setear la imagen desde el server para los dataBinding
     if(url==null) return
     if (url.contains("http",true)){
         //Con BitmapFactory y un asincrono, podemos obtener la fuente del url y convertirla a bitmap
