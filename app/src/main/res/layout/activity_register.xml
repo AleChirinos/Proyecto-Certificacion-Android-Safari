@@ -110,6 +110,7 @@
             app:tint="?attr/colorOnPrimary" />
 
         <TextView
+            android:id="@+id/indicateTextView"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
