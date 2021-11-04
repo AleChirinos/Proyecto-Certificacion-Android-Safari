@@ -20,6 +20,9 @@
         android:name="edu.upb.tumejorviaje.ui.mainmenu.tabs.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/fromprofileFragmentTopostDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
     </fragment>
 
     <fragment

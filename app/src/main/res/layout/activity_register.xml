@@ -130,6 +130,7 @@
             android:layout_marginEnd="15dp"
             android:textColorHint="?attr/colorOnSecondary"
             app:boxStrokeColor="?attr/colorOnPrimary"
+            app:errorEnabled="true"
             app:helperText="@string/required"
             app:helperTextTextColor="?attr/colorPrimary"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -153,6 +154,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/RegisterPassword"
             android:layout_width="0dp"
+            app:errorEnabled="true"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
@@ -182,6 +184,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/RegisterConfirmPasword"
             android:layout_width="0dp"
+            app:errorEnabled="true"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
@@ -210,6 +213,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/RegisterEmail"
             android:layout_width="0dp"
+            app:errorEnabled="true"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
@@ -237,6 +241,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/RegisterDescription"
             android:layout_width="0dp"
+            app:errorEnabled="true"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"

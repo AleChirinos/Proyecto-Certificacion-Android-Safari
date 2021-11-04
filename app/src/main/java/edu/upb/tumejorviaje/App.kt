@@ -25,7 +25,10 @@ import edu.upb.tumejorviaje.data.search.persistence.SearchPersistenceControllerI
 import edu.upb.tumejorviaje.data.user.UserRepository
 import edu.upb.tumejorviaje.data.user.network.UserNetworkController
 import edu.upb.tumejorviaje.data.user.network.UserNetworkControllerImp
+import edu.upb.tumejorviaje.data.user.persistency.UserPersistenceController
+import edu.upb.tumejorviaje.data.user.persistency.UserPersistenceControllerImp
 import edu.upb.tumejorviaje.databases.AppDatabase
+import edu.upb.tumejorviaje.model.User
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -34,6 +37,7 @@ import org.koin.dsl.module
 class App:Application() {
     companion object {
         lateinit var db: AppDatabase
+        lateinit var userToKeep: User
     }
 
     val appModule = module {
@@ -41,7 +45,8 @@ class App:Application() {
         single<FeedNetworkController> { FeedNetworkControllerImp() }
         single { FeedRepository(get(),get()) }
         single<UserNetworkController>{UserNetworkControllerImp()}
-        single { UserRepository(get()) }
+        single<UserPersistenceController>{UserPersistenceControllerImp()}
+        single { UserRepository(get(),get()) }
         single<SearchPersistenceController>{SearchPersistenceControllerImp()}
         single<SearchNetworkController>{ SearchNetworkControllerImp() }
         single{SearchRepository(get(),get())}
@@ -62,4 +67,5 @@ class App:Application() {
             modules(appModule)
         }
     }
+
 }

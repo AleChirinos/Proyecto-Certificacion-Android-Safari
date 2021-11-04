@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.lifecycle.LifecycleOwner
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
@@ -21,6 +22,8 @@ import com.google.android.gms.common.api.ApiException
 
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.tasks.Task
+import edu.upb.tumejorviaje.App
+import edu.upb.tumejorviaje.model.User
 
 
 class LoginOrRegisterActivity : AppCompatActivity() {
@@ -31,6 +34,7 @@ class LoginOrRegisterActivity : AppCompatActivity() {
     private lateinit var callbackManager: CallbackManager
     private lateinit var binding : ActivityLoginOrRegisterBinding
     private val loginOrRegisterViewModel: LoginOrRegisterViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,8 +52,8 @@ class LoginOrRegisterActivity : AppCompatActivity() {
             val usernamEmail = binding.editTextTextUserName.editText?.text.toString().trim()
             val password = binding.editTextTextPassword.editText?.text.toString().trim()
 
-
             try {
+               //Utilizariamos lo de user, pero por alguna razon da como si no hubiera datos de la lista
                 loginOrRegisterViewModel.login(usernamEmail, password).invokeOnCompletion {
                     val intent = Intent(this, MenuActivity::class.java)
                     startActivity(intent)

@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import edu.upb.tumejorviaje.databinding.FragmentProfileBinding
+import edu.upb.tumejorviaje.ui.mainmenu.tabs.feed.FeedFragmentDirections
 import edu.upb.tumejorviaje.ui.mainmenu.tabs.feed.FeedListAdapter
 
 class ProfileFragment: Fragment(){
@@ -44,6 +46,11 @@ class ProfileFragment: Fragment(){
                     binding.swiperefresh.isRefreshing = false
                 }
             }
+
+        feedListAdapter.setOnFeedItemClickListener {
+            val direction=ProfileFragmentDirections.fromprofileFragmentTopostDetailsFragment(it)
+            findNavController().navigate(direction)
+        }
             profileViewModel.updatePostsProfile(profileViewModel.userToShow.value!!.username)
 
 
